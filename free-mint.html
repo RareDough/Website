@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="BoredApePizzaClub" />
+    <meta
+      name="description"
+      content="Mint your FREE Infinity Pizza here. A Polygon based NFT that gives access to the upcoming private Sale!"
+    />
+    <meta
+      name="keywords"
+      content="Blockchain, Ethereum, Polygon, nft, bayc, boredpizzas, freenft, freemint, nftcommunity"
+    />
+    <title>BoredPizzas | Free Mint</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="infinityPage">
+    <!-- Hide Menu -->
+    <div id="mobHideMenu" class="hideMenu">
+      <div class="hideMenuHeader">
+        <div>
+          <div class="dropdown flagDropdown">
+            <a
+              class="dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img id="selectedFlag2" src="./img/EN.png" alt="Default English Flag" />
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div>
+                <a onClick="setLanguage('ch')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/CH.png" alt="Chinese Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('fr')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/FR.png" alt="French Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('gr')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/GR.png" alt="German Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('it')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/IT.png" alt="Italian Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('jp')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/JP.png" alt="Japanese Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('tr')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/TR.png" alt="Turkish Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('hi')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/HI.png" alt="Hindi Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('th')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/TH.png" alt="Thai Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('en')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/EN.png" alt="British Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('es')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/ES.png" alt="Spanish Flag"
+                /></a>
+              </div>
+               <div>
+                <a onClick="setLanguage('nl')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/NL.png" alt="Dutch Flag"
+                /></a>
+              </div>
+               <div>
+                <a onClick="setLanguage('pt')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/PT.png" alt="Portuguese Flag"
+                /></a>
+              </div>
+              <div>
+                <a onClick="setLanguage('ar')" class="dropdown-item" href="#"
+                  ><img img class="flagSrc" src="./img/arabic.png" alt="Arabic Flag"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a class="menuBrand" href="index">
+            <img src="./img/logo.png" alt="Bored Ape Pizza Club Logo" />
+          </a>
+        </div>
+        <div id="hideMenuIcon" class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line mb-0"></span>
+        </div>
+      </div>
+      <div class="hideMenuBody">
+        <a
+          class="hideMenuLink active"
+          tkey="free_mint_btn"
+          href="free-mint"
+          >Free mint</a
+        >
+        <br />
+        <a class="hideMenuLink" tkey="get_btn" href="vip-pass"
+          >Get Vip Pass</a
+        >
+        <div class="socialIcons">
+          <a
+            class=""
+            href="https://opensea.io/collection/boredapepizzaclub"
+            target="_blank"
+          >
+            <img src="./img/opensea-icon.png" alt="Opensea Icon" />
+          </a>
+          <a
+            class="mx-2"
+            href="https://twitter.com/BOREDpizzas"
+            target="_blank"
+          >
+            <img src="./img/twitter-icon.png" alt="Twitter Icon" />
+          </a>
+          <a href="https://discord.gg/GbwykC99N6" target="_blank">
+            <img src="./img/discrod-icon.png" alt="Discord Icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWapper">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-sm">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav brandNav ms-auto">
+              <li class="nav-item firstItem">
+                <a
+                  tkey="free_mint_btn"
+                  class="nav-link active"
+                  aria-current="page"
+                  href="free-mint"
+                  >Free mint</a
+                >
+              </li>
+              <li class="nav-item logoItem">
+                <a class="nav-link logo" href="index">
+                  <img src="./img/logo.png" alt="Bored Ape Pizza Club Logo" />
+                </a>
+              </li>
+              <li class="nav-item secondItem">
+                <a tkey="get_btn" class="nav-link" href="vip-pass"
+                  >Get VIP Pass</a
+                >
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mt-4">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://opensea.io/collection/boredapepizzaclub"
+                  target="_blank"
+                  ><img src="./img/opensea-icon.png" alt="Opensea Icon"
+                /></a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link px-0"
+                  href="https://twitter.com/BOREDpizzas"
+                  target="_blank"
+                  ><img src="./img/twitter-icon.png" alt="Twitter Icon"
+                /></a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://discord.gg/GbwykC99N6"
+                  target="_blank"
+                  ><img src="./img/discrod-icon.png" alt="Discord Icon"
+                /></a>
+              </li>
+              <li class="nav-item dropdown flagDropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img id="selectedFlag" src="./img/EN.png" alt="Default English Flag" />
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a
+                      onClick="setLanguage('ch')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img
+                        class="flagSrc"
+                        tkey="flag"
+                        src="./img/CH.png"
+                        alt="Chinese Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('fr')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/FR.png" alt="French Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('gr')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/GR.png" alt="German Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('it')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/IT.png" alt="Italian Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('jp')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/JP.png" alt="Japanese Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('tr')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/TR.png" alt="Turkish Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('hi')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/HI.png" alt="Hindi Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('th')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/TH.png" alt="Thai Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('en')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/EN.png" alt="English Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('es')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/ES.png" alt="Spanish Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('pt')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/PT.png" alt="Portuguese Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('nl')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/NL.png" alt="Dutch Flag"
+                    /></a>
+                  </li>
+                  <li>
+                    <a
+                      onClick="setLanguage('ar')"
+                      class="dropdown-item"
+                      href="#"
+                      ><img class="flagSrc" src="./img/arabic.png" alt="Arabic Flag"
+                    /></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Infinity Section -->
+      <section class="infinitySection mintSection">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mt-4 mt-lg-0">
+              <a class="imageLink" href="#">
+                <img class="pizzaImg" src="./img/freemint/infinity2_pizza.jpg" alt="Infinity Pizza Image" />
+              </a>
+              <a tkey="mint_btn" class="mainBtn mobileBtn" href="#">Mint</a>
+            </div>
+            <div class="col-lg-6">
+              <h1 tkey="nft_heading" class="mainHeading">Mint Free NFT</h1>
+              <p tkey="main_text" class="mainText">
+                Grab your special Infinity Pizza <br />
+                to <span>enter the Private Sale</span>!
+              </p>
+              <!-- <a tkey="mint_btn" class="mainBtn desktopBtn" href="#">Mint</a>-->
+
+              <!-- Minting button provided by Mintplex.xyz -->
+              <div
+                id="rampp-minting-container-9c7e2db7-94b7-4a6a-a808-97b90d5692e3"
+                class="rampp-minting-container"
+              >
+                <button
+                  id="rampp-minting-button-9c7e2db7-94b7-4a6a-a808-97b90d5692e3"
+                  tkey="mint_btn"
+                  class="rampp-minting-button"
+                  style="display: none"
+                  data-merkle-proof-uri="https://us-central1-nft-rampp.cloudfunctions.net/allowlist/wmPf4U2dsRqr6bm51WMs/merkle/verify"
+                  data-styles="eyJvcGVuIjp7InRleHQiOiJNaW50Iiwic3R5bGVzIjoiYm9yZGVyOm5vbmU7d2lkdGg6IDE1cmVtO3BhZGRpbmc6MC41cmVtO2ZvbnQtc2l6ZTogMS4xMjVyZW07bGluZS1oZWlnaHQ6IDEuNzVyZW07dGV4dC1hbGlnbjogY2VudGVyO2N1cnNvcjogcG9pbnRlcjtib3JkZXItcmFkaXVzOjAuMTI1cmVtO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZjdjMzZmOyJ9LCJwYXVzZWQiOnsidGV4dCI6Ik1pbnQlMjBDbG9zZWQiLCJzdHlsZXMiOiJib3JkZXI6bm9uZTt3aWR0aDogMTVyZW07cGFkZGluZzowLjVyZW07Zm9udC1zaXplOiAxLjEyNXJlbTtsaW5lLWhlaWdodDogMS43NXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7Y3Vyc29yOiBwb2ludGVyO2JvcmRlci1yYWRpdXM6MC4xMjVyZW07Y29sb3I6IzY3NjU2NTtiYWNrZ3JvdW5kLWNvbG9yOiNhZGFkYWQ7Y3Vyc29yOm5vdC1hbGxvd2VkOyJ9LCJzdXBwbHlSZWFjaGVkIjp7InRleHQiOiJBbGwlMjBUb2tlbnMlMjBNaW50ZWQhIiwic3R5bGVzIjoiYm9yZGVyOm5vbmU7d2lkdGg6IDE1cmVtO3BhZGRpbmc6MC41cmVtO2ZvbnQtc2l6ZTogMS4xMjVyZW07bGluZS1oZWlnaHQ6IDEuNzVyZW07dGV4dC1hbGlnbjogY2VudGVyO2N1cnNvcjogcG9pbnRlcjtib3JkZXItcmFkaXVzOjAuMTI1cmVtO2NvbG9yOiNmZjAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZiOGI4O2N1cnNvcjpub3QtYWxsb3dlZDsifSwiZXJyb3IiOnsidGV4dCI6Ik1pbnRpbmcgVW5hdmFpbGFibGUiLCJzdHlsZXMiOiJib3JkZXI6bm9uZTt3aWR0aDogMTVyZW07cGFkZGluZzowLjVyZW07Zm9udC1zaXplOiAxLjEyNXJlbTtsaW5lLWhlaWdodDogMS43NXJlbTt0ZXh0LWFsaWduOiBjZW50ZXI7Y3Vyc29yOiBwb2ludGVyO2JvcmRlci1yYWRpdXM6MC4xMjVyZW07Y29sb3I6I2ZmMDAwMDtiYWNrZ3JvdW5kLWNvbG9yOiNmZmI4Yjg7Y3Vyc29yOm5vdC1hbGxvd2VkOyJ9LCJjbGFpbVRleHQiOnsidGV4dCI6bnVsbCwic3R5bGVzIjoiY29sb3I6IHJnYmEoMTU2LCAxNjMsIDE3NSk7Zm9udC1zaXplOiAwLjc1cmVtO2xpbmUtaGVpZ2h0OiAxcmVtO3RleHQtYWxpZ246IGNlbnRlcjtwYWRkaW5nLXRvcDogMC4yNXJlbTtwYWRkaW5nLWJvdHRvbTogMC4yNXJlbTttYXJnaW46MDtmb250LWZhbWlseTpzYW5zLXNlcmlmOyJ9LCJxdWFudGl0eSI6eyJ0ZXh0IjpudWxsLCJzdHlsZXMiOiJ3aWR0aDo0MHB4O2NvbG9yOiNmN2MzNmY7Ym9yZGVyLXN0eWxlOnNvbGlkO2JvcmRlci13aWR0aDoxcHg7Ym9yZGVyLWNvbG9yOiNmN2MzNmY7Ym9yZGVyLXJhZGl1czowLjEyNXJlbTtmb250LXNpemU6MS4zcmVtO3RleHQtYWxpZ246Y2VudGVyOyJ9fQ=="
+                  data-abi-link="https://firebasestorage.googleapis.com/v0/b/nft-rampp.appspot.com/o/solidity_outputs%2FwmPf4U2dsRqr6bm51WMs%2FInfinityPizzaContract_data-6a1b0ac4-15a4-4fe3-a16e-ed0c7a0a6173.json?alt=media"
+                  data-token-id="1"
+                  data-redirect="null"
+                  data-contract-address="0x1db352d01EDe4F0Bbf2EE0349aB62DB86bdF0C20"
+                  data-show-claim-count="false"
+                  data-network="polygon"
+                  data-format="single"
+                ></button>
+              </div>
+              <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+              ></script>
+              <script
+                type="text/javascript"
+                src="https://mintplex.xyz/embeds/v2/embed1155.js"
+                data-uuid="9c7e2db7-94b7-4a6a-a808-97b90d5692e3"
+              ></script>
+              <!-- End Mintplex.xyz minting button-->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Copy Right Text -->
+      <div class="copyRightText" tkey="copy_text">
+        © 2022 Made with ❤ by BAPC
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/lang.js"></script>
+    <script>
+      // Get Src from Image
+      let allFlags = document.querySelectorAll(".flagSrc");
+      for (let i = 0; i < allFlags.length; i++) {
+        allFlags[i].addEventListener("click", flagsHandleClick);
+      }
+
+      function flagsHandleClick(e) {
+        let flagSrc = e.target.src;
+        console.log(flagSrc);
+        document.getElementById("selectedFlag").src = flagSrc;
+        document.getElementById("selectedFlag2").src = flagSrc;
+      }
+
+      const selected = localStorage.getItem("langCode");
+      document.getElementById(
+        "selectedFlag"
+      ).src = `./img/${selected.toUpperCase()}.png`;
+      document.getElementById(
+        "selectedFlag2"
+      ).src = `./img/${selected.toUpperCase()}.png`;
+    </script>
+  </body>
+</html>

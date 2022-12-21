@@ -1,0 +1,467 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="BoredApePizzaClub" />
+    <meta
+      name="description"
+      content="Burn your Pizza Collectibles to get Breadcrumb ERC-20 Tokens."
+    />
+    <meta
+      name="keywords"
+      content="Blockchain, Ethereum, Polygon, nft, bayc, boredpizzas, freenft, freemint, nftcommunity, digital, collectibles"
+    />
+    <title>BoredPizzas | Burn Oven</title>
+<!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.boredpizzas.com/burn-oven">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BoredPizzas | Burn Oven">
+    <meta property="og:description" content="Burn your Pizza Collectibles to get Breadcrumb ERC-20 Tokens.">
+    <meta property="og:image" content="https://www.boredpizzas.com/img/Boredpizzasoven.jpg">
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="BoredPizzas Pizzeria" />
+    <meta property="og:image:type" content=".jpg" />
+
+  <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="boredpizzas.com">
+    <meta property="twitter:url" content="https://www.boredpizzas.com/burn-oven">
+    <meta name="twitter:title" content="BoredPizzas | Burn Oven">
+    <meta name="twitter:description" content="Burn your Pizza Collectibles to get Breadcrumb ERC-20 Tokens.">
+    <meta name="twitter:image" content="https://www.boredpizzas.com/img/Boredpizzasoven.jpg">
+    <meta name="twitter:image:alt" content="BoredPizzas Pizzeria">
+	
+    <link rel="apple-touch-icon" sizes="180x180" href="img/bapc-favicon-180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/bapc-favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/bapc-favicon-16.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+	
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/burn.css?v=1.0.10" />
+  </head>
+  <body class="burnPage">
+    <div id="bgVideoWrapper">
+      <video playsinline autoplay muted loop poster="img/bgvid-still.jpg" id="bgVid">
+        <source src="video/bgvid-trans.webm" type="video/webm">
+        <source src="video/bgvid-trans.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="bodyWrapper">
+      <header class="burn">
+        <div><a href="/" class="backLink">Back</a></div>
+        <div><img src="./img/logo.png" alt="" href="index" /></div>
+        <div><button id="connectWallet" class="btn" onClick="connectWallet();">Connect <span>Wallet</span></a></div>
+      </header>
+      <h1 class="burn">Burn Oven</h1>
+      <p id="introText">Burn your Pizza Collectibles to mint some $BREAD🔥</p>
+      <div id="ovenContainer">
+        <div id="inventory">
+          <div id="inventoryItemHover"></div>
+          <h2 class="burnHeading">Your Inventory</h2>
+          <div id="inventoryContainer">
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+            <div class="inventoryItem placeholder"></div>
+          </div>
+          <div id="inventoryTotal">
+		  <div><a onclick="addToWallet();">Total Value in BREAD:</a></div>
+            <div>
+              <img src="img/BAPC-coin.svg" alt="BAPC Coin" />
+              <span id="totalValue"></span>
+            </div>
+          </div>
+        </div>
+        <div id="videoWrapper">
+          <img src="img/firedemon.png">
+          <div id="burnbutton"></div>
+        </div>
+        <div id="burn">
+          <h2 class="burnHeading">Burn</h2>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <div class="tableFooter">
+            <div>
+              <div>You get BREAD:</div>
+              <div>+<img src="img/BAPC-coin.svg" alt="Bread Coin" /><span id="totalBurnValue"></span></div>
+            </div>
+          </tfoot>
+        </div>
+      </div>
+    </div>
+    <!-- Copy Right Text -->
+    <div class="copyRightText" tkey="copy_text">&copy; 2022 Made with ❤ by BAPC</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    
+    <!-- Web3 Injection -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js" integrity="sha512-mYc+D+NmmyR0Gcrzyae7q5HguBCS4cBHAsIk7gGhu0/ZyGg4z2YZDjyR2YQA/IMCMTNs4mnlw3vVdERzewpekQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- ABI files -->
+    <script src="js/coinabi.js"></script>
+    <script src="js/pizzaabi.js"></script>
+    <script src="js/ovenabi.js"></script>
+    <script src="js/pizzalib.js"></script>
+    
+    <!-- page script starts here -->
+    <script>
+      var wallets = null;
+      var web3 = null;
+      var holdings = [];
+      var selectedTokenIds = [];
+      var selectedAmounts = [];
+      const PIZZA = '0x2953399124F0cBB46d2CbACD8A89cF0599974963'; //OpenSea ERC1155
+      const PIZZA_ABI = top.abi_pizza;
+      const COIN = '0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f'; //Coin address
+      const COIN_ABI = top.abi_coin;
+      const OVEN = '0x7e410FcF59dd30bC09E9ad21b008D36b907fC86B'; //Oven address
+      const OVEN_ABI = top.abi_oven;      
+      const LIBRARY = top.pizzalib;
+      const FINNEY = 1000000000000000;
+      const connectBtn = document.getElementById('connectWallet');
+
+
+      
+      async function connectWallet() {
+        // CONNECT TO USER WALLET
+      	await window.ethereum.enable();
+      	web3 = new Web3(window.ethereum);
+      	wallets = await web3.eth.getAccounts();
+
+        connectBtn.innerHTML = wallets[0];
+      	
+      	// VERIFY CORRECT CHAIN LOADED IN WALLET OR REQUEST CHANGE NETWORK
+      	let chainId = await web3.eth.getChainId();    
+      	if (chainId != 137){
+      	  await window.ethereum.request({
+      	    method: 'wallet_switchEthereumChain',
+      	    params: [{chainId: '0x89'}],
+      	  });
+      	  window.location.reload();
+      	}
+      	
+      	//PULL PIZZA DATA AND STORE IT LOCALLY
+      	await getUserPizzas();
+      	
+      	// ADD PAGE UPDATE CODE AFTER WALLET CONNECT HERE
+      	await checkApproval();
+      }
+      
+      async function burnPizzas() {
+        let gas = await web3.eth.getGasPrice();
+        let txn = new web3.eth.Contract(OVEN_ABI, OVEN);
+        console.log(txn);
+
+        await txn.methods.burnPizzaBatch( selectedTokenIds, selectedAmounts ).send({ from:wallets[0], amount:0, gasPrice:(gas*3)});
+
+        // empty burn table and hide footer
+        const tableBody = document.getElementsByTagName('tbody')[0];
+        const tableFooter = document.querySelector('.tableFooter');
+        tableFooter.style.display = 'none';
+        tableBody.innerHTML = '';
+      }
+      
+      async function setApproval() {
+        let gas = await web3.eth.getGasPrice();
+        
+        let txn = new web3.eth.Contract(PIZZA_ABI, PIZZA);
+        await txn.methods.setApprovalForAll( OVEN, true ).send({ from:wallets[0], amount:0, gasPrice:(gas*3) });
+        
+        await checkApproval();
+      }
+      
+      async function checkApproval() {
+        let txn = new web3.eth.Contract(PIZZA_ABI, PIZZA);
+        let isApproved = await txn.methods.isApprovedForAll( wallets[0], OVEN ).call();
+        
+        if (isApproved) {
+          document.getElementById('burnbutton').innerHTML = '<button id="burnPizza" class="btn" onClick="burnPizzas();">Burn</button><button id="burnPizza" class="btn" onClick="addToWallet();">Add to wallet</button>';
+        } else {
+          document.getElementById('burnbutton').innerHTML = '<button id="burnPizza" class="btn" onClick="setApproval();">Allow Burning</button><button id="burnPizza" class="btn" onClick="addToWallet();">Add BREAD to wallet</button>';
+        }
+          
+      }
+      
+      async function getUserPizzas() {
+        holdings = []; //The holdings ID list stays consistent with our pizza library file
+        let jlength = LIBRARY.length
+        let walletarray = [];
+        let tokenidarray = [];
+          
+        for (i=0; i<jlength; i++){
+          
+          tokenidarray.push(LIBRARY[i]['tokenid']);
+          walletarray.push(wallets[0]);
+          
+        }
+        
+        let txn = new web3.eth.Contract(PIZZA_ABI, PIZZA);
+        holdings = await txn.methods.balanceOfBatch( walletarray, tokenidarray ).call();
+        
+        // clear placeholders
+        inventoryContainer.innerHTML = '';
+        // show inventory total
+        inventoryTotal.style.display = 'flex';
+        // init value
+        let totalValue = 0;
+        for (const [i, quantity] of holdings.entries()) {
+          // if token is held
+          if (quantity !== '0') {
+            let tokenName = LIBRARY[i]['name'],
+                imageName = tokenName.replace(/\s+/g, '-').toLowerCase(),
+                value = LIBRARY[i]['price'],
+                img = document.createElement('img'),
+                span = document.createElement('span'),
+                div = document.createElement('div');
+
+            // build out inventory item
+            div.classList.add('inventoryItem');
+            // add data attributes
+            div.dataset.tokenName = tokenName;
+            div.dataset.imageName = imageName;
+            div.dataset.quantity = quantity;
+            div.dataset.value = value;
+            div.dataset.index = i;
+            // specify image path
+            img.src = 'img/pizzas/'+imageName+'.jpg';
+
+            // build out value span
+            span.classList.add('quantity');
+            span.textContent = quantity;
+
+            // increment total value
+            totalValue += (value * quantity);
+
+            div.appendChild(img);
+            div.appendChild(span);
+
+            inventoryContainer.appendChild(div);
+          }
+        }
+
+        $totalValue = document.getElementById('totalValue');
+        $totalValue.innerHTML = totalValue.toLocaleString();
+      }
+
+      $(function() {
+        // Inventory hover
+        $(document).on('mouseenter', '.inventoryItem:not(.placeholder)', function() {
+          const $this = $(this);
+          const name = $this.attr('data-token-name');
+          const image = $this.attr('data-image-name');
+          const quantity = $this.attr('data-quantity');
+          const value = $this.attr('data-value');
+          const index = $this.attr('data-index');
+
+          const $infoWindow = `
+            <div class="pizzaImage"><img src="img/pizzas/${image}.jpg" alt="${name}"></div>
+            <div class="pizzaInfo">
+              <span>${name} Pizza</span>
+              <div>
+                <span>Burn for BREAD</span>
+                <span>+<img src="img/BAPC-coin.svg" alt="Bread Coin" />${value}</span>
+              </div>
+            </div>
+          `;
+
+          const width = $this.width();
+          const diff = (width - 145) / 2;
+          const left = $this.position().left + (width + 10);
+          const top = $this.position().top + diff;
+          $('#inventoryItemHover').css({top: top,left: left}).show();
+
+          $('#inventoryItemHover').html($infoWindow);
+        });
+        $(document).on('mouseleave', '.inventoryItem:not(.placeholder)', function() {
+          $('#inventoryItemHover').hide();
+        });
+
+        // Build out burn table
+        $(document).on('click', '.inventoryItem:not(.placeholder):not(.disabled)', function() {
+          const $this = $(this);
+          $this.addClass('disabled');
+
+          // get token values
+          const name = $this.attr('data-token-name');
+          const image = $this.attr('data-image-name');
+          const quantity = $this.attr('data-quantity');
+          const value = $this.attr('data-value');
+          const index = $this.attr('data-index');
+
+          // build out table row
+          const $tableRow = `
+            <tr data-index="${index}" data-value="${value}" data-quantity="${quantity}">
+              <td><img src="img/pizzas/${image}.jpg" alt="${name}"><span class="removeRow">x</span></td>
+              <td>${name} Pizza</td>
+              <td><span class="add ${quantity == 1 ? 'disabled' : ''}">+</span><span class="quantity">1</span><span class="sub">-</span></td>
+              <td class="value"><img src="img/BAPC-coin.svg" alt="BAPC Coin"><span>${value}</span></td>
+            </tr>
+          `;
+
+          // add row to table
+          $('#burn table tbody').prepend($tableRow);
+
+          // loop over table rows
+          getRows();
+        });
+
+        // Increase/decrease quantity
+        $(document).on('click', 'span.add:not(.disabled), span.sub', function() {
+          const $this = $(this);
+          const $tableRow = $this.closest('tr');
+          const quantity = parseInt($tableRow.attr('data-quantity'));
+          const value = parseFloat($tableRow.attr('data-value'));
+          const index = $tableRow.attr('data-index');
+          let amount = parseInt($('.quantity', $tableRow).text());
+          let totalValue = value;
+          if ($this.hasClass('add')) {
+            amount++;
+            if (amount === quantity) {
+              $this.addClass('disabled');
+            }
+          } else {
+            amount--;
+            $('span.add', $tableRow).removeClass('disabled');
+            if (amount === 0) {
+              $tableRow.remove();
+              $('.inventoryItem[data-index="'+index+'"]').removeClass('disabled');
+            }
+          }
+
+          // calculate row total
+          totalValue = (amount * value);
+          $('.quantity', $tableRow).text(amount);
+          $('.value span', $tableRow).text(totalValue);
+
+          // loop over table rows
+          getRows();
+        });
+
+        // Delete row 
+        $(document).on('click', 'span.removeRow', function() {
+          const $this = $(this);
+          const $tableRow = $this.closest('tr');
+          const index = $tableRow.attr('data-index');
+          $tableRow.remove();
+          $('.inventoryItem[data-index="'+index+'"]').removeClass('disabled');
+
+          // loop over table rows
+          getRows();
+        });
+
+        // Loop over table row function
+        function getRows() {
+          selectedTokenIds = [];
+          selectedAmounts = [];
+          let totalBurnValue = 0;
+
+          const rowCount = $('#burn tbody tr').length;
+          if (rowCount > 0) {
+            $('#burn table thead').show();
+            $('#burn .tableFooter').show();
+          } else {
+            $('#burn table thead').removeAttr('style');
+            $('#burn .tableFooter').removeAttr('style');
+          }
+
+          $('#burn tbody tr').each(function(i) {
+            const $tableRow = $(this);
+            const tokenIndex = $tableRow.attr('data-index');
+            const quantity = $('.quantity', $tableRow).text();
+            const value = parseFloat($tableRow.attr('data-value'));
+
+            selectedTokenIds.push(LIBRARY[tokenIndex]['tokenid']);
+            selectedAmounts.push(quantity);
+
+            totalBurnValue += (value * quantity);
+          });
+
+          $('#totalBurnValue').text(totalBurnValue.toLocaleString());
+
+          console.log(selectedTokenIds);
+          console.log(selectedAmounts);
+        }
+
+        function clearTable() {
+          $('#burn tbody').html('');
+        }
+      });
+      
+	async function addToWallet(){
+		let tokenAddress = COIN;
+		let tokenSymbol = 'BREAD';
+		let uri = 'https://www.boredpizzas.com/img/BAPC-coin.svg'; //bapc-favicon.png';
+		if (window.ethereum) {
+			const wasAdded = await ethereum.request({
+				method: 'wallet_watchAsset',
+				params: {
+					type: 'ERC20',
+					options: {
+						address: tokenAddress,
+						symbol: tokenSymbol,
+						decimals: 18,
+						image: uri
+					}
+				}
+			})
+			if (wasAdded) {
+				console.log("$BREAD added to wallet.");
+			}
+		}
+	}
+	    
+	window.addEventListener('DOMContentLoaded', (event) => {
+	    connectWallet();	
+	    console.log('DOM fully loaded and parsed');
+	});
+    </script>
+
+  </body>
+</html>
