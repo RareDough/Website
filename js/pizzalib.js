@@ -121,6 +121,12 @@ window.pizzalib = [
 		"image": "https://www.boredpizzas.com/img/pizzas/youmack.jpg"
 	},
 	{
+		"name": "Xmas 2022",
+		"tokenid": "15325094160703702961871960386367558677721013205368135024481889724126147379700",
+		"price": 175,
+		"image": "https://www.boredpizzas.com/img/pizzas/xmas.jpg"
+	},
+	{
 		"name": "Genesis 1",
 		"tokenid": "15325094160703702961871960386367558677721013205368135024481889686742752035816",
 		"price": 24500,
