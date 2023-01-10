@@ -1,6 +1,12 @@
 
 window.pizzalib = [
 	{
+		"name": "Clammy",
+		"tokenid": "15325094160703702961871960386367558677721013205368135024481889725225659007476",
+		"price": 225,
+		"image": "https://www.boredpizzas.com/img/pizzas/stellar-gate.jpg"
+	},
+	{
 		"name": "Stellar Gate",
 		"tokenid": "15325094160703702961871960386367558677721013205368135024481889710932007850888",
 		"price": 45,
