@@ -2,7 +2,7 @@
   "free_mint_btn": "Gratis Mint",
   "get_btn": "VIP Pass kaufen",
   "main_heading": "Clubmitglied werden",
-  "copy_text": "© 2022 mit ❤ erstellt von BAPC",
+  "copy_text": "© 2022 mit ❤ erstellt von RareDough",
   "nft_heading": "Mint Gratis NFT",
   "main_text": "Schnapp dir deine spezial Infinity Pizza <br />um <span>am Private Sale teilzunehmen</span>!",
   "main_text2": "Werde Gründungs-Unterstützer und sichere dir deinen <br />Platz ganz oben in der Community.<br />Verpasse nicht die Chance, dir rechtzeitig deinen VIP Pass zu sichern!",
@@ -17,5 +17,8 @@
   "main_text5": "1 x FREE Mint für die kommende<br />NFT Kollektion",
   "whitelist_sauce": "Ein Platz auf der Whitelist <span>LEVEL 3</span>",
   "main_text6": "1 x zusätzliche Whitelist LEVEL 3<br />für einen deiner Freunde",
-  "upcoming": "Anstehende NFT<br />Kollektion"
+  "upcoming": "Anstehende NFT<br />Kollektion",
+  "leaderboard": "Leaderboard",
+  "shop": "Shop",
+  "mint_now": "Mint Now"
 }
