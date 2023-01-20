@@ -4,37 +4,46 @@
   if ($page == 'index'):
     $page = 'home';
     $title = 'RareDough | Home';
-    $description = 'This is the meta description for the homepage';
+    $description = 'Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products.';
   elseif ($page == 'shop'):
     $title = 'RareDough | Shop';
-    $description = 'This is the meta description for the shop page';
+    $description = 'Discover our innovative crypto Products. You can spend your BREAD Tokens for Services and NFTs here.';
   elseif ($page == 'account'):
     $title = 'RareDough | Account';
-    $description = 'This is the meta description for the account page';
+    $description = 'Connect your wallet to see your NFT Inventory, BREAD balance and Engagement Ranking.';
   elseif ($page == 'burn-oven'):
     $title = 'RareDough | Burn Oven';
-    $description = 'This is the meta description for the burn oven';
+    $description = 'Burn Pizza Collectibles to earn BREAD Tokens here. Use your BREAD in our Shop to buy unique products.';
   elseif ($page == 'leaderboard'):
-    $title = 'RareDough | Leader Board';
-    $description = 'This is the meta description for the leaderboard page';
+    $title = 'RareDough | Leaderboard';
+    $description = 'Displaying the TOP Supporters on Twitter. Interact with our Account or post Tweets including #RareDough and @RareDough to claim the Twitter Engagement Leaderboard! ';
   elseif ($page == 'freemint'):
     $title = 'RareDough | Freemint';
-    $description = 'This is the meta description for the freemint';
+    $description = 'Mint your FREE Pizza here. You can mint as many Free Pizzas as you like, please share with your friends!';
   elseif ($page == 'vip-pass'):
     $title = 'RareDough | VIP Pass';
-    $description = 'This is the meta description for the VIP pass page';
+    $description = 'Support us and enjoy privileged benefits in the RareDough Community.';
   elseif ($page == 'infinity'):
     $title = 'RareDough | Infinity';
-    $description = 'This is the meta description for the Infinity Pizza';
+    $description = 'This Pizza serves as BASIC access token to the RareDough Ecosystem. Holders may participate in the Private Sale AFTER the Whitelist lvl 1 mint (No guaranteed NFT).';
   elseif ($page == 'whitelist-lvl1'):
-    $title = 'RareDough | Whitelist lvl1';
-    $description = 'This is the meta description for the Whitelist lvl1';
+    $title = 'RareDough | Whitelist-lvl1';
+    $description = 'This NFT serves as ELEVATED access token to the RareDough Ecosystem. Holders may buy 1x NFT during the Private Sale. A time window of 24 hours grants exclusive minting permissions AFTER the Whitelist lvl 2 mint.';
   elseif ($page == 'whitelist-lvl2'):
-    $title = 'RareDough | Whitelist lvl2';
-    $description = 'This is the meta description for the Whitelist lvl2';
+    $title = 'RareDough | Whitelist-lvl2';
+    $description = 'This NFT serves as PRIVILEGED access token for the RareDough Ecosystem. Holders may buy up to 3x NFTs during the Private Sale. A time window of 24 hours grants exclusive minting permissions AFTER the Whitelist lvl 3 mint.';
   elseif ($page == 'whitelist-lvl3'):
-    $title = 'RareDough | Vip Pass';
-    $description = 'This is the meta description for the Whitelist lvl3';
+    $title = 'RareDough | Whitelist-lvl3';
+    $description = 'This NFT serves as PREMIUM access token for the RareDough Ecosystem. Holders are guaranteed to be the first to buy up to 5x NFTs during the Private Sale. A time window of 48 hours guarantees exclusive minting permissions before everyone else.';
+  elseif ($page == 'twitter-promo'):
+    $title = 'RareDough | Twitter Promo';
+    $description = 'RareDough will host a Giveaway to promote you or your project through Twitter or Discord. This NFT can only be used in combination with a Custom Pizza Creation NFT. ONLY RareDough Pizza NFTs are allowed, you will have to send us your previously minted Pizzas (from our Smart Contract), we will take care of the distribution (including transactionfees). We reserve the right to deny promotion of questionable or harmful accounts.';
+  elseif ($page == 'custom-pizza-V1'):
+    $title = 'RareDough | Custom Pizza V1';
+    $description = 'Holders of this NFT are eligible for 1x Custom Pizza Creation. We will create and mint a Pizza NFT through our Collection for you. Contact us via Discord to redeem your Voucher. You will have to provide us your artworks & logo to include in the center of the Pizza. We reserve the right to deny abusive and illegal images.'
+  elseif ($page == 'airdrop-pass'):
+    $title = 'RareDough | Airdrop Pass';
+    $description = 'Never miss out on new Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)'
   endif;
 ?>
 
@@ -55,15 +64,15 @@
     />
     <meta
       name="keywords"
-      content="Blockchain, Ethereum, Polygon, nft, bayc, boredpizzas, freenft, freemint, nftcommunity, whitelist, digital, collectibles"
+      content="Blockchain, Ethereum, Polygon, NFT, Crypto, Freemint, NFTcommunity, Whitelist, Digital, Collectibles"
     />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://raredough.com">
     <meta property="og:type" content="website">
     <meta property="og:title" content="RareDough.com">
-    <meta property="og:description" content="Collect digital Pizza Collectibles, burn and engage to earn BREAD Tokens.">
-    <meta property="og:image" content="https://www.RareDough.com/img/BoredPizzas.jpg">
+    <meta property="og:description" content="Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products">
+    <meta property="og:image" content="https://www.raredough.com/img/home-bg.jpg">
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="RareDough Pizzeria" />
@@ -74,8 +83,8 @@
     <meta property="twitter:domain" content="RareDough.com">
     <meta property="twitter:url" content="https://RareDough.com">
     <meta name="twitter:title" content="RareDough.com">
-    <meta name="twitter:description" content="Collect digital Pizza Collectibles, burn and engage to earn BREAD Tokens.">
-    <meta name="twitter:image" content="https://www.RareDough.com/img/BoredPizzas.jpg">
+    <meta name="twitter:description" content="Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products">
+    <meta name="twitter:image" content="https://www.raredough.com/img/home-bg.jpg">
     <meta name="twitter:image:alt" content="RareDough Pizzeria">
     
     <link rel="apple-touch-icon" sizes="180x180" href="img/bapc-favicon-180.png">
@@ -99,7 +108,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" integrity="sha512-uBLaY+6crwV4JAHILx0HWvYncrX7TXL770hqxly0ZsQ199v4lr2yNB2jiPMoxNajFPHSQnU80B1O8dJLujWZMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com"  />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -250,13 +259,13 @@
       <div class="hideMenuBody">
         <a class="hideMenuLink" tkey="" href="./">Home</a>
         <br />
-        <a class="hideMenuLink" tkey="get_btn" href="./vip-pass">Get Vip Pass</a>
+        <a class="hideMenuLink" tkey="get_btn" href="./vip-pass.php">Get Vip Pass</a>
         <br />
-        <a class="hideMenuLink" tkey="" href="./burn-oven">Burn oven</a>
+        <a class="hideMenuLink" tkey="" href="./burn-oven.php">Burn oven</a>
         <br />
-        <a class="hideMenuLink" tkey="leaderboard" href="./leaderboard">Leaderboard</a>
+        <a class="hideMenuLink" tkey="leaderboard" href="./leaderboard.php">Leaderboard</a>
         <br />
-        <a class="hideMenuLink" tkey="shop" href="./shop">Shop</a>
+        <a class="hideMenuLink" tkey="shop" href="./shop.php">Shop</a>
         <div class="socialIcons">
           <a
             class=""
@@ -310,16 +319,16 @@
                 >
               </li>
               <li class="nav-item">
-                <a tkey="get_btn" class="nav-link" href="./vip-pass">Get VIP Pass</a>
+                <a tkey="get_btn" class="nav-link" href="./vip-pass.php">Get VIP Pass</a>
               </li>
               <li class="nav-item">
-                <a tkey="" class="nav-link" href="./burn-oven">Burn oven</a>
+                <a tkey="" class="nav-link" href="./burn-oven.php">Burn oven</a>
               </li>
               <li class="nav-item">
-                <a tkey="leaderboard" class="nav-link" href="./leaderboard">Leaderboard</a>
+                <a tkey="leaderboard" class="nav-link" href="./leaderboard.php">Leaderboard</a>
               </li>
               <li class="nav-item">
-                <a tkey="shop" class="nav-link" href="./shop">Shop</a>
+                <a tkey="shop" class="nav-link" href="./shop.php">Shop</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -518,7 +527,7 @@
                         /><span class="bread-balance">0</span>
                       </span>
                       <li>
-                        <a href="./account" class="dropdown-item <?= ($page == 'account') ? 'active' : ''; ?>">Account</a>
+                        <a href="./account.php" class="dropdown-item <?= ($page == 'account') ? 'active' : ''; ?>">Account</a>
                       </li>
                       <!-- <li><a href="#" class="dropdown-item">Logout</a></li> -->
                     </ul>
