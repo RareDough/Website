@@ -250,13 +250,13 @@
       <div class="hideMenuBody">
         <a class="hideMenuLink" tkey="" href="./">Home</a>
         <br />
-        <a class="hideMenuLink" tkey="get_btn" href="./vip-pass.php">Get Vip Pass</a>
+        <a class="hideMenuLink" tkey="get_btn" href="./vip-pass">Get Vip Pass</a>
         <br />
-        <a class="hideMenuLink" tkey="" href="./burn-oven.php">Burn oven</a>
+        <a class="hideMenuLink" tkey="" href="./burn-oven">Burn oven</a>
         <br />
-        <a class="hideMenuLink" tkey="leaderboard" href="./leaderboard.php">Leaderboard</a>
+        <a class="hideMenuLink" tkey="leaderboard" href="./leaderboard">Leaderboard</a>
         <br />
-        <a class="hideMenuLink" tkey="shop" href="./shop.php">Shop</a>
+        <a class="hideMenuLink" tkey="shop" href="./shop">Shop</a>
         <div class="socialIcons">
           <a
             class=""
@@ -310,16 +310,16 @@
                 >
               </li>
               <li class="nav-item">
-                <a tkey="get_btn" class="nav-link" href="./vip-pass.php">Get VIP Pass</a>
+                <a tkey="get_btn" class="nav-link" href="./vip-pass">Get VIP Pass</a>
               </li>
               <li class="nav-item">
-                <a tkey="" class="nav-link" href="./burn-oven.php">Burn oven</a>
+                <a tkey="" class="nav-link" href="./burn-oven">Burn oven</a>
               </li>
               <li class="nav-item">
-                <a tkey="leaderboard" class="nav-link" href="./leaderboard.php">Leaderboard</a>
+                <a tkey="leaderboard" class="nav-link" href="./leaderboard">Leaderboard</a>
               </li>
               <li class="nav-item">
-                <a tkey="shop" class="nav-link" href="./shop.php">Shop</a>
+                <a tkey="shop" class="nav-link" href="./shop">Shop</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -518,7 +518,7 @@
                         /><span class="bread-balance">0</span>
                       </span>
                       <li>
-                        <a href="./account.php" class="dropdown-item <?= ($page == 'account') ? 'active' : ''; ?>">Account</a>
+                        <a href="./account" class="dropdown-item <?= ($page == 'account') ? 'active' : ''; ?>">Account</a>
                       </li>
                       <!-- <li><a href="#" class="dropdown-item">Logout</a></li> -->
                     </ul>

@@ -7,11 +7,11 @@
                     <div class="sideMenu">
                         <!-- desktopView -->
                         <div class="sideMenuLinks desktopView">
-                            <a class="sideMenuLink" href="./shop.php">All Items</a>
-                            <a class="sideMenuLink" href="./whitelist.php">Whitelist</a>
-                            <a class="sideMenuLink" href="./limited-editions.php">Limited Editions</a>
-                            <a class="sideMenuLink active" href="./custom-pizza.php">Custom Pizzas</a>
-                            <a class="sideMenuLink" href="./utilities.php">Utilities</a>
+                            <a class="sideMenuLink" href="./shop">All Items</a>
+                            <a class="sideMenuLink" href="./whitelist">Whitelist</a>
+                            <a class="sideMenuLink" href="./limited-editions">Limited Editions</a>
+                            <a class="sideMenuLink active" href="./custom-pizza">Custom Pizzas</a>
+                            <a class="sideMenuLink" href="./utilities">Utilities</a>
                         </div>
                     </div>
                 </div>

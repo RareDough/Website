@@ -4,10 +4,10 @@
 <section class="infinitySection homeSection">
   <div class="container">
     <div class="multiButton">
-      <a class="mainBtn" tkey="shop" href="shop.php"
+      <a class="mainBtn" tkey="shop" href="shop"
         >Enter Shop</a
       >
-      <a class="mainBtn" tkey="get_btn" href="vip-pass.php">GET VIP PASS</a>
+      <a class="mainBtn" tkey="get_btn" href="vip-pass">GET VIP PASS</a>
     </div>
     <div class="homeContents">
       <h1 tkey="main_heading" class="mainHeading">Join the Club</h1>
