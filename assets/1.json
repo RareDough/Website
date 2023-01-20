@@ -1,0 +1,49 @@
+{
+    "name": "Free Pizza",
+    "symbol": "FREEPIZZA",
+    "description": "Mint a free Pizza and burn it in the Oven to collect your first BREAD Tokens.",
+    "image": "https://raredough.com/assets/images/1.png",
+    "external_link": "https://raredough.com/freemint",
+    "attributes": [
+      {
+        "name": "Category",
+        "value": "Utilities"
+      },
+      {
+        "name": "Price",
+        "value": "0 BREAD"
+      },
+      {
+        "name": "Background",
+        "value": "Mystic Violet"
+      },
+      {
+        "name": "Plate",
+        "value": "Ceramic White"
+      },
+      {
+        "name": "Dough",
+        "value": "Infinite Wheat"
+      },
+      {
+        "name": "Sauce",
+        "value": "Infinite Tomato Sauce"
+      },
+      {
+        "name": "Cheese",
+        "value": "Infinite Gouda"
+      },
+      {
+        "name": "Topping",
+        "value": "Infinite"
+      },
+      {
+        "name": "Special",
+        "value": "Portal"
+      },
+      {
+        "name": "Utility",
+        "value": "Free Mint"
+      }
+    ]
+}  
