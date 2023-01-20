@@ -40,10 +40,10 @@
     $description = 'RareDough will host a Giveaway to promote you or your project through Twitter or Discord. This NFT can only be used in combination with a Custom Pizza Creation NFT. ONLY RareDough Pizza NFTs are allowed, you will have to send us your previously minted Pizzas (from our Smart Contract), we will take care of the distribution (including transactionfees). We reserve the right to deny promotion of questionable or harmful accounts.';
   elseif ($page == 'custom-pizza-V1'):
     $title = 'RareDough | Custom Pizza V1';
-    $description = 'Holders of this NFT are eligible for 1x Custom Pizza Creation. We will create and mint a Pizza NFT through our Collection for you. Contact us via Discord to redeem your Voucher. You will have to provide us your artworks & logo to include in the center of the Pizza. We reserve the right to deny abusive and illegal images.'
+    $description = 'Holders of this NFT are eligible for 1x Custom Pizza Creation. We will create and mint a Pizza NFT through our Collection for you. Contact us via Discord to redeem your Voucher. You will have to provide us your artworks & logo to include in the center of the Pizza. We reserve the right to deny abusive and illegal images.';
   elseif ($page == 'airdrop-pass'):
     $title = 'RareDough | Airdrop Pass';
-    $description = 'Never miss out on new Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)'
+    $description = 'Never miss out on new Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
   endif;
 ?>
 
