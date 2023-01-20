@@ -220,20 +220,16 @@ async function checkApproval() {
       txn = new web3.eth.Contract(PIZZA_ABI, PIZZA);
       isApproved = await txn.methods.isApprovedForAll(walletAddress, OVEN).call();
 
-      console.log(isApproved);
-
       if (!isApproved) {
          burnButton.innerHTML = 'APPROVE';
          burnButton.classList.add('approve');
          burnButton.style.display = 'inline-block';
       }
-   } else if (page === 'freemint' || page === 'infinity' || page === 'whitelist-lvl1' || page === 'whitelist-lvl2' || page === 'whitelist-lvl3' || $page === 'airdrop-pass' || $page === 'custom-pizza-V1' || $page === 'twitter-promo') {
+   } else if (page === 'freemint' || page === 'infinity' || page === 'whitelist-lvl1' || page === 'whitelist-lvl2' || page === 'whitelist-lvl3' || page === 'airdrop-pass' || page === 'custom-pizza-V1' || page === 'twitter-promo') {
       txn = new web3.eth.Contract(BREAD_ABI, BREAD);
       isApproved = await txn.methods.allowance(walletAddress, SHOP).call();
 
-      console.log(isApproved);
-
-      if (isApproved < 9900000000000000000000000000) {
+      if (BigInt(isApproved) < BigInt(999999000000000000000000)) {
          mintButton.innerHTML = 'APPROVE';
          mintButton.classList.add('approve');
       }
