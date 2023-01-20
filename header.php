@@ -57,7 +57,7 @@
       name="viewport"
     />
     <title><?= $title; ?></title>
-    <meta name="author" content="BoredApePizzaClub" />
+    <meta name="author" content="RareDough" />
     <meta
       name="description"
       content="<?= $description; ?>"
@@ -311,7 +311,7 @@
             <ul class="navbar-nav brandNav">
               <li class="nav-item">
                 <a
-                  tkey="free_mint_btn"
+                  tkey=""
                   class="nav-link"
                   aria-current="page"
                   href="./"
