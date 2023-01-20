@@ -46,7 +46,7 @@
     <?php endif; ?>
 
     <?php if ($page == 'shop' || $page == 'utilities' || $page == 'whitelist' || $page == 'limited-editions' || $page == 'custom-pizza'): ?>
-      <script src="./js/shop.js"></script>
+      <script src="./js/shop.js?v=1.0.1"></script>
     <?php endif; ?>
 
     <?php if ($page == 'burn-oven'): ?>

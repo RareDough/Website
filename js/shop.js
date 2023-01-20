@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 shopItem = `<div class="col mt-4">
                             <a class="link" href="${itemLink}">
                               <div class="shopCard">
-                                 <img class="shopCardImg" src="./assets/images/${itemIndex}.png" alt="${itemName}">
+                                 <img class="shopCardImg" src="./img/pizzas/${itemName.replace(/\s+/g, '-').toLowerCase()}.jpg" alt="${itemName}">
                                  <div class="shopCardFooter">
                                     <p class="category">${itemCategory}</p>
                                     <p class="cardText">${itemName}</p>
