@@ -56,7 +56,7 @@ async function populateWalletData() {
    await getUserAssets();
 
    // IF BURN OVEN OR PRODUCTPAGE, CHECK APPROVAL
-   if (page === 'burn-oven' || page === 'freemint' || page === 'infinity' || page === 'whitelist-lvl1' || page === 'whitelist-lvl2' || page === 'whitelist-lvl3' || $page === 'airdrop-pass' || $page === 'custom-pizza-V1' || $page === 'twitter-promo') {
+   if (page === 'burn-oven' || page === 'freemint' || page === 'infinity' || page === 'whitelist-lvl1' || page === 'whitelist-lvl2' || page === 'whitelist-lvl3' || page === 'airdrop-pass' || page === 'custom-pizza-V1' || page === 'twitter-promo') {
       await checkApproval();
    }
 }
