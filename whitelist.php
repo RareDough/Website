@@ -13,7 +13,22 @@
                             <a class="sideMenuLink" href="./custom-pizza">Custom Pizzas</a>
                             <a class="sideMenuLink" href="./utilities">Utilities</a>
                         </div>
+                       <!-- mobileView -->
+                <div class="sideMenuLinks mobileView">
+                  <a class="sideMenuLink active" data-bs-toggle="collapse" href="#sideMenu" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Whitelist
+                  </a>
+                  <div class="collapse collapsebg" id="sideMenu">
+                    <div class="card card-body">
+                      <a class="sideMenuLink " href="./shop">All Items</a>
+                      <a class="sideMenuLink" href="./limited-editions">Limited Editions</a>
+                      <a class="sideMenuLink" href="./custom-pizza">Custom Pizzas</a>
+                      <a class="sideMenuLink" href="./utilities">Utilities</a>
                     </div>
+                  </div>
+                </div>
+              </div>
                 </div>
                 <div class="col-lg-10 py-lg-5 ps-lg-4">
                     <div class="row">
