@@ -40,7 +40,7 @@
       <script src="./js/pizzaabi.js"></script>
       <script src="./js/ovenabi.js"></script>
       <script src="./js/pizzalib.js"></script>
-      <script src="./js/connect.js?v=1.0.1"></script>
+      <script src="./js/connect.js?v=1.0.2"></script>
     <?php elseif ($page == 'leaderboard'): ?>
       <script src="./js/leaderboard.js"></script>
     <?php endif; ?>
