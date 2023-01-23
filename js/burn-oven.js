@@ -60,7 +60,7 @@ $(function() {
     const $tableRow = `<div class="burnListContainer" data-index="${index}" data-value="${value}" data-quantity="${quantity}">
                         <div class="burnImgArea">
                           <img class="burnListImg" src="./img/pizzas/${image}.jpg" alt="${name}">
-                          <span class="burilistText">Genesis Pizza #8</span>
+                          <span class="burilistText">${name}</span>
                         </div>
                         <div class="customCounter">
                           <a class="countBtn add ${quantity == 1 ? 'disabled' : ''}" href="#"><i class="fa-solid fa-square-plus"></i></a>
