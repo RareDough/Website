@@ -115,7 +115,7 @@
             </h1>
             <img
               class="getCardImg"
-              src="./img/shop-card-img-10.png"
+              src="./img/get-card-img-4.png"
               alt=""
             />
             <p tkey="main_text6" class="mainText">

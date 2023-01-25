@@ -830,8 +830,8 @@ body.infinityPage {
   display:none;
 }
 
-body.burn-oven #mintButton {
-  display:none;
+#mintButton {
+
 }
 
 /* Shop Page */
