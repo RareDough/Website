@@ -19,7 +19,7 @@
       <a class="imageLink" href="#">
         <img
           class="pizzaImg"
-            src="<?= $itemImage ?>"
+            src="./img/pizzas/<?= (str_replace(' ', '-', strtolower($itemName))); ?>.jpg"
             alt="<?= $itemName ?>"
         />
       </a>
@@ -33,7 +33,7 @@
         <a class="imageLink" href="#">
           <img
             class="pizzaImg"
-            src="<?= $itemImage ?>"
+            src="./img/pizzas/<?= (str_replace(' ', '-', strtolower($itemName))); ?>.jpg"
             alt="<?= $itemName ?>"
           />
         </a>
