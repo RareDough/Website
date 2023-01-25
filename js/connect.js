@@ -16,6 +16,8 @@ const BREAD_ABI = top.abi_coin;
 const BREAD_IMG = 'https://www.boredpizzas.com/img/BAPC-coin.svg';
 const OVEN = '0x7e410FcF59dd30bC09E9ad21b008D36b907fC86B'; //Oven address
 const OVEN_ABI = top.abi_oven;      
+const OVENV2 = '0x7e410FcF59dd30bC09E9ad21b008D36b907fC86B'; //Oven address
+const OVENV2_ABI = top.abi_ovenv2;  
 const LIBRARY = top.pizzalib;
 const inventoryContainer = document.getElementById('inventoryContainer');
 

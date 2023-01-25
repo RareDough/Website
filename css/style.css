@@ -830,7 +830,7 @@ body.infinityPage {
   display:none;
 }
 
-#mintButton {
+body.burn-oven #mintButton {
   display:none;
 }
 
