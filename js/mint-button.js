@@ -19,7 +19,7 @@ async function buyPizzas() {
   await txn.methods.buyPizzas( TOKENID, AMOUNT ).send({ from:walletAddress, amount:0, gasPrice:(gas*3)});
 }
 
-$(function() {
+/* $(function() {
   $('#mintButton').click(function(e) {
     e.preventDefault();
     if ($(this).hasClass('approve')) {
@@ -31,3 +31,16 @@ $(function() {
     }
   });
 });
+*/
+
+$(function() {
+   $('#mintButton').click(function() {
+      if (!$(this).hasClass('connected2')) {
+         connectWallet();
+      } else {
+        checkConnection();
+        buyPizzas();
+      }
+   });
+});
+

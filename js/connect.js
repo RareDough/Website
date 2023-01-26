@@ -47,6 +47,7 @@ async function populateWalletData() {
    let walletTruncated = truncateAddress(walletAddress);
    connectBtn.querySelector('span').innerHTML = walletTruncated;
    connectBtn.classList.add('connected');
+   mintButton.classList.add('connected2');
    connectBtn.setAttribute('data-bs-toggle', 'dropdown');
    if(document.querySelector('.wallet-address')){
       document.querySelector('.wallet-address').innerHTML = walletTruncated;
