@@ -135,6 +135,17 @@ async function getUserAssets() {
       breadBalanceEles[i].innerHTML = parseFloat(breadHoldings).toLocaleString();
    }
 
+   /* If shop page check if balance is sufficient */
+   if (document.getElementById('mintButton')) {
+      let itemPrice = mintButton.dataset.price;
+      if (parseFloat(itemPrice) > parseFloat(breadHoldings)) {
+         // user does not have enough BREAD
+         mintButton.classList.add('disabled');
+         mintButton.innerHTML = 'Insufficient $BREAD';
+      }
+   }
+
+
    /* Account Inventory */
    if (inventoryContainer) {
       inventoryContainer.innerHTML = '';

@@ -40,7 +40,7 @@
       <script src="./js/pizzaabi.js"></script>
       <script src="./js/ovenabi.js"></script>
       <script src="./js/pizzalib.js"></script>
-      <script src="./js/connect.js?v=1.0.3"></script>
+      <script src="./js/connect.js?v=1.0.4"></script>
     <?php elseif ($page == 'leaderboard'): ?>
       <script src="./js/leaderboard.js"></script>
     <?php endif; ?>
@@ -54,7 +54,7 @@
     <?php endif; ?>
 
     <?php if ($page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo'): ?>
-      <script src="./js/mint-button.js?v=1.0.1"></script>
+      <script src="./js/mint-button.js?v=1.0.2"></script>
     <?php endif; ?>
 
   </body>

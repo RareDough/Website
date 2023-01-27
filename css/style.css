@@ -833,6 +833,13 @@ body.infinityPage {
 #mintButton {
 
 }
+  #mintButton.disabled {
+    cursor:not-allowed;
+  }
+    #mintButton.light.disabled:hover {
+      background-color:#faedd7;
+      color:black;
+    }
 
 /* Shop Page */
 #shopSection {

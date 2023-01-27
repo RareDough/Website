@@ -20,12 +20,15 @@ async function buyPizzas() {
 }
 
 $(function() {
-   $('#mintButton').click(function() {
+  $('#mintButton').click(function(e) {
+    e.preventDefault();
+    if (!$(this).hasClass('disabled')) {
       if (!$('#connectBtn').hasClass('connected')) {
         connectWallet();
       } else {
         buyPizzas();
       }
-   });
+    }
+  });
 });
 
