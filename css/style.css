@@ -395,25 +395,7 @@ a.link {
   justify-content: space-between;
   position: relative;
 }
-.rampp-minting-button {
-  display: inline-block;
-  padding: 0.9em 0.5em;
-  text-align: center;
-  font-size: 1.2em;
-  transition: 200ms all ease-in-out;
-  color: black !important;
-  background-color: #f7c36f !important;
-  border-radius: 0.2em;
-  text-decoration: none;
-  margin-top: 1.5em;
-  font-weight: 600;
-  width: 100%;
-  line-height: 0.9;
-  max-width: 200px;
-}
-.rampp-minting-button:hover {
-  background-color: white !important;
-}
+
 .hideMenu .menuBrand {
   display: inline-block;
   text-decoration: none;
@@ -423,7 +405,7 @@ a.link {
   font-size: 0.9em;
 }
 .hideMenu .hideMenuBody {
-  margin: 2em 0;
+  margin: 1em 0;
   /* opacity: -1; */
   display: none;
 }

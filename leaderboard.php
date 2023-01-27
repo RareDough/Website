@@ -410,16 +410,5 @@
     </div>
   </div>
 </div>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-<script
-  type="text/javascript"
-  src="https://mintplex.xyz/embeds/v2/embed1155.js"
-  data-uuid="9c7e2db7-94b7-4a6a-a808-97b90d5692e3"
-></script>
-<!-- End Mintplex.xyz minting button-->
 
 <?php include 'footer.php';?>
