@@ -19,26 +19,11 @@ async function buyPizzas() {
   await txn.methods.buyPizzas( TOKENID, AMOUNT ).send({ from:walletAddress, amount:0, gasPrice:(gas*3)});
 }
 
-/* $(function() {
-  $('#mintButton').click(function(e) {
-    e.preventDefault();
-    if ($(this).hasClass('approve')) {
-      // set approval
-      setSpendApproval();
-    } else {
-      // buy
-      buyPizzas();
-    }
-  });
-});
-*/
-
 $(function() {
    $('#mintButton').click(function() {
-      if (!$(this).hasClass('connected2')) {
-         connectWallet();
+      if (!$('#connectBtn').hasClass('connected')) {
+        connectWallet();
       } else {
-        checkConnection();
         buyPizzas();
       }
    });

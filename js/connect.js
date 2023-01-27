@@ -47,8 +47,14 @@ async function populateWalletData() {
    let walletTruncated = truncateAddress(walletAddress);
    connectBtn.querySelector('span').innerHTML = walletTruncated;
    connectBtn.classList.add('connected');
-   mintButton.classList.add('connected2');
    connectBtn.setAttribute('data-bs-toggle', 'dropdown');
+
+   // CHANGE MINT BUTTON TEXT IF CONNECTED
+   if (document.getElementById('mintButton')) {
+      mintButton.innerHTML = 'Buy Now';
+   }
+
+   // POPULATE WALLET ADDRESS IF ACCOUNT PAGE
    if(document.querySelector('.wallet-address')){
       document.querySelector('.wallet-address').innerHTML = walletTruncated;
       document.querySelector('.wallet-address').setAttribute('data-copy', walletAddress);
@@ -81,9 +87,20 @@ async function connectWallet() {
 
 async function checkConnection() {
    if (provider) {
-      await ethereum.request({ method: 'eth_accounts' }).then(handleAccountsChanged).catch(console.error);
+      window.ethereum.sendAsync({
+         method: 'eth_accounts',
+         params: [],
+         jsonrpc: '2.0',
+         id: new Date().getTime()
+      },
+      function(error, result) {
+         if (result['result'] !== '') {
+            // if wallet found, populate data or else do nothing
+            handleAccountsChanged(result['result']);
+         }
+      });
    } else {
-      console.log('No wallet detected');
+      console.log('Wallet software not detected');
    }
 }
 
