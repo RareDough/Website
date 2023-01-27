@@ -94,7 +94,7 @@ async function checkConnection() {
          id: new Date().getTime()
       },
       function(error, result) {
-         if (result['result'] !== '') {
+         if (result['result'] != '') {
             // if wallet found, populate data or else do nothing
             handleAccountsChanged(result['result']);
          }
