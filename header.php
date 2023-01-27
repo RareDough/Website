@@ -4,22 +4,22 @@
   if ($page == 'index'):
     $page = 'home';
     $title = 'RareDough | Home';
-    $description = 'Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products.';
+    $description = 'Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products created by RareDough.';
   elseif ($page == 'shop'):
     $title = 'RareDough | Shop';
-    $description = 'Discover our innovative crypto Products. You can spend your BREAD Tokens for Services and NFTs here.';
+    $description = 'Discover our innovative RareDough Products. You can spend your BREAD Tokens for Services and NFTs here.';
   elseif ($page == 'account'):
     $title = 'RareDough | Account';
-    $description = 'Connect your wallet to see your NFT Inventory, BREAD balance and Engagement Ranking.';
+    $description = 'Connect your wallet to see your RareDough NFT Inventory, BREAD balance and Engagement Ranking.';
   elseif ($page == 'burn-oven'):
     $title = 'RareDough | Burn Oven';
-    $description = 'Burn Pizza Collectibles to earn BREAD Tokens here. Use your BREAD in our Shop to buy unique products.';
+    $description = 'Burn RareDough Pizza Collectibles to earn BREAD Tokens here. Use your BREAD in our Shop to buy unique products.';
   elseif ($page == 'leaderboard'):
     $title = 'RareDough | Leaderboard';
-    $description = 'Displaying the TOP Supporters on Twitter. Interact with our Account or post Tweets including #RareDough and @RareDough to claim the Twitter Engagement Leaderboard! ';
+    $description = 'Displaying the TOP Supporters on Twitter. Interact with our official RareDough Account or post Tweets including #RareDough and @RareDough to climb the Twitter Engagement Leaderboard! ';
   elseif ($page == 'freemint'):
     $title = 'RareDough | Freemint';
-    $description = 'Mint your FREE Pizza here. You can mint as many Free Pizzas as you like, please share with your friends!';
+    $description = 'Mint your FREE RareDough Pizza here. You can mint as many Free Pizzas as you like, please share with your friends!';
   elseif ($page == 'vip-pass'):
     $title = 'RareDough | VIP Pass';
     $description = 'Support us and enjoy privileged benefits in the RareDough Community.';
@@ -40,10 +40,10 @@
     $description = 'RareDough will host a Giveaway to promote you or your project through Twitter or Discord. This NFT can only be used in combination with a Custom Pizza Creation NFT. ONLY RareDough Pizza NFTs are allowed, you will have to send us your previously minted Pizzas (from our Smart Contract), we will take care of the distribution (including transactionfees). We reserve the right to deny promotion of questionable or harmful accounts.';
   elseif ($page == 'custom-pizza-V1'):
     $title = 'RareDough | Custom Pizza V1';
-    $description = 'Holders of this NFT are eligible for 1x Custom Pizza Creation. We will create and mint a Pizza NFT through our Collection for you. Contact us via Discord to redeem your Voucher. You will have to provide us your artworks & logo to include in the center of the Pizza. We reserve the right to deny abusive and illegal images.';
+    $description = 'Holders of this NFT are eligible for 1x Custom Pizza Creation. RareDough will create and mint a Pizza NFT through our Collection for you. Contact us via Discord to redeem your Voucher. You will have to provide us your artworks & logo to include in the center of the Pizza. We reserve the right to deny abusive and illegal images.';
   elseif ($page == 'airdrop-pass'):
     $title = 'RareDough | Airdrop Pass';
-    $description = 'Never miss out on new Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
+    $description = 'Never miss out on new RareDough Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
   endif;
 ?>
 
@@ -64,14 +64,14 @@
     />
     <meta
       name="keywords"
-      content="Blockchain, Ethereum, Polygon, NFT, Crypto, Freemint, NFTcommunity, Whitelist, Digital, Collectibles"
+      content="Raredough, Blockchain, Ethereum, Polygon, NFT, Token, BREAD, Crypto, Freemint, Community, Whitelist, Digital Collectibles"
     />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://raredough.com">
     <meta property="og:type" content="website">
     <meta property="og:title" content="RareDough.com">
-    <meta property="og:description" content="Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products">
+    <meta property="og:description" content="Collect digital Pizza Collectibles, burn to earn BREAD and buy innovative RareDough products">
     <meta property="og:image" content="https://www.raredough.com/img/home-bg.jpg">
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -82,8 +82,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="RareDough.com">
     <meta property="twitter:url" content="https://RareDough.com">
-    <meta name="twitter:title" content="RareDough.com">
-    <meta name="twitter:description" content="Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products">
+    <meta name="twitter:title" content="It's RareDough">
+    <meta name="twitter:description" content="Collect digital Pizza Collectibles, burn to earn BREAD and buy innovative RareDough products">
     <meta name="twitter:image" content="https://www.raredough.com/img/home-bg.jpg">
     <meta name="twitter:image:alt" content="RareDough Pizzeria">
     
@@ -121,11 +121,12 @@
       <div class="hideMenuHeader">
         <div>
           <a class="menuBrand" href="./">
-            <img src="./img/logo.png" alt="BoredApePizzaClub Logo" />
+            <img src="./img/logo.png" alt="RareDough Logo" />
           </a>
         </div>
         <div class="languagesSide">
           <div>
+          <?php if ($page == 'home'): ?>
             <div class="dropdown flagDropdown me-3">
               <a
                 class="dropdown-toggle"
@@ -248,6 +249,7 @@
                 </div>
               </div>
             </div>
+          <?php endif; ?>
           </div>
           <div id="hideMenuIcon" class="hamburger">
             <span class="line"></span>

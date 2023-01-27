@@ -17,7 +17,7 @@
       <div class="col-lg-4 mt-lg-5">
         <div class="itemsContainer">
           <div class="itemsHeader">
-            <h2 class="itemHeading">Your Inventory</h2>
+            <h2 class="itemHeading">Select Pizzas</h2>
             <h2 id="totalInventoryQuantity" class="itemHeading">(<span></span> items)</h2>
           </div>
           <div class="itemContainerBody">
@@ -249,7 +249,8 @@
         </div>
       </div>
       <div class="col-lg-4 mt-5 text-center">
-        <h1 class="commonHeading mb-3 desktopView">Burn oven</h1>
+        <h1 class="commonHeading mb-3">Burn oven</h1>
+        <img src="./img/burn-oven-img.png" alt="" />
         <p class="commonText">
           By clicking approve, you are granting access to
           <span>ALL NFTs</span> you currently own until you
@@ -257,9 +258,8 @@
           Smart Contract to transfer your Pizzas from your wallet and mint
           the Tokens.
         </p>
-        <img src="./img/burn-oven-img.png" alt="" />
         <br />
-        <a id="burnButton" class="mainBtn lightwhite" href="#">BURN</a>
+        <a id="burnButton" class="mainBtn lightwhite" href="#">Burn</a>
         <a id="addToWallet" class="mainBtn lightwhite" href="#">ADD TO WALLET</a>
       </div>
       <div class="col-lg-4 mt-5">
