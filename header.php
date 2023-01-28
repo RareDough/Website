@@ -44,6 +44,9 @@
   elseif ($page == 'airdrop-pass'):
     $title = 'RareDough | Airdrop Pass';
     $description = 'Never miss out on new RareDough Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
+  elseif ($page == '100k-pizza'):
+    $title = 'RareDough | 100k Pizza';
+    $description = 'Never miss out on new RareDough Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
   endif;
 ?>
 
@@ -499,7 +502,7 @@
                 </li>
               <?php endif; ?>
             </ul>
-            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo'): ?>
+            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza'): ?>
               <ul class="navbar-nav ms-3 wallet">
                 <li class="nav-item">
                 </li>
@@ -511,7 +514,7 @@
                       type="button"
                       aria-expanded="false"
                     >
-                      <img id="userIcon" src="./img/userIcon.svg" alt="" />
+                 <!--    <img id="userIcon" src="./img/userIcon.svg" alt="" /> -->
                       <span>Connect</span>
                       <img
                         src="./img/downArrowDark.svg"
