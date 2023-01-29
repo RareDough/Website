@@ -118,7 +118,7 @@
     />
     <link rel="stylesheet" href="./css/style.css?v=1.0.2" />
   </head>
-  <body class="<?= $page; ?>" data-page="<?= $page; ?>">
+  <body class="<?= $page; ?>" data-page="<?= $page; ?>" onload="connectWallet()">
     <!-- Hide Menu -->
     <div id="mobHideMenu" class="hideMenu">
       <div class="hideMenuHeader">
