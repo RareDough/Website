@@ -6,11 +6,12 @@
   <source src="video/bgvid-trans.mp4" type="video/mp4">
 </video>
 
-<!-- Burn Oven Section -->
+<!-- Burn Oven Section 
 <div class="col-lg-4 text-center mobileView">
   <h1 class="commonHeading">Burn oven</h1>
   <a id="" class="mainBtn lightwhite" href="./burn-oven">Switch to V1</a>
 </div>
+-->
 
 <section class="burnOvenSection">
   <div class="container">
