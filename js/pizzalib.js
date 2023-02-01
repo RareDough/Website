@@ -1,5 +1,11 @@
 
 window.pizzalib = [
+    {
+		"name": "EggoSphere",
+		"tokenid": "15325094160703702961871960386367558677721013205368135024481889727424682263028",
+		"price": 225,
+		"image": "https://www.raredough.com/img/pizzas/eggosphere.jpg"
+	},
   {
 		"name": "DCLBrasil",
 		"tokenid": "15325094160703702961871960386367558677721013205368135024481889726325170635252",

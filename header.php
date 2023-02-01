@@ -47,6 +47,9 @@
   elseif ($page == '100k-pizza'):
     $title = 'RareDough | 100k Pizza';
     $description = 'Never miss out on new RareDough Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
+    elseif ($page == 'burn-ovenv2'):
+    $title = 'RareDough | Burn Oven V2';
+    $description = 'Burn RareDough Pizza Collectibles to earn BREAD Tokens here. Use your BREAD in our Shop to buy unique products.';
   endif;
 ?>
 
