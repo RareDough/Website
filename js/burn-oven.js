@@ -3,22 +3,11 @@ let selectedTokenIds = [],
 
 async function burnPizzas() {
   let gas = await web3.eth.getGasPrice();
-  if (page === 'burn-ovenv2') {
-      let txn = new web3.eth.Contract(OVENV2_ABI, OVENV2);
-await txn.methods.burnPizzaBatch( selectedTokenIds, selectedAmounts ).send({ from:walletAddress, amount:0, gasPrice:(gas*3)});
-
-  // empty burn table
-  burnList.innerHTML = '';
-    
-  } else {
-      let txn = new web3.eth.Contract(OVEN_ABI, OVEN);
-
+  let txn = new web3.eth.Contract(OVEN_ABI, OVEN);
   await txn.methods.burnPizzaBatch( selectedTokenIds, selectedAmounts ).send({ from:walletAddress, amount:0, gasPrice:(gas*3)});
 
   // empty burn table
   burnList.innerHTML = '';
-  }
-
 }
 
 $(function() {
@@ -159,19 +148,6 @@ $(function() {
     // }
 
     $('#burnList .burnListContainer').each(function(i) {
-      if (page === 'burn-ovenv2'){
-      const $tableRow = $(this);
-      const tokenIndex = $tableRow.attr('data-index');
-      const quantity = $('.quantity', $tableRow).text();
-      const value = parseFloat($tableRow.attr('data-value'));    
-
-      selectedTokenIds.push(LIBRARY2[tokenIndex]['tokenid']);
-      selectedAmounts.push(quantity);
-
-      totalQuantity += parseInt(quantity);
-      totalBurnValue += (value * quantity);
-      } else {
-      
       const $tableRow = $(this);
       const tokenIndex = $tableRow.attr('data-index');
       const quantity = $('.quantity', $tableRow).text();
@@ -182,7 +158,6 @@ $(function() {
 
       totalQuantity += parseInt(quantity);
       totalBurnValue += (value * quantity);
-        }
     });
 
     // SHOW BURN BUTTON IF PIZZAS SELECTED OTHERWISE HIDE

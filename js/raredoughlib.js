@@ -1,4 +1,3 @@
-
 window.raredoughlib = [
     {
 		"name": "Free Pizza",
@@ -6,5 +5,4 @@ window.raredoughlib = [
 		"price": 1,
 		"image": "https://www.raredough.com/img/pizzas/free-pizza.jpg"
 	}
-  
 ]

@@ -1,4 +1,3 @@
-
 window.pizzalib = [
     {
 		"name": "EggoSphere",
@@ -204,5 +203,4 @@ window.pizzalib = [
 		"price": 2000,
 		"image": "https://www.raredough.com/img/pizzas/genesis-10.jpg"
 	}
-
 ]

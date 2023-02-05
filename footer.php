@@ -42,7 +42,7 @@
       <script src="./js/ovenabiv2.js"></script>
       <script src="./js/pizzalib.js"></script>
       <script src="./js/raredoughlib.js"></script>
-      <script src="./js/connect.js?v=1.0.4"></script>
+      <script src="./js/connect.js?v=1.0.5"></script>
     <?php elseif ($page == 'leaderboard'): ?>
       <script src="./js/leaderboard.js"></script>
     <?php endif; ?>
@@ -52,7 +52,7 @@
     <?php endif; ?>
 
     <?php if ($page == 'burn-oven' || $page == 'burn-ovenv2'): ?>
-      <script src="./js/burn-oven.js"></script>
+      <script src="./js/burn-oven.js?v=1.0.1"></script>
     <?php endif; ?>
 
     <?php if ($page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza' || $page == 'burn-ovenv2'): ?>

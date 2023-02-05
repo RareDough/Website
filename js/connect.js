@@ -14,13 +14,22 @@ const PIZZA_ABI = top.abi_pizza;
 const BREAD = '0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f'; //Bread address
 const BREAD_ABI = top.abi_coin;
 const BREAD_IMG = 'https://www.raredough.com/img/BAPC-coin.svg';
-const OVEN = '0x7e410FcF59dd30bC09E9ad21b008D36b907fC86B'; //Oven address
-const OVEN_ABI = top.abi_oven;      
-const OVENV2 = '0x2d67a8e2759942F77167438a3e8785Af4c04068e'; //Oven address
-const OVENV2_ABI = top.abi_ovenv2;  
-const LIBRARY = top.pizzalib;
-const LIBRARY2 = top.raredoughlib;
 const inventoryContainer = document.getElementById('inventoryContainer');
+
+// Specify which libray/oven to use
+let LIBRARY = null,
+    OVEN = null,
+    OVEN_ABI = null;
+
+if (page === 'burn-ovenv2') {
+   LIBRARY = top.raredoughlib;
+   OVEN = '0x2d67a8e2759942F77167438a3e8785Af4c04068e';
+   OVEN_ABI = top.abi_ovenv2;
+} else {
+   LIBRARY = top.pizzalib;
+   OVEN = '0x7e410FcF59dd30bC09E9ad21b008D36b907fC86B';
+   OVEN_ABI = top.abi_oven;      
+}
 
 if (provider) {
    web3 = new Web3(window.ethereum);
@@ -115,119 +124,21 @@ async function handleAccountsChanged(accounts) {
 }
 
 async function getUserAssets() {
-  if (page === 'burn-ovenv2'){
-
-   let jlength = LIBRARY2.length;
-   let walletArray = [];
-   let pizzaIdArray = [];
-
-   for (i=0; i<jlength; i++) {
-      pizzaIdArray.push(LIBRARY2[i]['tokenid']);
-      walletArray.push(walletAddress);
-   }
-
-   let pizzaTxn = new web3.eth.Contract(SHOP_ABI, SHOP);
-   pizzaHoldings = await pizzaTxn.methods.balanceOfBatch(walletArray, pizzaIdArray).call();
-
-   let breadTxn = new web3.eth.Contract(BREAD_ABI, BREAD);
-   breadHoldings = await breadTxn.methods.balanceOf(walletAddress).call();
-   breadHoldings = web3.utils.fromWei(breadHoldings, 'ether');
-
-   let breadBalanceEles = document.querySelectorAll('.bread-balance');
-   for(var i=0;i<breadBalanceEles.length;i++) {
-      breadBalanceEles[i].innerHTML = parseFloat(breadHoldings).toLocaleString();
-   }
-
-   /* If shop page check if balance is sufficient */
-   if (document.getElementById('mintButton')) {
-      let itemPrice = mintButton.dataset.price;
-      if (parseFloat(itemPrice) > parseFloat(breadHoldings)) {
-         // user does not have enough BREAD
-         mintButton.classList.add('disabled');
-         mintButton.innerHTML = 'Insufficient $BREAD';
-      }
-   }
-
-
-   /* Account Inventory */
-   if (inventoryContainer) {
-      inventoryContainer.innerHTML = '';
-      let totalInventoryQuantity = 0;
-          totalValue = 0;
-
-      for (const [i, quantity] of pizzaHoldings.entries()) {
-         // if token is held
-         if (quantity !== '0') {
-            let tokenName = LIBRARY2[i]['name'],
-                imageName = tokenName.replace(/\s+/g, '-').toLowerCase(),
-                category = LIBRARY2[i]['category'],
-                value = LIBRARY2[i]['price'];
-
-            // build HTML
-            if (page === 'burn-ovenv2') {
-               pizzaEle = `<div class="col-3">
-                              <div class="itemImageParent inventoryItem" data-token-name="${tokenName}" data-image-name="${imageName}" data-quantity="${quantity}" data-value="${value}" data-index="${i}">
-                                 <span class="itemRate">${quantity}</span>
-                                 <img
-                                   class="itemImg"
-                                   src="./img/pizzas/${imageName}.jpg"
-                                   alt="${tokenName}"
-                                 />
-                              </div>
-                           </div>`;
-            } else {
-               pizzaEle = `<div class="col inventoryItem mt-4">
-                                 <div class="shopCard">
-                                    <img
-                                       class="shopCardImg"
-                                       src="./img/pizzas/${imageName}.jpg"
-                                       alt=""
-                                    />
-                                    <div class="shopCardFooter">
-                                       <p class="category">${category}</p>
-                                       <p class="cardText">${tokenName}</p>
-                                       <p class="cardText odd d-flex align-items-center justify-content-start">
-                                          <img class="me-2" src="./img/bpac-sm-icon.svg" alt="" /> ${value.toLocaleString()}
-                                       </p>
-                                       <a href="#" class="mainBtn light shopBtn">Mint Now</a>
-                                    </div>
-                                 </div>
-                              </div>`;
-            }
-
-            // increment total quantity
-            totalInventoryQuantity += parseInt(quantity);
-
-            // increment total value
-            totalValue += (value * quantity);
-
-            // populate inventory and value
-            inventoryContainer.insertAdjacentHTML('beforeend', pizzaEle);
-         }
-      }
-
-      if (page === 'burn-ovenv2') {
-         document.querySelector('#totalInventoryQuantity span').innerHTML = parseFloat(totalInventoryQuantity).toLocaleString();
-      }
-
-      let breadValueEles = document.querySelectorAll('.pizza-bread-value');
-      for (var i = 0; i < breadValueEles.length; i++) {
-         breadValueEles[i].innerHTML = parseFloat(totalValue).toLocaleString();
-      }
-   }
-  }
-  else {
-
-   let jlength = LIBRARY.length;
-   let walletArray = [];
-   let pizzaIdArray = [];
+   let jlength = LIBRARY.length,
+       pizzaTxn = null,
+       walletArray = [],
+       pizzaIdArray = [];
 
    for (i=0; i<jlength; i++) {
       pizzaIdArray.push(LIBRARY[i]['tokenid']);
       walletArray.push(walletAddress);
    }
 
-   let pizzaTxn = new web3.eth.Contract(PIZZA_ABI, PIZZA);
+   if (page === 'burn-ovenv2') {
+      pizzaTxn = new web3.eth.Contract(SHOP_ABI, SHOP);
+   } else {
+      pizzaTxn = new web3.eth.Contract(PIZZA_ABI, PIZZA);
+   }
    pizzaHoldings = await pizzaTxn.methods.balanceOfBatch(walletArray, pizzaIdArray).call();
 
    let breadTxn = new web3.eth.Contract(BREAD_ABI, BREAD);
@@ -248,7 +159,6 @@ async function getUserAssets() {
          mintButton.innerHTML = 'Insufficient $BREAD';
       }
    }
-
 
    /* Account Inventory */
    if (inventoryContainer) {
@@ -265,7 +175,7 @@ async function getUserAssets() {
                 value = LIBRARY[i]['price'];
 
             // build HTML
-            if (page === 'burn-oven') {
+            if (page === 'burn-oven' || page === 'burn-ovenv2') {
                pizzaEle = `<div class="col-3">
                               <div class="itemImageParent inventoryItem" data-token-name="${tokenName}" data-image-name="${imageName}" data-quantity="${quantity}" data-value="${value}" data-index="${i}">
                                  <span class="itemRate">${quantity}</span>
@@ -316,7 +226,6 @@ async function getUserAssets() {
          breadValueEles[i].innerHTML = parseFloat(totalValue).toLocaleString();
       }
    }
-  }
 }
 
 async function addToWallet(tokenAddress, tokenSymbol, tokenImage) {
