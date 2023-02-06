@@ -57,7 +57,7 @@
                     <a id="mintButton" data-id="5" class="mainBtn light" data-price="<?= str_replace(' BREAD','',$itemPrice); ?>" href="#">Connect Wallet</a>
                   </div>
                   <div class="col-lg-6 ">
-                    <a href="https://app.uniswap.org/#/tokens/polygon/0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f" class="mainBtn dark">Buy BREAD</a>
+                    <a href="https://app.uniswap.org/#/tokens/polygon/0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f" target="_blank" class="mainBtn dark">Buy BREAD</a>
                   </div>
                 </div>
               </div>

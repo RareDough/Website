@@ -54,10 +54,10 @@
                 </h1>
                 <div class="row ">
                   <div class="col-lg-6 ">
-                    <a id="mintButton" data-id="9" class="mainBtn light" data-price="<?= str_replace(' BREAD','',$itemPrice); ?>" href="#">Connect Wallet</a>
+                    <a class="mainBtn light" href="https://opensea.io/assets/matic/0xf829fdf890b800d2be08bea228142726fed3e71d/9" target="_blank">Buy on Opensea</a>
                   </div>
                   <div class="col-lg-6 ">
-                    <a href="https://app.uniswap.org/#/tokens/polygon/0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f" class="mainBtn dark">Buy BREAD</a>
+                    <a href="https://app.uniswap.org/#/tokens/polygon/0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f" class="mainBtn dark" target="_blank">Buy BREAD</a>
                   </div>
                 </div>
               </div>
