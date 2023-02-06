@@ -46,7 +46,13 @@
     $description = 'Never miss out on new RareDough Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
   elseif ($page == '100k-pizza'):
     $title = 'RareDough | 100k Pizza';
-    $description = 'Never miss out on new RareDough Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
+    $description = ' A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 101k BREAD Tokens (1% Bonus), if burned in the NFT Oven.';
+  elseif ($page == '50k-pizza'):
+    $title = 'RareDough | 50k Pizza';
+    $description = 'A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 50250 BREAD Tokens (0.5% Bonus), if burned in the NFT Oven.';
+  elseif ($page == '10k-pizza'):
+    $title = 'RareDough | 10k Pizza';
+    $description = 'A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 10010 BREAD Tokens (0.1% Bonus), if burned in the Oven.';
     elseif ($page == 'burn-ovenv2'):
     $title = 'RareDough | Burn Oven V2';
     $description = 'Burn RareDough Pizza Collectibles to earn BREAD Tokens here. Use your BREAD in our Shop to buy unique products.';
@@ -505,7 +511,7 @@
                 </li>
               <?php endif; ?>
             </ul>
-            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza' || $page == 'burn-ovenv2'): ?>
+            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza' || $page == '50k-pizza' || $page == '10k-pizza' || $page == 'burn-ovenv2'): ?>
               <ul class="navbar-nav ms-3 wallet">
                 <li class="nav-item">
                 </li>

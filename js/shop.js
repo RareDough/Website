@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
    const category = shopSection.dataset.category;
    console.log(category);
-   for (a = 1; a < 10; a++) {
+   for (a = 1; a < 12; a++) {
       let itemIndex = a;
       fetch(`./assets/${a}.json`)
          .then((response) => {

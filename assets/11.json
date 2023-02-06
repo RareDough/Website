@@ -1,0 +1,25 @@
+{
+    "name": "10k Stablepizza",
+    "symbol": "10k",
+    "description": "Because it's more fun to hold a bronze Pizza instead of 10k Tokens. A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 10010 BREAD Tokens (0.1% Bonus), if burned in the NFT Oven. Final supply is determined based on Sales during the Sale period. Burn-Oven is enabled AFTER Sale ends.",
+    "image": "https://raredough.com/assets/images/11.jpg",
+    "external_link": "https://raredough.com/10k-pizza",
+    "attributes": [
+      {
+        "name": "Category",
+        "value": "limited editions"
+      },
+      {
+        "name": "Price",
+        "value": "10000 BREAD"
+      },
+      {
+        "name": "Edition",
+        "value": "Bronze"
+      },
+      {
+        "name": "Utility",
+        "value": "BREAD Security"
+      }
+    ]
+}  
