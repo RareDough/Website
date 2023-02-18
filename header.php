@@ -53,9 +53,33 @@
   elseif ($page == '10k-pizza'):
     $title = 'RareDough | 10k Pizza';
     $description = 'A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 10010 BREAD Tokens (0.1% Bonus), if burned in the Oven.';
-    elseif ($page == 'burn-ovenv2'):
+  elseif ($page == 'burn-ovenv2'):
     $title = 'RareDough | Burn Oven V2';
     $description = 'Burn RareDough Pizza Collectibles to earn BREAD Tokens here. Use your BREAD in our Shop to buy unique products.';
+  elseif ($page == 'bitcoin-pizza-79715'):
+    $title = 'RareDough | Inscription 79715';
+    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
+  elseif ($page == 'bitcoin-pizza-79944'):
+    $title = 'RareDough | Inscription 79944';
+    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
+  elseif ($page == 'bitcoin-pizza-80332'):
+    $title = 'RareDough | Inscription 80332';
+    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
+  elseif ($page == 'bitcoin-pizza-79831'):
+    $title = 'RareDough | Inscription 79831';
+    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
+  elseif ($page == 'bitcoin-pizza-80331'):
+    $title = 'RareDough | Inscription 80331';
+    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
+  elseif ($page == 'bitcoin-pizza-79930'):
+    $title = 'RareDough | Inscription 79930';
+    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
+  elseif ($page == 'burn-bitcoin-pizza-79921'):
+    $title = 'RareDough | Inscription 79921';
+    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
+  elseif ($page == 'bitcoin-pizza-80348'):
+    $title = 'RareDough | Inscription 80348';
+    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
   endif;
 ?>
 
