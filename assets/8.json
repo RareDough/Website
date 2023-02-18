@@ -6,15 +6,15 @@
     "external_link": "https://raredough.com/twitter-promo",
     "attributes": [
       {
-        "name": "Category",
+        "trait_type": "Category",
         "value": "custom pizza"
       },
       {
-        "name": "Price",
+        "trait_type": "Price",
         "value": "30000 BREAD"
       },
       {
-        "name": "Utility",
+        "trait_type": "Utility",
         "value": "Free Giveaway Promotion"
       }
     ]

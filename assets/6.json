@@ -6,15 +6,15 @@
     "external_link": "https://raredough.com/airdrop-pass",
     "attributes": [
       {
-        "name": "Category",
+        "trait_type": "Category",
         "value": "Utilities"
       },
       {
-        "name": "Price",
+        "trait_type": "Price",
         "value": "100000 BREAD"
       },
       {
-        "name": "Utility",
+        "trait_type": "Utility",
         "value": "Future Pizza Airdrops"
       }
     ]

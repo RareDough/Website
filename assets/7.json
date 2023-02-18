@@ -6,15 +6,15 @@
     "external_link": "https://raredough.com/custom-pizza-V1",
     "attributes": [
       {
-        "name": "Category",
+        "trait_type": "Category",
         "value": "custom pizza"
       },
       {
-        "name": "Price",
+        "trait_type": "Price",
         "value": "20000 BREAD"
       },
       {
-        "name": "Utility",
+        "trait_type": "Utility",
         "value": "Custom Pizza creation"
       }
     ]

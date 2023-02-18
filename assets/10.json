@@ -6,19 +6,19 @@
     "external_link": "https://raredough.com/50k-pizza",
     "attributes": [
       {
-        "name": "Category",
+        "trait_type": "Category",
         "value": "limited editions"
       },
       {
-        "name": "Price",
+        "trait_type": "Price",
         "value": "50000 BREAD"
       },
       {
-        "name": "Edition",
+        "trait_type": "Edition",
         "value": "Silver"
       },
       {
-        "name": "Utility",
+        "trait_type": "Utility",
         "value": "BREAD Security"
       }
     ]

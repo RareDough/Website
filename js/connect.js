@@ -6,7 +6,7 @@ let web3 = null,
 
 const truncateRegex = /^(0x[a-zA-Z0-9]{3})[a-zA-Z0-9]+([a-zA-Z0-9]{3})$/;
 const provider = window.ethereum;
-const SPENDAMOUNT = '10000000000000000000000000000';
+const SPENDAMOUNT = '25000000';
 const SHOP_ABI = top.abi_shop;
 const SHOP = '0xf829FDF890B800d2be08BEA228142726FeD3E71d'; //Shop Contract
 const PIZZA = '0x2953399124F0cBB46d2CbACD8A89cF0599974963'; //OpenSea ERC1155
@@ -15,6 +15,8 @@ const BREAD = '0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f'; //Bread address
 const BREAD_ABI = top.abi_coin;
 const BREAD_IMG = 'https://www.raredough.com/img/BAPC-coin.svg';
 const inventoryContainer = document.getElementById('inventoryContainer');
+const USDC = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
+const USDC_ABI = top.abi_usdc;
 
 // Specify which libray/oven to use
 let LIBRARY = null,
@@ -75,7 +77,7 @@ async function populateWalletData() {
    await getUserAssets();
 
    // IF BURN OVEN OR PRODUCTPAGE, CHECK APPROVAL
-   if (page === 'burn-oven') {
+   if (page === 'burn-oven' || page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348') {
       await checkApproval();
    }
 }
@@ -217,7 +219,7 @@ async function getUserAssets() {
          }
       }
 
-      if (page === 'burn-oven') {
+      if (page === 'burn-oven' || page === 'burn-ovenv2') {
          document.querySelector('#totalInventoryQuantity span').innerHTML = parseFloat(totalInventoryQuantity).toLocaleString();
       }
 
@@ -252,21 +254,36 @@ async function setApproval() {
    let gas = await web3.eth.getGasPrice();
 
    let txn = new web3.eth.Contract(PIZZA_ABI, PIZZA);
-   await txn.methods.setApprovalForAll( OVEN, true ).send({ from:walletAddress, amount:0, gasPrice:(gas*3) });
+   await txn.methods.setApprovalForAll( OVEN, true ).send({ from:walletAddress, amount:0, gasPrice:(gas) });
 
    await checkApproval();
 }
 
 async function checkApproval() {
-   let txn = new web3.eth.Contract(PIZZA_ABI, PIZZA),
-       isApproved = false;
+   let txn = null,
+       isApproved = null;
 
-   isApproved = await txn.methods.isApprovedForAll(walletAddress, OVEN).call();
+   if (page === 'burn-oven') {
+      txn = new web3.eth.Contract(PIZZA_ABI, PIZZA);
+      isApproved = await txn.methods.isApprovedForAll(walletAddress, OVEN).call();
 
-   if (!isApproved) {
-      burnButton.innerHTML = 'APPROVE';
-      burnButton.classList.add('approve');
-      burnButton.style.display = 'inline-block';
+      if (!isApproved) {
+         burnButton.innerHTML = 'APPROVE';
+         burnButton.classList.add('approve');
+         burnButton.style.display = 'inline-block';
+      }
+   } else if (page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348') {
+      txn = new web3.eth.Contract(USDC_ABI, USDC);
+      isApproved = await txn.methods.allowance(walletAddress, SHOP).call();
+
+      console.log(isApproved);
+
+      if (isApproved < 25000000) {
+         mintButton.innerHTML = 'APPROVE';
+         mintButton.classList.add('approve');
+         mintButton.style.display = 'inline-block';
+      }
+
    }
 }
 
@@ -280,14 +297,3 @@ $(function() {
    checkConnection();
 });
 
-// async function allowance() {
-//    let txn = new web3.eth.Contract(BREAD_ABI, BREAD);
-//    let isApproved = await txn.methods.allowance( walletAddress, SHOP ).call();
-
-//    if (isApproved < 999999) {
-//       mintButton.innerHTML = 'APPROVE';
-//       mintButton.classList.add('approve');
-//    }
-
-//    mintButton.style.display = 'inline-block';
-// }

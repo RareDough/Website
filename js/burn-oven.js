@@ -4,7 +4,7 @@ let selectedTokenIds = [],
 async function burnPizzas() {
   let gas = await web3.eth.getGasPrice();
   let txn = new web3.eth.Contract(OVEN_ABI, OVEN);
-  await txn.methods.burnPizzaBatch( selectedTokenIds, selectedAmounts ).send({ from:walletAddress, amount:0, gasPrice:(gas*3)});
+  await txn.methods.burnPizzaBatch( selectedTokenIds, selectedAmounts ).send({ from:walletAddress, amount:0, gasPrice:(gas)});
 
   // empty burn table
   burnList.innerHTML = '';

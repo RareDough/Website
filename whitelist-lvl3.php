@@ -74,10 +74,10 @@
               <div class="card card-body">
                 <div class="cardContainer">
                   <div class="row">
-                    <?php foreach ($itemAttributes as $attribute): if (get_object_vars($attribute)['name'] !== 'Price'): ?>
+                    <?php foreach ($itemAttributes as $attribute): if (get_object_vars($attribute)['trait_type'] !== 'Price'): ?>
                       <div class="col">
                         <div class="collapesCard">
-                          <div class="smText"><?= get_object_vars($attribute)['name']; ?></div>
+                          <div class="smText"><?= get_object_vars($attribute)['trait_type']; ?></div>
                           <div class="mainText"><?= get_object_vars($attribute)['value']; ?></div>
                         </div>
                       </div>
@@ -110,7 +110,7 @@
                     </tr>
                     <tr>
                       <td class="smText">Contract</td>
-                      <td class="mainText" href="https://polygonscan.com/address/0x37322bf16ccf75fdcf2ee22b4361913b0facba49">0x37322bf16ccf75fdcf2ee22b4361913b0facba49 <img src="./img/collapesArrow.svg" alt=""></td>
+                      <td class="mainText"> <a href="https://polygonscan.com/address/0xf829FDF890B800d2be08BEA228142726FeD3E71d">Polygonscan <img src="./img/collapesArrow.svg" alt=""></a></td>
                     </tr>
                   </tbody>
                 </table>

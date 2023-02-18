@@ -6,23 +6,23 @@
     "external_link": "https://raredough.com/whitelist-lvl1",
     "attributes": [
       {
-        "name": "Category",
+        "trait_type": "Category",
         "value": "Whitelist"
       },
       {
-        "name": "Price",
+        "trait_type": "Price",
         "value": "35000 BREAD"
       },
       {
-        "name": "Background",
+        "trait_type": "Background",
         "value": "Green"
       },
       {
-        "name": "Sauce",
+        "trait_type": "Sauce",
         "value": "Mayonaise"
       },
       {
-        "name": "Utility",
+        "trait_type": "Utility",
         "value": "Elevated Access"
       }
     ]

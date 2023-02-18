@@ -110,7 +110,7 @@
                     </tr>
                     <tr>
                       <td class="smText">Contract</td>
-                      <td class="mainText" href="https://polygonscan.com/address/0x37322bf16ccf75fdcf2ee22b4361913b0facba49">0x37322bf16ccf75fdcf2ee22b4361913b0facba49 <img src="./img/collapesArrow.svg" alt=""></td>
+                      <td class="mainText"> <a href="https://polygonscan.com/address/0xf829FDF890B800d2be08BEA228142726FeD3E71d">Polygonscan <img src="./img/collapesArrow.svg" alt=""></a></td>
                     </tr>
                   </tbody>
                 </table>

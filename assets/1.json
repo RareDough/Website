@@ -6,43 +6,43 @@
     "external_link": "https://raredough.com/freemint",
     "attributes": [
       {
-        "name": "Category",
+        "trait_type": "Category",
         "value": "Utilities"
       },
       {
-        "name": "Price",
+        "trait_type": "Price",
         "value": "0 BREAD"
       },
       {
-        "name": "Background",
+        "trait_type": "Background",
         "value": "Mystic Violet"
       },
       {
-        "name": "Plate",
+        "trait_type": "Plate",
         "value": "Ceramic White"
       },
       {
-        "name": "Dough",
+        "trait_type": "Dough",
         "value": "Infinite Wheat"
       },
       {
-        "name": "Sauce",
+        "trait_type": "Sauce",
         "value": "Infinite Tomato Sauce"
       },
       {
-        "name": "Cheese",
+        "trait_type": "Cheese",
         "value": "Infinite Gouda"
       },
       {
-        "name": "Topping",
+        "trait_type": "Topping",
         "value": "Infinite"
       },
       {
-        "name": "Special",
+        "trait_type": "Special",
         "value": "Portal"
       },
       {
-        "name": "Utility",
+        "trait_type": "Utility",
         "value": "Free Mint"
       }
     ]

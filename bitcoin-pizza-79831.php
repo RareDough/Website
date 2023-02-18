@@ -1,6 +1,6 @@
 <?php 
   include 'header.php';
-  $itemData = file_get_contents('./assets/9.json');
+  $itemData = file_get_contents('./assets/13.json');
   $itemDecoded = json_decode($itemData, false);
 
   $itemName = $itemDecoded->name;
@@ -54,10 +54,10 @@
                 </h1>
                 <div class="row ">
                   <div class="col-lg-6 ">
-                    <a class="mainBtn light" href="https://opensea.io/assets/matic/0xf829fdf890b800d2be08bea228142726fed3e71d/9" target="_blank">Buy on Opensea</a>
+                    <a id="mintButton" data-id="13" class="mainBtn light" data-price="<?= str_replace(' USDC','',$itemPrice); ?>" href="#">Connect Wallet</a>
                   </div>
                   <div class="col-lg-6 ">
-                    <a href="https://app.uniswap.org/#/tokens/polygon/0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f" class="mainBtn dark" target="_blank">Buy BREAD</a>
+                    <a href="https://app.uniswap.org/#/tokens/polygon/0x2791bca1f2de4661ed88a30c99a7a9449aa84174" target="_blank" class="mainBtn dark">Buy USDC</a>
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@
                   <tbody>
                     <tr>
                       <td class="smText">Token ID</td>
-                      <td class="mainText">9</td>
+                      <td class="mainText">12</td>
                     </tr>
                     <tr>
                       <td class="smText">Blockchain</td>

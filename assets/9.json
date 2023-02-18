@@ -6,19 +6,19 @@
     "external_link": "https://raredough.com/100k-pizza",
     "attributes": [
       {
-        "name": "Category",
+        "trait_type": "Category",
         "value": "limited editions"
       },
       {
-        "name": "Price",
+        "trait_type": "Price",
         "value": "OutofStock BREAD"
       },
       {
-        "name": "Edition",
+        "trait_type": "Edition",
         "value": "Gold"
       },
       {
-        "name": "Utility",
+        "trait_type": "Utility",
         "value": "BREAD Security"
       }
     ]

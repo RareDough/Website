@@ -1,0 +1,25 @@
+{
+    "name": "Bitcoin Pizza 79944",
+    "symbol": "Ord79944",
+    "description": "This NFT entitles the owner to claim the Bitcoin Pizza #79944 inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC). Please open a Support Ticket in our Discord to Claim the Pizza. In order to claim the Ordinal, a compatible Bitcoin address is required. Please follow this Tutorial to Setup a compatible Bitcoin Wallet: https://docs.raredough.com/receiving-bitcoin-ordinals",
+    "image": "https://raredough.com/assets/images/16.jpg",
+    "external_link": "https://raredough.com/bitcoin-pizza-79944",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "limited editions"
+      },
+      {
+        "trait_type": "Price",
+        "value": "25 USDC"
+      },
+      {
+        "trait_type": "Inscription",
+        "value": "79944"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Voucher"
+      }
+    ]
+}  
