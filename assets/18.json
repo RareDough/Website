@@ -18,6 +18,10 @@
         "value": "80332"
       },
       {
+        "trait_type": "Resolution",
+        "value": "200x200"
+      },
+      {
         "trait_type": "Utility",
         "value": "Voucher"
       }

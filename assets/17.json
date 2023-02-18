@@ -14,6 +14,10 @@
         "value": "25 USDC"
       },
       {
+        "trait_type": "Resolution",
+        "value": "200x200"
+      },
+      {
         "trait_type": "Inscription",
         "value": "80331"
       },
