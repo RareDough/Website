@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
    const category = shopSection.dataset.category;
    console.log(category);
-   for (a = 1; a < 20; a++) {
+   for (a = 1; a < 21; a++) {
+     if (a === 10 || a === 11 || a === 12 || a === 13 || a === 14 || a === 15 || a === 16 || a === 17) {
+         continue;
+      }
       let itemIndex = a;
       fetch(`./assets/${a}.json`)
          .then((response) => {
