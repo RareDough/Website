@@ -19,7 +19,7 @@
       <a class="imageLink" href="#">
         <img
           class="pizzaImg"
-            src="./img/pizzas/<?= (str_replace(' ', '-', strtolower($itemName))); ?>.jpg"
+            src="./img/pizzas/<?= (str_replace(' ', '-', strtolower($itemName))); ?>.webp"
             alt="<?= $itemName ?>"
         />
       </a>
