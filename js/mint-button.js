@@ -36,7 +36,7 @@ $(function() {
           
         // Allow user to specify amount
           let pizzaName = $('.desktopView .itemHeading').text();
-          AMOUNT = prompt('How many ' + pizzaName + 's would you like to buy?', '');
+          AMOUNT = prompt('How many ' + pizzaName + 's would you like to buy? (max. 10)', '1');
           buyPizzas();
           
         } else {
