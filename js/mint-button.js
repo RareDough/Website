@@ -1,4 +1,4 @@
-const AMOUNT = 1;
+let AMOUNT = 1;
 
 async function setSpendApproval() {
   let gas = await web3.eth.getGasPrice();
@@ -13,8 +13,6 @@ async function buyPizzas() {
   let gas = await web3.eth.getGasPrice();
   let txn = new web3.eth.Contract(SHOP_ABI, SHOP);
   let TOKENID = mintButton.dataset.id;
-
-  console.log(TOKENID);
 
   await txn.methods.buyPizzas( TOKENID, AMOUNT ).send({ from:walletAddress, amount:0, gasPrice:(gas)});
 }
@@ -35,6 +33,9 @@ $(function() {
       if (!$('#connectBtn').hasClass('connected')) {
         connectWallet();
       } else {
+        let pizzaName = $('.desktopView .itemHeading').text();
+        AMOUNT = prompt('How many ' + pizzaName + 's would you like to buy?', '1');
+
         buyPizzas();
       }
     }
