@@ -33,8 +33,9 @@ $(function() {
       if (!$('#connectBtn').hasClass('connected')) {
         connectWallet();
       } else {
-        let pizzaName = $('.desktopView .itemHeading').text();
-        AMOUNT = prompt('How many ' + pizzaName + 's would you like to buy?', '1');
+        // Allow user to specify amount
+        // let pizzaName = $('.desktopView .itemHeading').text();
+        // AMOUNT = prompt('How many ' + pizzaName + 's would you like to buy?', '1');
 
         buyPizzas();
       }
