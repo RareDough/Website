@@ -1,5 +1,3 @@
-let AMOUNT = 1;
-
 async function setSpendApproval() {
   let gas = await web3.eth.getGasPrice();
 
@@ -20,7 +18,7 @@ async function buyPizzas() {
 $(function() {
   $('#mintButton').click(function(e) {
     e.preventDefault();
-    if (page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348' || page === 'coldpizza') {
+    if (page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348') {
       if ($(this).hasClass('approve')) {
       // set approval
       setSpendApproval();
@@ -34,8 +32,8 @@ $(function() {
         connectWallet();
       } else {
         // Allow user to specify amount
-        // let pizzaName = $('.desktopView .itemHeading').text();
-        // AMOUNT = prompt('How many ' + pizzaName + 's would you like to buy?', '1');
+        let pizzaName = $('.desktopView .itemHeading').text();
+        AMOUNT = prompt('How many ' + pizzaName + 's would you like to buy?', '1');
 
         buyPizzas();
       }
