@@ -80,6 +80,12 @@
   elseif ($page == 'bitcoin-pizza-80348'):
     $title = 'RareDough | Inscription 80348';
     $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
+    elseif ($page == 'coldpizza'):
+    $title = 'RareDough | Coldpizza';
+    $description = 'Showcasing our beloved Community Member "Coldpizza" (Twitter: @coldpizza_16). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
+    elseif ($page == 'redheadphone'):
+    $title = 'RareDough | Redheadphone Pizza';
+    $description = 'Showcasing our beloved Community Member "RedHeadphone" (Twitter: @huzaifa_Khila). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
   endif;
 ?>
 
@@ -535,7 +541,7 @@
                 </li>
               <?php endif; ?>
             </ul>
-            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza' || $page == '50k-pizza' || $page == '10k-pizza' || $page == 'burn-ovenv2' || $page == 'bitcoin-pizza-80332' || $page == 'bitcoin-pizza-79831' || $page == 'bitcoin-pizza-80331' || $page == 'bitcoin-pizza-79944' || $page == 'bitcoin-pizza-79715' || $page == 'bitcoin-pizza-79921' || $page == 'bitcoin-pizza-79930' || $page == 'bitcoin-pizza-80348' || $page == 'coldpizza'): ?>
+            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza' || $page == '50k-pizza' || $page == '10k-pizza' || $page == 'burn-ovenv2' || $page == 'bitcoin-pizza-80332' || $page == 'bitcoin-pizza-79831' || $page == 'bitcoin-pizza-80331' || $page == 'bitcoin-pizza-79944' || $page == 'bitcoin-pizza-79715' || $page == 'bitcoin-pizza-79921' || $page == 'bitcoin-pizza-79930' || $page == 'bitcoin-pizza-80348' || $page == 'coldpizza' || $page == 'redheadphone'): ?>
               <ul class="navbar-nav ms-3 wallet">
                 <li class="nav-item">
                 </li>
