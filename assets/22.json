@@ -1,0 +1,29 @@
+{
+    "name": "VinnyPizza",
+    "symbol": "VINNY",
+    "description": "Showcasing our beloved Community Member 'Vinnypiazza' (Twitter: @vinnypiazza). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together. Collect this Pizza in the Shop and stay tuned for surprises!",
+    "image": "https://raredough.com/assets/images/22.jpg",
+    "external_link": "https://raredough.com/vinnypizza",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "custom pizza"
+      },
+      {
+        "trait_type": "Price",
+        "value": "100 BREAD"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Community Spotlight"
+      },
+      {
+        "trait_type": "Name",
+        "value": "Vinnypizza"
+      },
+      {
+        "trait_type": "Twitter",
+        "value": "@vinnypiazza"
+      }
+    ]
+}  

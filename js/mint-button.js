@@ -32,7 +32,7 @@ $(function() {
         connectWallet();
       } else {
 
-        if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone') {
+        if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone' || page === 'vinnypizza') {
           
         // Allow user to specify amount
           let pizzaName = $('.desktopView .itemHeading').text();

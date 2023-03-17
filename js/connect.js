@@ -77,7 +77,7 @@ async function populateWalletData() {
    await getUserAssets();
 
    // IF BURN OVEN OR PRODUCTPAGE, CHECK APPROVAL
-   if (page === 'burn-oven' || page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348' || page === 'coldpizza' || page === 'redheadphone') {
+   if (page === 'burn-oven' || page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348') {
       await checkApproval();
    }
 }

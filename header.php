@@ -86,6 +86,9 @@
     elseif ($page == 'redheadphone'):
     $title = 'RareDough | Redheadphone Pizza';
     $description = 'Showcasing our beloved Community Member "RedHeadphone" (Twitter: @huzaifa_Khila). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
+    elseif ($page == 'vinnypizza'):
+    $title = 'RareDough | Vinnypizza';
+    $description = 'Showcasing our beloved Community Member "Vinnypiazza" (Twitter: @vinnypiazza). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
   endif;
 ?>
 
@@ -313,7 +316,7 @@
         <div class="socialIcons">
           <a
             class=""
-            href="https://opensea.io/collection/boredapepizzaclub"
+            href="https://opensea.io/collection/raredough"
             target="_blank"
           >
             <img src="./img/opensea-icon.png" alt="Opensea Icon" />
@@ -379,7 +382,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link"
-                  href="https://opensea.io/collection/boredapepizzaclub"
+                  href="https://opensea.io/collection/raredough"
                   target="_blank"
                   ><img src="./img/opensea-icon.png" alt=""
                 /></a>
@@ -541,7 +544,7 @@
                 </li>
               <?php endif; ?>
             </ul>
-            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza' || $page == '50k-pizza' || $page == '10k-pizza' || $page == 'burn-ovenv2' || $page == 'bitcoin-pizza-80332' || $page == 'bitcoin-pizza-79831' || $page == 'bitcoin-pizza-80331' || $page == 'bitcoin-pizza-79944' || $page == 'bitcoin-pizza-79715' || $page == 'bitcoin-pizza-79921' || $page == 'bitcoin-pizza-79930' || $page == 'bitcoin-pizza-80348' || $page == 'coldpizza' || $page == 'redheadphone'): ?>
+            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza' || $page == '50k-pizza' || $page == '10k-pizza' || $page == 'burn-ovenv2' || $page == 'bitcoin-pizza-80332' || $page == 'bitcoin-pizza-79831' || $page == 'bitcoin-pizza-80331' || $page == 'bitcoin-pizza-79944' || $page == 'bitcoin-pizza-79715' || $page == 'bitcoin-pizza-79921' || $page == 'bitcoin-pizza-79930' || $page == 'bitcoin-pizza-80348' || $page == 'coldpizza' || $page == 'redheadphone' || $page == 'vinnypizza'): ?>
               <ul class="navbar-nav ms-3 wallet">
                 <li class="nav-item">
                 </li>

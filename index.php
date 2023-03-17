@@ -13,7 +13,7 @@
       <h1 tkey="main_heading" class="mainHeading">Join the Club</h1>
       <a
         class="homeSocialLink"
-        href="https://opensea.io/collection/boredapepizzaclub"
+        href="https://opensea.io/collection/raredough"
         target="_blank"
       >
         <img src="./img/home-opensea-icon.png" alt="Opensea Icon" />
