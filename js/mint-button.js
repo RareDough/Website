@@ -31,14 +31,19 @@ $(function() {
       if (!$('#connectBtn').hasClass('connected')) {
         connectWallet();
       } else {
-
         if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone' || page === 'vinnypizza') {
-          
-        // Allow user to specify amount
+          // Allow user to specify amount
           let pizzaName = $('.desktopView .itemHeading').text();
-          AMOUNT = prompt('How many ' + pizzaName + 's would you like to buy? (max. 10)', '1');
+          AMOUNT = (function ask() {
+            let n = prompt('How many ' + pizzaName + 's would you like to buy? (max. 10)', '1');
+            // If user hits "cancel" close prompt
+            if (n === null) {
+              return;
+            }
+            // If amount is not a number, or the value is not between 1 and 10, re-prompt
+            return isNaN(n) || +n > 10 || +n < 1 ? ask() : n;
+          }());
           buyPizzas();
-          
         } else {
           AMOUNT = 1;
           buyPizzas();
