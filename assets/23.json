@@ -1,0 +1,29 @@
+{
+    "name": "ChessPizza",
+    "symbol": "CHESS",
+    "description": "This is a special Promo Pizza created to Showcase great projects in the Web3 Space. The $ELO Chess Club is a Play-to-Earn crypto chess game in Decentraland. Play free Chess and earn ELO Tokens here: https://play.decentraland.org/?position=-117%2C6",
+    "image": "https://raredough.com/assets/images/23.jpg",
+    "external_link": "https://raredough.com/chesspizza",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "custom pizza"
+      },
+      {
+        "trait_type": "Price",
+        "value": "100 BREAD"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Collaboration"
+      },
+      {
+        "trait_type": "Name",
+        "value": "Chesspizza"
+      },
+      {
+        "trait_type": "Twitter",
+        "value": "@neyyyhaaa"
+      }
+    ]
+}  
