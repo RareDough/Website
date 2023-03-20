@@ -31,7 +31,7 @@ $(function() {
       if (!$('#connectBtn').hasClass('connected')) {
         connectWallet();
       } else {
-        if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone' || page === 'vinnypizza') {
+        if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone' || page === 'vinnypizza' || page === 'chesspizza') {
           // Allow user to specify amount
           let pizzaName = $('.desktopView .itemHeading').text();
           AMOUNT = (function ask() {
