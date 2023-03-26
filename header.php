@@ -1,6 +1,11 @@
 <?php 
   $filename = basename($_SERVER['PHP_SELF']);
   $page = preg_replace("/(.+)\.php$/", "$1", $filename);
+
+  // START SHOP PAGES
+  $shopPages = array('account', 'shop', 'burn-oven', 'freemint', 'infinity', 'whitelist-lvl1', 'whitelist-lvl2', 'whitelist-lvl3', 'airdrop-pass', 'custom-pizza-V1', 'twitter-promo', '100k-pizza', '50k-pizza', '10k-pizza', 'burn-ovenv2', 'bitcoin-pizza-80332', 'bitcoin-pizza-79831', 'bitcoin-pizza-80331', 'bitcoin-pizza-79944', 'bitcoin-pizza-79715', 'bitcoin-pizza-79921', 'bitcoin-pizza-79930', 'bitcoin-pizza-80348', 'coldpizza', 'redheadphone', 'vinnypizza', 'chesspizza', 'grafkaalpizza');
+  // END SHOP PAGES
+
   if ($page == 'index'):
     $page = 'home';
     $title = 'RareDough | Home';
@@ -550,7 +555,7 @@
                 </li>
               <?php endif; ?>
             </ul>
-            <?php if ($page == 'account' || $page == 'shop' || $page == 'burn-oven' || $page == 'freemint' || $page == 'infinity' || $page == 'whitelist-lvl1' || $page == 'whitelist-lvl2' || $page == 'whitelist-lvl3' || $page == 'airdrop-pass' || $page == 'custom-pizza-V1' || $page == 'twitter-promo' || $page == '100k-pizza' || $page == '50k-pizza' || $page == '10k-pizza' || $page == 'burn-ovenv2' || $page == 'bitcoin-pizza-80332' || $page == 'bitcoin-pizza-79831' || $page == 'bitcoin-pizza-80331' || $page == 'bitcoin-pizza-79944' || $page == 'bitcoin-pizza-79715' || $page == 'bitcoin-pizza-79921' || $page == 'bitcoin-pizza-79930' || $page == 'bitcoin-pizza-80348' || $page == 'coldpizza' || $page == 'redheadphone' || $page == 'vinnypizza' || $page == 'chesspizza' || $page == 'grafkaalpizza'): ?>
+            <?php if (in_array($page, $shopPages)): ?>
               <ul class="navbar-nav ms-3 wallet">
                 <li class="nav-item">
                 </li>
