@@ -1,0 +1,25 @@
+{
+    "name": "Easter23 Pizza",
+    "symbol": "EASTER23",
+    "description": "Celebrating Easter 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.",
+    "image": "https://raredough.com/assets/images/25.jpg",
+    "external_link": "https://raredough.com/easter23pizza",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "limited edition"
+      },
+      {
+        "trait_type": "Price",
+        "value": "1000000 BREAD"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Seasonal Event"
+      },
+      {
+        "trait_type": "Name",
+        "value": "Easter 2023"
+      }
+    ]
+}  

@@ -1,0 +1,25 @@
+{
+    "name": "BulksenderPizza",
+    "symbol": "BULKSENDER",
+    "description": "Celebrating the creators of the Bulksender Tool.",
+    "image": "https://raredough.com/assets/images/26.jpg",
+    "external_link": "https://raredough.com/bulksenderpizza",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "custom pizza"
+      },
+      {
+        "trait_type": "Price",
+        "value": "100 BREAD"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Honorary"
+      },
+      {
+        "trait_type": "URL",
+        "value": "https://bulksender.app"
+      }
+    ]
+}  
