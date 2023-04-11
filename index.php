@@ -1,15 +1,39 @@
-<html>
-  <head>
-    <title>PHP Test</title>
-  </head>
-  <body>
-    <?php echo '<p>Hello World</p>'; ?> 
+<?php include 'header.php';?>
 
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
-  </body>
-</html>
+<!-- Infinity Section -->
+<section class="infinitySection homeSection">
+  <div class="container">
+    <div class="multiButton">
+      <a class="mainBtn" tkey="shop" href="shop"
+        >Enter Shop</a
+      >
+      <a class="mainBtn" tkey="get_btn" href="vip-pass">GET VIP PASS</a>
+    </div>
+    <div class="homeContents">
+      <h1 tkey="main_heading" class="mainHeading">Join the Club</h1>
+      <a
+        class="homeSocialLink"
+        href="https://opensea.io/collection/raredough"
+        target="_blank"
+      >
+        <img src="./img/home-opensea-icon.png" alt="Opensea Icon" />
+      </a>
+      <a
+        class="homeSocialLink odd"
+        href="https://twitter.com/RareDough"
+        target="_blank"
+      >
+        <img src="./img/home-twitter-icon.png" alt="Twitter Icon" />
+      </a>
+      <a
+        class="homeSocialLink"
+        href="https://discord.com/invite/GbwykC99N6"
+        target="_blank"
+      >
+        <img src="./img/home-discord-icon.png" alt="Discord Icon" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<?php include 'footer.php';?>

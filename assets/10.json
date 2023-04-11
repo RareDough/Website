@@ -1,0 +1,25 @@
+{
+    "name": "50k Stablepizza",
+    "symbol": "50k",
+    "description": "Because it's more fun to hold a silver Pizza instead of 50k Tokens. A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 50250 BREAD Tokens (0.5% Bonus), if burned in the Oven. Final supply is determined based on Sales during the Sale period. Burn-Oven is enabled AFTER Sale ends.",
+    "image": "https://raredough.com/assets/images/10.jpg",
+    "external_link": "https://raredough.com/50k-pizza",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "limited editions"
+      },
+      {
+        "trait_type": "Price",
+        "value": "OutofStock BREAD"
+      },
+      {
+        "trait_type": "Edition",
+        "value": "Silver"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "BREAD Security"
+      }
+    ]
+}  

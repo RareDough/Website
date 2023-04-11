@@ -1,0 +1,49 @@
+{
+    "name": "Infinity Pizza",
+    "symbol": "INFINITY",
+    "description": "This Pizza serves as BASIC access token to the RareDough Ecosystem. Holders may participate in the Private Sale AFTER the Whitelist lvl 1 mint (No guaranteed NFT).",
+    "image": "https://raredough.com/assets/images/2.png",
+    "external_link": "https://raredough.com/infinity",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "Whitelist"
+      },
+      {
+        "trait_type": "Price",
+        "value": "1 BREAD"
+      },
+      {
+        "trait_type": "Background",
+        "value": "Galaxy"
+      },
+      {
+        "trait_type": "Plate",
+        "value": "Ceramic White"
+      },
+      {
+        "trait_type": "Dough",
+        "value": "Infinite Wheat"
+      },
+      {
+        "trait_type": "Sauce",
+        "value": "Infinite Tomato Sauce"
+      },
+      {
+        "trait_type": "Cheese",
+        "value": "Infinite Gouda"
+      },
+      {
+        "trait_type": "Topping",
+        "value": "Infinite"
+      },
+      {
+        "trait_type": "Special",
+        "value": "Portal"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Basic Access"
+      }
+    ]
+}  

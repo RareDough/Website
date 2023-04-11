@@ -1,0 +1,29 @@
+{
+    "name": "Whitelist lvl 2",
+    "symbol": "WLLVL2",
+    "description": "This NFT serves as PRIVILEGED access token for the RareDough Ecosystem. Holders may buy up to 3x NFTs during the Private Sale. A time window of 24 hours grants exclusive minting permissions AFTER the Whitelist lvl 3 mint.",
+    "image": "https://raredough.com/assets/images/4.png",
+    "external_link": "https://raredough.com/whitelist-lvl2",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "Whitelist"
+      },
+      {
+        "trait_type": "Price",
+        "value": "85000 BREAD"
+      },
+      {
+        "trait_type": "Background",
+        "value": "Blue"
+      },
+      {
+        "trait_type": "Sauce",
+        "value": "Ketchup"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Privileged Access"
+      }
+    ]
+}  
