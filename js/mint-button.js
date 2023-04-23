@@ -31,7 +31,7 @@ $(function() {
       if (!$('#connectBtn').hasClass('connected')) {
         connectWallet();
       } else {
-        if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone' || page === 'vinnypizza' || page === 'chesspizza' || page === 'grafkaalpizza') {
+        if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone' || page === 'vinnypizza' || page === 'chesspizza' || page === 'grafkaalpizza' || page === 'jdoggpizza' || page === 'minguspizza' || page === 'easter23pizza' || page === 'bulksenderpizza' || page === 'corapizza') {
           // Allow user to specify amount
           let pizzaName = $('.desktopView .itemHeading').text();
           AMOUNT = (function ask() {
