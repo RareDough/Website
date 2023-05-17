@@ -7,23 +7,19 @@
 		return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window;
 	}();
 
-	let $form 		 = $('#pizza-form'),
-		$imgCont	 = $('#image-upload'),
-		$input		 = $form.find('input[type="file"]'),
-		$label		 = $form.find('#image-upload label'),
-		$errorMsg	 = $form.find('.input-error'),
-		droppedFiles = false,
-		showFiles	 = function(files) {
-			$label.text( files[ 0 ].name );
-		};
+	let $form 		  = $('#pizza-form'),
+		$imgCont	  = $('#image-upload'),
+		fileInput	  = document.getElementById('file-input'),
+		customImage   = document.getElementById('custom-image'),
+		$input		  = $form.find('input[type="file"]'),
+		$label		  = $form.find('#image-upload label'),
+		$errorMsg	  = $form.find('.input-error'),
+		userFile 	  = {},
+		userFileReady = true,
+		droppedFiles  = false;
 
 	// letting the server side to know we are going to make an Ajax request
 	$form.append( '<input type="hidden" name="ajax" value="1" />' );
-
-	// automatically submit the form on file select
-	$input.on('change', function(e) {
-		showFiles(e.target.files);
-	});
 
 	// drag&drop files if the feature is available
 	if (isAdvancedUpload) {
@@ -45,6 +41,61 @@
 			showFiles(droppedFiles);
 		});
 	}
+
+	// File select handler
+	customImage.addEventListener('change', async (event) => {
+		
+		userFile = {};
+		userFileReady = false;
+
+		const inputKey = customImage.getAttribute('name')
+		let files = event.srcElement.files;
+		const filePromises = Object.entries(files).map(item => {
+			return new Promise((resolve, reject) => {
+			const [index, file] = item;
+			const reader = new FileReader();
+			reader.readAsBinaryString(file);
+
+			reader.onload = function(event) {
+				const fileKey = `${inputKey}${files.length > 1 ? `[${index}]` : ''}`
+				userFile[fileKey] = `data:${file.type};base64,${btoa(event.target.result)}`
+				let userImage = new Image();
+				userImage.id = 'user-image';
+				userImage.src = userFile[fileKey];
+				document.getElementById('pizza-container').appendChild(userImage);
+				fileInput.style.display = 'none';
+				resolve();
+			};
+
+			reader.onerror = function() {
+				console.log('File not read');
+				reject();
+			};
+		});
+
+	});
+
+	Promise.all(filePromises)
+		.then(() => {
+			console.log('Ready to submit');
+			userFileReady = true;
+		})
+		.catch((error) => {
+			console.log(error);
+			console.log('Something went wrong');
+		})
+	});
+
+	const handleForm = async (event) => {
+		event.preventDefault();
+
+		if(!userFileReady) {
+			console.log('Files being processed');
+			return
+		}
+	}
+
+	// $form.addEventListener('submit', handleForm)
 
 	// Form submission
 	// $form.on('submit', function(e) {

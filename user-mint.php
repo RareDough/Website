@@ -14,6 +14,9 @@
         <label class="instructions">File types supported: JPG, PNG, GIF, SVG. Max size: 5 MB</label>
         <!-- PIZZA IMAGE -->
         <div id="image-upload">
+          <div id="pizza-container">
+            <img id="pizza-template" src="/assets/images/pizza-template.png" alt="Pizza Template" />
+          </div>
           <div id="file-input">
             <label for="custom-image">
               <input type="file" name="custom-image" id="custom-image" />
