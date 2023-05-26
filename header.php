@@ -3,7 +3,7 @@
   $page = preg_replace("/(.+)\.php$/", "$1", $filename);
 
   // START SHOP PAGES
-  $shopPages = array('account', 'shop', 'burn-oven', 'freemint', 'infinity', 'whitelist-lvl1', 'whitelist-lvl2', 'whitelist-lvl3', 'airdrop-pass', 'custom-pizza-V1', 'twitter-promo', '100k-pizza', '50k-pizza', '10k-pizza', 'burn-ovenv2', 'bitcoin-pizza-80332', 'bitcoin-pizza-79831', 'bitcoin-pizza-80331', 'bitcoin-pizza-79944', 'bitcoin-pizza-79715', 'bitcoin-pizza-79921', 'bitcoin-pizza-79930', 'bitcoin-pizza-80348', 'coldpizza', 'redheadphone', 'vinnypizza', 'chesspizza', 'grafkaalpizza', 'easter23pizza', 'bulksenderpizza', 'minguspizza', 'corapizza', 'jdoggpizza');
+  $shopPages = array('account', 'shop', 'burn-oven', 'freemint', 'infinity', 'whitelist-lvl1', 'whitelist-lvl2', 'whitelist-lvl3', 'airdrop-pass', 'custom-pizza-V1', 'twitter-promo', '100k-pizza', '50k-pizza', '10k-pizza', 'burn-ovenv2', 'bitcoin-pizza-80332', 'bitcoin-pizza-79831', 'bitcoin-pizza-80331', 'bitcoin-pizza-79944', 'bitcoin-pizza-79715', 'bitcoin-pizza-79921', 'bitcoin-pizza-79930', 'bitcoin-pizza-80348', 'coldpizza', 'redheadphone', 'vinnypizza', 'chesspizza', 'grafkaalpizza', 'easter23pizza', 'bulksenderpizza', 'minguspizza', 'corapizza', 'jdoggpizza','btcday23','vip');
   // END SHOP PAGES
 
   if ($page == 'index'):
@@ -100,6 +100,27 @@
     elseif ($page == 'grafkaalpizza'):
     $title = 'RareDough | Grafkaalpizza';
     $description = 'Showcasing our beloved Community Member "Grafkaal" (Twitter: @grafkaal). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
+    elseif ($page == 'jdoggpizza'):
+    $title = 'RareDough | Jdoggpizza';
+    $description = 'Showcasing our beloved Community Member "Jdogg" (Twitter: @612crypto_eth). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
+    elseif ($page == 'easterpizza23'):
+    $title = 'RareDough | Easter23pizza';
+    $description = 'Celebrating Easter 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.';
+    elseif ($page == 'bulksenderpizza'):
+    $title = 'RareDough | Bulksenderpizza';
+    $description = 'Celebrating the creators of the Bulksender Tool.';
+    elseif ($page == 'minguspizza'):
+    $title = 'RareDough | Minguspizza';
+    $description = 'Showcasing our beloved Community Member "MingusMill" (Twitter: @WNCDAVE1). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
+    elseif ($page == 'corapizza'):
+    $title = 'RareDough | Corapizza';
+    $description = 'Showcasing our beloved Community Member "GreenLantern" (Twitter: @GreenLanternNFT). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
+    elseif ($page == 'vip'):
+    $title = 'RareDough | VIP';
+    $description = 'Support us and enjoy privileged benefits in the RareDough Community.';
+    elseif ($page == 'btcday23'):
+    $title = 'RareDough | BTCDay23Pizza';
+    $description = 'Celebrating Bitcoin Day 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.';
   endif;
 ?>
 

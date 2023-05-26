@@ -1,0 +1,25 @@
+{
+    "name": "Bitcoin Day Pizza",
+    "symbol": "BTCDAY23",
+    "description": "Celebrating Bitcoin Day 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.",
+    "image": "https://raredough.com/assets/images/31.jpg",
+    "external_link": "https://raredough.com/btcday23",
+    "attributes": [
+      {
+        "trait_type": "Category",
+        "value": "limited edition"
+      },
+      {
+        "trait_type": "Price",
+        "value": "1000000 BREAD"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Seasonal Event"
+      },
+      {
+        "trait_type": "Name",
+        "value": "Bitcoin Day 2023"
+      }
+    ]
+}  

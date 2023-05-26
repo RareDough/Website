@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
    const category = shopSection.dataset.category;
    console.log(category);
-   for (a = 1; a < 30; a++) {
-     if (a === 10 || a === 11 || a === 12 || a === 13 || a === 14 || a === 15 || a === 16 || a === 17 || a === 25) {
+   for (a = 1; a < 32; a++) {
+     if (a === 10 || a === 11 || a === 12 || a === 13 || a === 14 || a === 15 || a === 16 || a === 17 || a === 25 || a === 31) {
          continue;
       }
       let itemIndex = a;

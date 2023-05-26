@@ -77,7 +77,7 @@ async function populateWalletData() {
    await getUserAssets();
 
    // IF BURN OVEN OR PRODUCTPAGE, CHECK APPROVAL
-   if (page === 'burn-oven' || page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348') {
+   if (page === 'burn-oven' || page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348' || page === 'vip') {
       await checkApproval();
    }
 }
@@ -272,7 +272,7 @@ async function checkApproval() {
          burnButton.classList.add('approve');
          burnButton.style.display = 'inline-block';
       }
-   } else if (page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348') {
+   } else if (page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348' || page === 'vip') {
       txn = new web3.eth.Contract(USDC_ABI, USDC);
       isApproved = await txn.methods.allowance(walletAddress, SHOP).call();
 

@@ -18,7 +18,7 @@ async function buyPizzas() {
 $(function() {
   $('#mintButton').click(function(e) {
     e.preventDefault();
-    if (page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348') {
+    if (page === 'bitcoin-pizza-80332' || page === 'bitcoin-pizza-79831' || page === 'bitcoin-pizza-80331' || page === 'bitcoin-pizza-79944' || page === 'bitcoin-pizza-79715' || page === 'bitcoin-pizza-79921' || page === 'bitcoin-pizza-79930' || page === 'bitcoin-pizza-80348' || page === 'vip') {
       if ($(this).hasClass('approve')) {
       // set approval
       setSpendApproval();
@@ -31,7 +31,7 @@ $(function() {
       if (!$('#connectBtn').hasClass('connected')) {
         connectWallet();
       } else {
-        if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone' || page === 'vinnypizza' || page === 'chesspizza' || page === 'grafkaalpizza' || page === 'jdoggpizza' || page === 'minguspizza' || page === 'easter23pizza' || page === 'bulksenderpizza' || page === 'corapizza') {
+        if (page === 'coldpizza' || page === 'infinity' || page === 'redheadphone' || page === 'vinnypizza' || page === 'chesspizza' || page === 'grafkaalpizza' || page === 'jdoggpizza' || page === 'minguspizza' || page === 'easter23pizza' || page === 'bulksenderpizza' || page === 'corapizza' || page === 'btcday23') {
           // Allow user to specify amount
           let pizzaName = $('.desktopView .itemHeading').text();
           AMOUNT = (function ask() {
