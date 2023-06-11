@@ -109,6 +109,30 @@
 	}
 	pizzaNameInput.addEventListener('keyup', updateName);
 
+	// Show name on pizza
+	const textPath = document.getElementById('text-path');
+	const nameToggle = document.getElementsByName('show-name')[0];
+
+	let show = function (elem) {
+		elem.style.display = 'block';
+	};
+
+	let hide = function (elem) {
+		elem.style.display = 'none';
+	};
+
+	let toggleName = function(elem) {
+		if (window.getComputedStyle(elem).display === 'block') {
+			hide(elem);
+			return;
+		}
+
+		show(elem);
+	};
+	nameToggle.addEventListener('change', function() {
+		toggleName(textPath);
+	});
+
 	// $form.addEventListener('submit', handleForm)
 
 	// Form submission

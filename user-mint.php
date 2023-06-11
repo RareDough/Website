@@ -21,12 +21,12 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
           <div id="pizza-container">
             <img id="pizza-template" src="/custom-mint/backgrounds/<?php echo $backgrounds[0]; ?>" alt="Background Image" />
             <!-- Text on Curve -->
-            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 2" viewBox="0 0 500 500">
+            <svg xmlns="http://www.w3.org/2000/svg" id="text-path" viewBox="0 0 500 500">
               <g data-name="Layer 1">
                 <path d="M0 0h500v500H0z" style="fill:none"/>
-                <path id="curved-text" d="M63 250c0 103.55 83.95 187.5 187.5 187.5S438 353.55 438 250" style="stroke:#000;fill:none"/>
+                <path id="curved-text" d="M63 250c0 103.55 83.95 187.5 187.5 187.5S438 353.55 438 250" style="stroke:none;fill:none"/>
                 <text font-size="30" fill="#000000" letter-spacing="2" font-family="sans-serif" font-weight="bold" dominant-baseline="middle" text-anchor="middle">
-                  <textPath xlink:href="#curved-text" id="custom-text" startOffset = "50%">This is my custom pizza</textPath>
+                  <textPath xlink:href="#curved-text" id="custom-text" startOffset = "50%"></textPath>
                 </text>
               </g>
             </svg>
