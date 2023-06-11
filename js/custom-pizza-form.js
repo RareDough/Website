@@ -129,99 +129,37 @@
 
 		show(elem);
 	};
+
 	nameToggle.addEventListener('change', function() {
 		toggleName(textPath);
 	});
 
-	// $form.addEventListener('submit', handleForm)
-
 	// Form submission
 	$form.on('submit', function(e) {
-		// preventing the duplicate submissions if the current one is in progress
+		e.preventDefault();
+
+		// Check if form is already submitting
 		if ($form.hasClass('is-uploading')) return false;
 
 		$form.addClass('is-uploading').removeClass('is-error');
 
-
-
-		if (isAdvancedUpload) {
-			e.preventDefault();
-
-			// gathering the form data
-			// var ajaxData = new FormData($form.get(0));
-			// if (droppedFiles) {
-			// 	$.each( droppedFiles, function(i, file) {
-			// 		ajaxData.append( $input.attr( 'name' ), file );
-			// 	});
-			// }
-
-			// ajax request
-			const customImageCont = document.getElementById('pizza-container');
-			html2canvas(customImageCont,{allowTaint:true}).then(canvas => {
-		        var dataURL = canvas.toDataURL();
-		        console.log(dataURL);
-                $.ajax({
-                    type: 'POST',
-                    url: '/inc/save-pizza',
-                    data: {
-                        imgBase64: dataURL
-                    }
-                }).done(function(o) {
-                    console.log('saved');
-                });
-		    });
-			// html2canvas(customImageCont, {
-            //     onrendered: function(canvas) {
-            //     	console.log(canvas);
-            //         var imgsrc = canvas.toDataURL('image/png');
-            //         console.log(imgsrc);
-            //         // $("#holder-img").attr('src', imgsrc);
-            //         // $("#holder-cont").show();
-            //         var dataURL = canvas.toDataURL();
-            //         $.ajax({
-            //             type: 'POST',
-            //             url: '/inc/save-pizza.php',
-            //             data: {
-            //                 imgBase64: dataURL
-            //             }
-            //         }).done(function(o) {
-            //             console.log('saved');
-            //         });
-            //     }
-            // });
-			// $.ajax({
-			// 	url: 			$form.attr( 'action' ),
-			// 	type:			$form.attr( 'method' ),
-			// 	data: 			ajaxData,
-			// 	dataType:		'json',
-			// 	cache:			false,
-			// 	contentType:	false,
-			// 	processData:	false,
-			// 	complete: function() {
-			// 		$form.removeClass( 'is-uploading' );
-			// 	},
-			// 	success: function(data) {
-			// 		$form.addClass( data.success == true ? 'is-success' : 'is-error' );
-			// 		if( !data.success ) $errorMsg.text( data.error );
-			// 	},
-			// 	error: function() {
-			// 		alert( 'Error. Please, contact the webmaster!' );
-			// 	}
-			// });
-		} else {
-			// let iframeName	= 'uploadiframe' + new Date().getTime(),
-			// 	$iframe		= $( '<iframe name="' + iframeName + '" style="display: none;"></iframe>' );
-
-			// $('body').append($iframe);
-			// $form.attr('target', iframeName);
-
-			// $iframe.one('load', function() {
-			// 	var data = $.parseJSON( $iframe.contents().find( 'body' ).text() );
-			// 	$form.removeClass( 'is-uploading' ).addClass( data.success == true ? 'is-success' : 'is-error' ).removeAttr( 'target' );
-			// 	if( !data.success ) $errorMsg.text( data.error );
-			// 	$iframe.remove();
-			// });
-		}
+		const customImageCont = document.getElementById('pizza-container');
+		html2canvas(customImageCont,{allowTaint:true}).then(canvas => {
+	        var dataURL = canvas.toDataURL();
+            $.ajax({
+                type: 'POST',
+                url: '/inc/save-pizza',
+                data: {
+                	userWallet: walletAddress,
+                    imgBase64: dataURL,
+                    name: pizzaNameInput.value,
+                    supply: document.getElementsByName('supply')[0].value,
+                    description: document.getElementById('pizza-desc').value
+                }
+            }).done(function(data) {
+                console.log(data);
+            });
+	    });
 	});
 
 	// Firefox focus bug fix for file input

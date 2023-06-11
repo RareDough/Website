@@ -1827,6 +1827,9 @@ video#bgVid {
       top:0;
       z-index:10;
     }
+      #pizza-container svg text {
+        text-transform:uppercase;
+      }
 
 #file-input {
   display:flex;

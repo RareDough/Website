@@ -25,8 +25,8 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
               <g data-name="Layer 1">
                 <path d="M0 0h500v500H0z" style="fill:none"/>
                 <path id="curved-text" d="M63 250c0 103.55 83.95 187.5 187.5 187.5S438 353.55 438 250" style="stroke:none;fill:none"/>
-                <text font-size="30" fill="#000000" letter-spacing="2" font-family="sans-serif" font-weight="bold" dominant-baseline="middle" text-anchor="middle">
-                  <textPath xlink:href="#curved-text" id="custom-text" startOffset = "50%"></textPath>
+                <text font-size="30" fill="#000000" letter-spacing="2" font-family="sans-serif" font-weight="bold" text-transform="uppercase" dominant-baseline="middle" text-anchor="middle">
+                  <textPath xlink:href="#curved-text" id="custom-text" startOffset="50%"></textPath>
                 </text>
               </g>
             </svg>
@@ -70,7 +70,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
           </label>
           <label>
             Description
-            <textarea rows="5" cols="33"></textarea>
+            <textarea id="pizza-desc" name="pizza-desc" rows="5" cols="33"></textarea>
           </label>
           <label>
             <input type="submit" />
