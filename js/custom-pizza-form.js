@@ -37,8 +37,12 @@
 			$imgCont.removeClass( 'is-dragover' );
 		})
 		.on('drop', function(e) {
-			droppedFiles = e.originalEvent.dataTransfer.files; // the files that were dropped
-			showFiles(droppedFiles);
+			droppedFiles = e.originalEvent.dataTransfer.files;
+			userFile = {};
+			userFileReady = false;
+
+			customImage.files = droppedFiles;
+			customImage.dispatchEvent(new Event('change'));
 		});
 	}
 
@@ -95,61 +99,106 @@
 		}
 	}
 
+	// Custom text on a curve
+	const pizzaNameInput = document.getElementById('pizza-name');
+	function updateName() {
+		let pizzaNameVal = pizzaNameInput.value;
+
+		const customText = document.getElementById('custom-text');
+		customText.textContent = pizzaNameVal;
+	}
+	pizzaNameInput.addEventListener('keyup', updateName);
+
 	// $form.addEventListener('submit', handleForm)
 
 	// Form submission
-	// $form.on('submit', function(e) {
-	// 	// preventing the duplicate submissions if the current one is in progress
-	// 	if ($form.hasClass('is-uploading')) return false;
+	$form.on('submit', function(e) {
+		// preventing the duplicate submissions if the current one is in progress
+		if ($form.hasClass('is-uploading')) return false;
 
-	// 	$form.addClass('is-uploading').removeClass('is-error');
+		$form.addClass('is-uploading').removeClass('is-error');
 
-	// 	if (isAdvancedUpload) {
-	// 		e.preventDefault();
 
-	// 		// gathering the form data
-	// 		var ajaxData = new FormData($form.get(0));
-	// 		if (droppedFiles) {
-	// 			$.each( droppedFiles, function(i, file) {
-	// 				ajaxData.append( $input.attr( 'name' ), file );
-	// 			});
-	// 		}
 
-	// 		// ajax request
-	// 		$.ajax({
-	// 			url: 			$form.attr( 'action' ),
-	// 			type:			$form.attr( 'method' ),
-	// 			data: 			ajaxData,
-	// 			dataType:		'json',
-	// 			cache:			false,
-	// 			contentType:	false,
-	// 			processData:	false,
-	// 			complete: function() {
-	// 				$form.removeClass( 'is-uploading' );
-	// 			},
-	// 			success: function(data) {
-	// 				$form.addClass( data.success == true ? 'is-success' : 'is-error' );
-	// 				if( !data.success ) $errorMsg.text( data.error );
-	// 			},
-	// 			error: function() {
-	// 				alert( 'Error. Please, contact the webmaster!' );
-	// 			}
-	// 		});
-	// 	} else {
-	// 		let iframeName	= 'uploadiframe' + new Date().getTime(),
-	// 			$iframe		= $( '<iframe name="' + iframeName + '" style="display: none;"></iframe>' );
+		if (isAdvancedUpload) {
+			e.preventDefault();
 
-	// 		$('body').append($iframe);
-	// 		$form.attr('target', iframeName);
+			// gathering the form data
+			// var ajaxData = new FormData($form.get(0));
+			// if (droppedFiles) {
+			// 	$.each( droppedFiles, function(i, file) {
+			// 		ajaxData.append( $input.attr( 'name' ), file );
+			// 	});
+			// }
 
-	// 		$iframe.one('load', function() {
-	// 			var data = $.parseJSON( $iframe.contents().find( 'body' ).text() );
-	// 			$form.removeClass( 'is-uploading' ).addClass( data.success == true ? 'is-success' : 'is-error' ).removeAttr( 'target' );
-	// 			if( !data.success ) $errorMsg.text( data.error );
-	// 			$iframe.remove();
-	// 		});
-	// 	}
-	// });
+			// ajax request
+			const customImageCont = document.getElementById('pizza-container');
+			html2canvas(customImageCont,{allowTaint:true}).then(canvas => {
+		        var dataURL = canvas.toDataURL();
+		        console.log(dataURL);
+                $.ajax({
+                    type: 'POST',
+                    url: '/inc/save-pizza',
+                    data: {
+                        imgBase64: dataURL
+                    }
+                }).done(function(o) {
+                    console.log('saved');
+                });
+		    });
+			// html2canvas(customImageCont, {
+            //     onrendered: function(canvas) {
+            //     	console.log(canvas);
+            //         var imgsrc = canvas.toDataURL('image/png');
+            //         console.log(imgsrc);
+            //         // $("#holder-img").attr('src', imgsrc);
+            //         // $("#holder-cont").show();
+            //         var dataURL = canvas.toDataURL();
+            //         $.ajax({
+            //             type: 'POST',
+            //             url: '/inc/save-pizza.php',
+            //             data: {
+            //                 imgBase64: dataURL
+            //             }
+            //         }).done(function(o) {
+            //             console.log('saved');
+            //         });
+            //     }
+            // });
+			// $.ajax({
+			// 	url: 			$form.attr( 'action' ),
+			// 	type:			$form.attr( 'method' ),
+			// 	data: 			ajaxData,
+			// 	dataType:		'json',
+			// 	cache:			false,
+			// 	contentType:	false,
+			// 	processData:	false,
+			// 	complete: function() {
+			// 		$form.removeClass( 'is-uploading' );
+			// 	},
+			// 	success: function(data) {
+			// 		$form.addClass( data.success == true ? 'is-success' : 'is-error' );
+			// 		if( !data.success ) $errorMsg.text( data.error );
+			// 	},
+			// 	error: function() {
+			// 		alert( 'Error. Please, contact the webmaster!' );
+			// 	}
+			// });
+		} else {
+			// let iframeName	= 'uploadiframe' + new Date().getTime(),
+			// 	$iframe		= $( '<iframe name="' + iframeName + '" style="display: none;"></iframe>' );
+
+			// $('body').append($iframe);
+			// $form.attr('target', iframeName);
+
+			// $iframe.one('load', function() {
+			// 	var data = $.parseJSON( $iframe.contents().find( 'body' ).text() );
+			// 	$form.removeClass( 'is-uploading' ).addClass( data.success == true ? 'is-success' : 'is-error' ).removeAttr( 'target' );
+			// 	if( !data.success ) $errorMsg.text( data.error );
+			// 	$iframe.remove();
+			// });
+		}
+	});
 
 	// Firefox focus bug fix for file input
 	$input

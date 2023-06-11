@@ -1820,6 +1820,13 @@ video#bgVid {
         left:0;
       }
 
+    #pizza-container svg {
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:10;
+    }
+
 #file-input {
   display:flex;
   flex-direction:column;
@@ -1881,7 +1888,15 @@ video#bgVid {
   flex-direction:column;
   row-gap:30px;
 }
-
+  .form-fields label.small {
+    display:flex;
+    align-items:center;
+    margin-top:-25px;
+  }
+    .form-fields label.small span {
+      display:inline-block;
+      margin-left:5px;
+    }
   .form-fields select, .form-fields input[type="text"], .form-fields textarea {
     display:block;
     width:100%;
@@ -1900,4 +1915,9 @@ video#bgVid {
   }
     .form-fields textarea {
       height:auto;
+    }
+    .form-fields select {
+      background-image:url(/img/dropdown-arrow.svg);
+      background-repeat:no-repeat;
+      background-position:calc(100% - 15px) center;
     }
