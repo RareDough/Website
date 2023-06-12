@@ -1,0 +1,53 @@
+{
+    "name": "PizzOmatic",
+    "symbol": "PIZZOMATIC",
+    "description": "Mint your free Pizza NFT in the RareDough Shop. You can burn this Pizza in the Burn Oven V2 to receive 1 BREAD Token for free. Use it to buy a Infinity Pizza and get BASIC access to the private Sale.",
+    "image": "https://raredough.com/pizzomatic/images/1.png",
+    "external_link": "https://raredough.com/pizzomatic",
+    "attributes": [
+      {
+        "trait_type": "FullName",
+        "value": "Genesis PizzOmatic Pizza"
+      },
+      {
+        "trait_type": "Price",
+        "value": "0 BREAD"
+      },
+      {
+        "trait_type": "Twitter",
+        "value": "https://twitter.com/raredough/"
+      },
+      {
+        "trait_type": "Link",
+        "value": "https://raredough.com/pizzomatic"
+      },
+      {
+        "trait_type": "Plate",
+        "value": "Ceramic White"
+      },
+      {
+        "trait_type": "Dough",
+        "value": "Unknown"
+      },
+      {
+        "trait_type": "Sauce",
+        "value": "Unknown"
+      },
+      {
+        "trait_type": "Cheese",
+        "value": "Unknown"
+      },
+      {
+        "trait_type": "Topping",
+        "value": "Unknown"
+      },
+      {
+        "trait_type": "Special",
+        "value": "Portal"
+      },
+      {
+        "trait_type": "Utility",
+        "value": "Free Mint"
+      }
+    ]
+}  
