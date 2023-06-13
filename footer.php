@@ -58,6 +58,8 @@
 
     <?php if ($page == 'user-mint'): ?>
       <script src="./js/html2canvas.min.js"></script>
+      <script src="./js/jquery.validate.min.js"></script>
+      <script src="./js/additional-methods.min.js"></script>
       <script src="./js/custom-pizza-form.js"></script>
     <?php endif; ?>
 

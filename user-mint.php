@@ -33,7 +33,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
           </div>
           <div id="file-input">
             <label for="custom-image">
-              <input type="file" name="custom-image" id="custom-image" />
+              <input type="file" name="custom-image" id="custom-image" accept=".gif,.jpg,.jpeg,.png,.webp,.svg" required />
               <img class="upload-arrow" src="/img/upload-arrow.svg" alt="Upload" />
               <div>
                 <strong>Choose a file</strong> <span class="d-none d-md-block">or drag it here.</span>
@@ -62,7 +62,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
           </label>
           <label>
             Name
-            <input id="pizza-name" type="text" />
+            <input id="pizza-name" type="text" maxlength="18" required />
           </label>
           <label class="small">
             <input name="show-name" type="checkbox" />
@@ -70,7 +70,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
           </label>
           <label>
             Description
-            <textarea id="pizza-desc" name="pizza-desc" rows="5" cols="33"></textarea>
+            <textarea id="pizza-desc" name="pizza-desc" rows="5" cols="33" maxlength="200" required></textarea>
           </label>
           <label>
             <input type="submit" />
@@ -80,5 +80,6 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
     </div>
   </div>
 </div>
+<div id="pizza-comp"></div>
 
 <?php include 'footer.php';?>

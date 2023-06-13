@@ -134,32 +134,83 @@
 		toggleName(textPath);
 	});
 
-	// Form submission
+	// Check for errors
+	$form.validate({
+		rules: {
+			'custom-image': {
+				required: true,
+            	accept: 'image/jpeg, image/png, image/gif, image/webp, image/svg+xml'
+			},
+	        'pizza-name': {
+	        	required: true,
+	        	maxlength: 18
+	        },
+	        'pizza-desc': {
+	        	required: true,
+	        	maxlength: 200
+	        }
+	    },
+	    messages: {
+	    	'custom-image': {
+				required: true,
+            	accept: 'Accepted filetypes: JPG, PNG, GIF, WEBP, SVG'
+			},
+	        'pizza-name': {
+	        	required: 'Please name your pizza',
+	        	maxlength: 'Pizza name must be 18 characters or less'
+	        },
+	        'pizza-desc': {
+	        	required: 'Please name your pizza',
+	        	maxlength: 'Pizza name must be 50 characters or less'
+	        }
+	    },
+		errorPlacement: function(error, element) {
+			if (element.attr('name') == 'custom-image') {
+				error.insertAfter('#image-upload');
+			} else {
+				error.insertAfter(element);
+			}
+		}
+	});
+
+	// Submit form if valid
 	$form.on('submit', function(e) {
 		e.preventDefault();
 
-		// Check if form is already submitting
-		if ($form.hasClass('is-uploading')) return false;
+		let isvalid = $form.valid();
+		if (isvalid) {
+			// Check if form is already submitting
+			if ($form.hasClass('is-uploading')) return false;
 
-		$form.addClass('is-uploading').removeClass('is-error');
+			$form.addClass('is-uploading').removeClass('is-error');
 
-		const customImageCont = document.getElementById('pizza-container');
-		html2canvas(customImageCont,{allowTaint:true}).then(canvas => {
-	        var dataURL = canvas.toDataURL();
-            $.ajax({
-                type: 'POST',
-                url: '/inc/save-pizza',
-                data: {
-                	userWallet: walletAddress,
-                    imgBase64: dataURL,
-                    name: pizzaNameInput.value,
-                    supply: document.getElementsByName('supply')[0].value,
-                    description: document.getElementById('pizza-desc').value
-                }
-            }).done(function(data) {
-                console.log(data);
-            });
-	    });
+			// Clone preview to final composition container
+			let $finalPizza = $('#pizza-container').clone();
+			$('#pizza-comp').html($finalPizza);
+
+			// Generate image file
+			const pizzaComp = document.getElementById('pizza-comp');
+			html2canvas(pizzaComp, {
+				allowTaint:true,
+				width: 1000,
+				height: 1000
+			}).then(canvas => {
+		        var dataURL = canvas.toDataURL();
+	            $.ajax({
+	                type: 'POST',
+	                url: '/inc/save-pizza',
+	                data: {
+	                	userWallet: walletAddress,
+	                    imgBase64: dataURL,
+	                    name: pizzaNameInput.value,
+	                    supply: document.getElementsByName('supply')[0].value,
+	                    description: document.getElementById('pizza-desc').value
+	                }
+	            }).done(function(data) {
+	                console.log(data);
+	            });
+		    });
+		}
 	});
 
 	// Firefox focus bug fix for file input
