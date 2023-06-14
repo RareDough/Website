@@ -147,7 +147,7 @@
 	        },
 	        'pizza-desc': {
 	        	required: true,
-	        	maxlength: 200
+	        	maxlength: 1000
 	        }
 	    },
 	    messages: {

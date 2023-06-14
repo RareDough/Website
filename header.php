@@ -121,6 +121,12 @@
     elseif ($page == 'btcday23'):
     $title = 'RareDough | BTCDay23Pizza';
     $description = 'Celebrating Bitcoin Day 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.';
+    elseif ($page == 'user-mint'):
+      $title = 'RareDough | Mint Your Own RareDough Pizza';
+      $description = 'In 4 simple steps you can mint your very own custom RareDough pizza.';
+    else:
+      $title = 'RareDough';
+      $description = 'Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products created by RareDough.';
   endif;
 ?>
 
