@@ -1,18 +1,18 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 include 'header.php';
 
-// Connect to database and check wallet address
-include_once 'inc/functions.php';
-$pdo = pdo_connect_mysql();
-$stmt = $pdo->prepare('SELECT * FROM users WHERE user_address = ?');
-$stmt->execute(['0xf39CEB8Ab0DE75Dca31e988fD59D53cC009803E4']);
+// // Connect to database and check wallet address
+// include_once 'inc/functions.php';
+// $pdo = pdo_connect_mysql();
+// $stmt = $pdo->prepare('SELECT * FROM users WHERE user_address = ?');
+// $stmt->execute(['0xf39CEB8Ab0DE75Dca31e988fD59D53cC009803E4']);
 
-// Check if user exists
+// // Check if user exists
 // $user = $stmt->fetch(PDO::FETCH_ASSOC);
 // if ($user) {
 //   echo '<pre style="color:white;">';
