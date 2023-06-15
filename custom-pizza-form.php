@@ -13,15 +13,15 @@ $stmt = $pdo->prepare('SELECT * FROM users WHERE user_address = ?');
 $stmt->execute(['0xf39CEB8Ab0DE75Dca31e988fD59D53cC009803E4']);
 
 // Check if user exists
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-if ($user) {
-  echo '<pre style="color:white;">';
-  echo 'User Level: ' . $user['user_level'];
-  echo '</pre>';
-} else {
-  // User does not exist
-  exit('User does not exist');
-}
+// $user = $stmt->fetch(PDO::FETCH_ASSOC);
+// if ($user) {
+//   echo '<pre style="color:white;">';
+//   echo 'User Level: ' . $user['user_level'];
+//   echo '</pre>';
+// } else {
+//   // User does not exist
+//   exit('User does not exist');
+// }
 
 $path = 'custom-mint/backgrounds';
 $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
@@ -43,21 +43,22 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <ol>
-                    <li data-step="1"><a href="#">1</a></li>
-                    <li data-step="2"><a href="#">2</a></li>
-                    <li data-step="3"><a href="#">3</a></li>
-                    <li data-step="4"><a href="#">4</a></li>
+                    <li><a class="active-step" href="#" data-step="1">1</a></li>
+                    <li><a href="#" data-step="2">2</a></li>
+                    <li><a href="#" data-step="3">3</a></li>
+                    <li><a href="#" data-step="4">4</a></li>
                 </ol>
             </div>
         </div>
     </div>
 </section>
 <form action="" enctype="multipart/form-data" id="pizza-form">
-    <section class="mint-section active" data-step="1">
+    <section class="mint-section active-step" data-step="1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
                     <h2>1. Buy a plate to create your pizza</h2>
+                    <label>Choose your pizza supply.</label>
                 </div>
             </div>
         </div>
@@ -66,8 +67,8 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
-                    <label>Choose your pizza supply.</label>
-
+                    <h2>2. Select your plate (Pizza supply)</h2>
+                    <label>Choose your plate (TokenID).</label>
                 </div>
             </div>
         </div>
@@ -76,9 +77,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
-                    <h2>Create a new pizza</h2>
-                    <label class="instructions"><sup>*</sup>Required fields</label>
-                    <label class="instructions">File types supported: JPG, PNG, GIF, SVG. Max size: 5 MB</label>
+                    <h2>3. Create your pizza</h2>
                     <!-- PIZZA IMAGE -->
                     <div id="image-upload">
                         <div id="pizza-container">
@@ -104,6 +103,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                             </label>
                         </div>
                     </div>
+                    <label class="instructions">File types supported: JPG, PNG, GIF, SVG. Max size: 5 MB</label>
                     <!-- <div id="holder-cont"><img id="holder-img" src="" alt=""></div> -->
                     <div class="form-fields">
                         <label>
@@ -136,16 +136,25 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
             </div>
         </div>
     </section>
-    <section class="mint-section" data-step="2">
+    <section class="mint-section" data-step="4">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
-                    <label>Choose your pizza supply.</label>
-
+                    <h2>4. Your RareDough Pizza has been submitted!</h2>
                 </div>
             </div>
         </div>
     </section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 text-center">
+                <div id="mint-section-buttons">
+                    <a id="buy-token" href="#" class="mainBtn dark">Buy with BREAD</a>
+                    <a id="next-step" href="#" class="mainBtn light">Continue</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
 <div id="pizza-comp"></div>
 

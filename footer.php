@@ -56,7 +56,7 @@
       <script src="./js/burn-oven.js?v=1.0.2"></script>
     <?php endif; ?>
 
-    <?php if ($page == 'user-mint'): ?>
+    <?php if ($page == 'custom-pizza-form'): ?>
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>

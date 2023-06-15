@@ -3,7 +3,7 @@
   $page = preg_replace("/(.+)\.php$/", "$1", $filename);
 
   // START SHOP PAGES
-  $shopPages = array('account', 'shop', 'burn-oven', 'freemint', 'infinity', 'whitelist-lvl1', 'whitelist-lvl2', 'whitelist-lvl3', 'airdrop-pass', 'custom-pizza-V1', 'twitter-promo', '100k-pizza', '50k-pizza', '10k-pizza', 'burn-ovenv2', 'bitcoin-pizza-80332', 'bitcoin-pizza-79831', 'bitcoin-pizza-80331', 'bitcoin-pizza-79944', 'bitcoin-pizza-79715', 'bitcoin-pizza-79921', 'bitcoin-pizza-79930', 'bitcoin-pizza-80348', 'coldpizza', 'redheadphone', 'vinnypizza', 'chesspizza', 'grafkaalpizza', 'easter23pizza', 'bulksenderpizza', 'minguspizza', 'corapizza', 'jdoggpizza','btcday23','vip', 'user-mint');
+  $shopPages = array('account', 'shop', 'burn-oven', 'freemint', 'infinity', 'whitelist-lvl1', 'whitelist-lvl2', 'whitelist-lvl3', 'airdrop-pass', 'custom-pizza-V1', 'twitter-promo', '100k-pizza', '50k-pizza', '10k-pizza', 'burn-ovenv2', 'bitcoin-pizza-80332', 'bitcoin-pizza-79831', 'bitcoin-pizza-80331', 'bitcoin-pizza-79944', 'bitcoin-pizza-79715', 'bitcoin-pizza-79921', 'bitcoin-pizza-79930', 'bitcoin-pizza-80348', 'coldpizza', 'redheadphone', 'vinnypizza', 'chesspizza', 'grafkaalpizza', 'easter23pizza', 'bulksenderpizza', 'minguspizza', 'corapizza', 'jdoggpizza','btcday23','vip', 'custom-pizza-form');
   // END SHOP PAGES
 
   if ($page == 'index'):
@@ -121,7 +121,7 @@
     elseif ($page == 'btcday23'):
     $title = 'RareDough | BTCDay23Pizza';
     $description = 'Celebrating Bitcoin Day 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.';
-    elseif ($page == 'user-mint'):
+    elseif ($page == 'custom-pizza-form'):
       $title = 'RareDough | Mint Your Own RareDough Pizza';
       $description = 'In 4 simple steps you can mint your very own custom RareDough pizza.';
     else:
@@ -197,6 +197,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css?v=1.0.2" />
+    <?php if ( $page == 'custom-pizza-form') : ?>
+      <link rel="stylesheet" href="./css/custom-pizza.css?v=1.0.0" />
+    <?php endif; ?>
   </head>
   <body class="<?= $page; ?>" data-page="<?= $page; ?>" onload="connectWallet()">
     <!-- Hide Menu -->

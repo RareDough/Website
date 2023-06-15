@@ -2,6 +2,39 @@
 
 (function($, window, document, undefined) {
 
+	// Custom Pizza Nav
+	$('#mint-nav a').click(function(e) {
+		e.preventDefault();
+		const $this = $(this);
+		//if ($this.hasClass('previous-step')) {
+			const selectedStep = $this.attr('data-step');
+			$('section.mint-section, #mint-nav a').removeClass('active-step');
+			$('section.mint-section[data-step="'+selectedStep+'"], #mint-nav a[data-step="'+selectedStep+'"]').addClass('active-step');
+			$('#mint-nav ol').attr('data-step', selectedStep);
+			$('#mint-nav a').removeClass('previous-step');
+			$('#mint-nav a[data-step="'+selectedStep+'"]').parent().prevAll().find('a').addClass('previous-step');
+		//}
+	});
+
+	// Form progression
+	$('a#next-step').click(function(e) {
+		e.preventDefault();
+		const $this = $(this);
+		let currentStep = $('section.mint-section.active-step').attr('data-step'),
+			nextStep = parseInt(currentStep) + 1;
+
+		// Hide current section and show next
+		$('section.mint-section, #mint-nav a').removeClass('active-step');
+		$('section.mint-section[data-step="'+nextStep+'"], #mint-nav a[data-step="'+nextStep+'"]').addClass('active-step');
+
+		// Change data attribute for nav
+		$('#mint-nav ol').attr('data-step', nextStep);
+
+		// Set previous step classes
+		$('#mint-nav a').removeClass('previous-step');
+		$('#mint-nav a[data-step="'+nextStep+'"]').parent().prevAll().find('a').addClass('previous-step');
+	});
+
 	var isAdvancedUpload = function() {
 		var div = document.createElement('div');
 		return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window;
