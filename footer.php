@@ -41,6 +41,7 @@
       <script src="./js/pizzaabi.js"></script>
       <script src="./js/ovenabi.js"></script>
       <script src="./js/ovenabiv2.js"></script>
+      <script src="./js/pizzomaticabi.js"></script>
       <script src="./js/pizzalib.js"></script>
       <script src="./js/raredoughlib.js"></script>
       <script src="./js/connect.js?v=1.0.6"></script>
