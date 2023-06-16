@@ -198,7 +198,7 @@
     />
     <link rel="stylesheet" href="./css/style.css?v=1.0.2" />
     <?php if ( $page == 'custom-pizza-form') : ?>
-      <link rel="stylesheet" href="./css/custom-pizza.css?v=1.0.0" />
+      <link rel="stylesheet" href="./css/custom-pizza.css?v=1.0.1" />
     <?php endif; ?>
   </head>
   <body class="<?= $page; ?>" data-page="<?= $page; ?>" onload="connectWallet()">

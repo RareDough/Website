@@ -41,7 +41,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
 <section id="mint-nav">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
+            <div class="col-md-7 col-lg-5">
                 <ol>
                     <li><a class="active-step" href="#" data-step="1">1</a></li>
                     <li><a href="#" data-step="2">2</a></li>
@@ -56,9 +56,31 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
     <section class="mint-section active-step" data-step="1">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md-7 col-lg-5">
                     <h2>1. Buy a plate to create your pizza</h2>
                     <label>Choose your pizza supply.</label>
+                    <div class="form-fields form-fields__row">
+                        <label class="radio-label">
+                            <?= number_format(500); ?>
+                            <input name="pizza-supply" value="500" type="radio" />
+                            <img src="/custom-mint/backgrounds/purple-background.png" />
+                        </label>
+                        <label class="radio-label">
+                            <?= number_format(1000); ?>
+                            <input name="pizza-supply" value="1000" type="radio" />
+                            <img src="/custom-mint/backgrounds/purple-background.png" />
+                        </label>
+                        <label class="radio-label">
+                            <?= number_format(5000); ?>
+                            <input name="pizza-supply" value="5000" type="radio" />
+                            <img src="/custom-mint/backgrounds/purple-background.png" />
+                        </label>
+                        <label class="radio-label">
+                            <?= number_format(10000); ?>
+                            <input name="pizza-supply" value="10000" type="radio" />
+                            <img src="/custom-mint/backgrounds/purple-background.png" />
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -66,9 +88,19 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
     <section class="mint-section" data-step="2">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md-7 col-lg-5">
                     <h2>2. Select your plate (Pizza supply)</h2>
-                    <label>Choose your plate (TokenID).</label>
+                    <label>
+                        <div>
+                            Choose your plate (TokenID).
+                            <select name="token-select">
+                                <option selected disabled>Select a TokenID</option>
+                            </select>
+                        </div>
+                        <div class="token-preview">
+                            <img src="" alt="Token Preview" />
+                        </div>
+                    </label>
                 </div>
             </div>
         </div>
@@ -76,7 +108,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
     <section class="mint-section" data-step="3">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md-7 col-lg-5">
                     <h2>3. Create your pizza</h2>
                     <!-- PIZZA IMAGE -->
                     <div id="image-upload">
@@ -107,14 +139,6 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                     <!-- <div id="holder-cont"><img id="holder-img" src="" alt=""></div> -->
                     <div class="form-fields">
                         <label>
-                            Background image
-                            <select name="background">
-                                <?php foreach($backgrounds as $background) : ?>
-                                    <option value="<?= $background; ?>"><?= ucwords(str_replace(array('-','.png'), array(' ', ''), $background)); ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </label>
-                        <label>
                             Name
                             <input id="pizza-name" type="text" maxlength="18" required />
                         </label>
@@ -127,7 +151,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                             <textarea id="pizza-desc" name="pizza-desc" rows="5" cols="33" maxlength="1000" required></textarea>
                         </label>
                         <label>
-                            <input type="hidden" name="quantity">
+                            <input type="hidden" name="token-quantity">
                             <input type="hidden" name="token-id" />
                             <input type="submit" />
                         </label>
@@ -139,7 +163,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
     <section class="mint-section" data-step="4">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
+                <div class="col-md-7 col-lg-5">
                     <h2>4. Your RareDough Pizza has been submitted!</h2>
                 </div>
             </div>
@@ -149,8 +173,8 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 text-center">
                 <div id="mint-section-buttons">
-                    <a id="buy-token" href="#" class="mainBtn dark">Buy with BREAD</a>
-                    <a id="next-step" href="#" class="mainBtn light">Continue</a>
+                    <a id="buy-token" href="#" class="mainBtn dark" disabled>Buy with BREAD</a>
+                    <a id="next-step" href="#" class="mainBtn light" disabled>Continue</a>
                 </div>
             </div>
         </div>

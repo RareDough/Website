@@ -60,7 +60,7 @@
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/custom-pizza-form.js"></script>
+      <script src="./js/custom-pizza-form.js?v=1.0.0"></script>
     <?php endif; ?>
 
     <script src="./js/mint-button.js?v=1.0.7"></script>

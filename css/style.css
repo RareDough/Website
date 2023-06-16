@@ -304,7 +304,7 @@ a.link {
   background: #faedd7;
   border-radius: 10px;
 }
-.mainBtn.light:hover {
+.mainBtn.light:hover:enabled {
   background: #4a4555;
   color: white;
 }
@@ -312,6 +312,10 @@ a.link {
   background: #4a4555;
   border-radius: 10px;
   color: white;
+}
+.mainBtn[disabled] {
+  opacity:0.5;
+  cursor:not-allowed;
 }
 .infinitySection .imageLink {
   display: inline-block;
@@ -330,7 +334,7 @@ a.link {
 .mainText span {
   font-weight: 700;
 }
-.mainBtn {
+a.mainBtn {
   display: inline-block;
   padding: 0.9em 0.5em;
   text-align: center;
@@ -346,10 +350,13 @@ a.link {
   line-height: 0.9;
   max-width: 250px;
 }
-.mainBtn:hover {
-  color: black;
-  background-color: white;
-}
+  a.mainBtn:focus {
+    outline:none;
+  }
+  a.mainBtn:hover:enabled {
+    color: black;
+    background-color: white;
+  }
 .mainBtn.mobileBtn {
   display: none;
 }

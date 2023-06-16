@@ -132,6 +132,10 @@
         row-gap:30px;
         margin-top:30px;
     }
+        .form-fields__row {
+            flex-direction:row;
+            justify-content:space-between;
+        }
         #pizza-form label.small {
             display:flex;
             align-items:center;
@@ -141,6 +145,12 @@
                 display:inline-block;
                 margin-left:5px;
             }
+
+        #pizza-form label.radio-label {
+            font-size:14px;
+            font-weight:bold;
+            cursor:pointer;
+        }
 
         #pizza-form label.error {
             align-self:flex-start;
@@ -165,6 +175,9 @@
             outline:none;
             -webkit-appearance: none;
             appearance: none;
+        }
+        #pizza-form input[type="radio"] {
+            display:none;
         }
         #pizza-form textarea {
             height:auto;
@@ -310,4 +323,46 @@
         padding-left:40px;
         padding-right:40px;
         align-self:center;
+    }
+        #mint-section-buttons a:nth-child(2) {
+            margin-top:40px;
+        }
+        #mint-section-buttons a#next-step {
+            display:none;
+        }
+
+/* Step 1 */
+section[data-step="1"] label.radio-label {
+    width:calc(25% - 8px);
+}
+    section[data-step="1"] label.radio-label img {
+        border: 1px solid #292437;
+        border-radius: 10px;
+        margin-top:10px;
+    }
+        section[data-step="1"] label.radio-label input:checked + img{ 
+            border: 1px solid #fdc500;
+            box-shadow: 0px 0px 10px #ff1f00;
+        }
+
+/* Step 2 */
+section[data-step="2"] label {
+    display:flex;
+    width:100%;
+}
+    section[data-step="2"] label div {
+        width:100%;
+    }
+
+section[data-step="2"] .token-preview {
+    display:none;
+    width:100px;
+    height:100px;
+    margin-left:40px;
+    flex-shrink:0;
+}
+    section[data-step="2"] .token-preview img {
+        width:100%;
+        border: 1px solid #fdc500;
+        box-shadow: 0px 0px 10px #ff1f00;
     }

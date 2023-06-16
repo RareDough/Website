@@ -19,9 +19,13 @@
 	// Form progression
 	$('a#next-step').click(function(e) {
 		e.preventDefault();
-		const $this = $(this);
-		let currentStep = $('section.mint-section.active-step').attr('data-step'),
+		let $this = $(this),
+			currentStep = $('section.mint-section.active-step').attr('data-step'),
 			nextStep = parseInt(currentStep) + 1;
+
+		// Disable and hide continue button
+		$(this).attr('disabled', true);
+		$(this).hide();
 
 		// Hide current section and show next
 		$('section.mint-section, #mint-nav a').removeClass('active-step');
@@ -33,6 +37,65 @@
 		// Set previous step classes
 		$('#mint-nav a').removeClass('previous-step');
 		$('#mint-nav a[data-step="'+nextStep+'"]').parent().prevAll().find('a').addClass('previous-step');
+	});
+
+	// Update token preview and background image
+	function swapTokenBackground() {
+		let backgroundImage = $('input[name="pizza-supply"]:checked').siblings('img').attr('src');
+		$('.token-preview img').attr('src', backgroundImage);
+	}
+
+	// Step 1 
+	$('input[name="pizza-supply"]').on('change', function() {
+		let $this = $(this);
+		// Enable buy button once supply is selected
+		$('#buy-token').attr('disabled', false);
+		// Focus the buy button once a choice is made
+		$('#buy-token').focus();
+	});
+
+	$('#buy-token').click(function(e) {
+		e.preventDefault();
+		// Get quantiy value
+		let pizzaSupply = $('input[name="pizza-supply"]:checked').val();
+
+		// Hide buy button
+		$('#buy-token').hide();
+		
+		// GECKO DO YOUR MAGIC HERE
+		// Initialize transaction
+		// Get all TokenIDs that do not have complete metadata yet
+		// Populate token select dropdown with aforementioned token IDs
+		let tokenArray = [{id:69, quantity:1000}, {id:420, quantity:500}];
+		tokenArray.forEach(function(token) {
+			$('select[name="token-select"]').append('<option data-quantity="' + token['quantity'] + '" value="' + token['id'] + '">Token #' + token['id'] + '</option>');
+		});
+
+
+		// Enable and show continue button
+		$('a#next-step').attr('disabled', false);
+		$('a#next-step').css('display', 'inline-block');
+
+		// Update images
+		swapTokenBackground();
+	});
+
+	// Step 2
+	$('select[name="token-select"]').change(function() {
+		let $this = $(this),
+			tokenQuantity = $('option:selected', $this).attr('data-quantity'),
+			tokenID = $this.val();
+
+		// Show preview
+		$('.token-preview').show();
+
+		// Update hidden fields with selected values
+		$('input[name="token-quantity"]').val(tokenQuantity);
+		$('input[name="token-id"]').val(tokenID);
+
+		// Enable and show continue button
+		$('a#next-step').attr('disabled', false);
+		$('a#next-step').css('display', 'inline-block');
 	});
 
 	var isAdvancedUpload = function() {
