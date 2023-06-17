@@ -127,7 +127,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                         </div>
                         <div id="file-input">
                             <label for="custom-image">
-                                <input type="file" name="custom-image" id="custom-image" accept=".gif,.jpg,.jpeg,.png,.webp,.svg" required />
+                                <input type="file" name="custom-image" id="custom-image" required />
                                 <img class="upload-arrow" src="/img/upload-arrow.svg" alt="Upload" />
                                 <div>
                                     <strong>Choose a file</strong> <span class="d-none d-md-block">or drag it here.</span>
@@ -135,7 +135,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                             </label>
                         </div>
                     </div>
-                    <label class="instructions">File types supported: JPG, PNG, GIF, SVG. Max size: 5 MB</label>
+                    <label class="instructions">File types supported: JPG, PNG, GIF, WEBP. Max size: 5 MB</label>
                     <!-- <div id="holder-cont"><img id="holder-img" src="" alt=""></div> -->
                     <div class="form-fields">
                         <label>
@@ -144,7 +144,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                         </label>
                         <label>
                             Title (optional text on plate)
-                            <input id="token-title" type="text" maxlength="25" />
+                            <input id="token-title" name="token-title" type="text" maxlength="50" />
                         </label>
                         <label>
                             Description
@@ -163,7 +163,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                             <input name="discord-joined" type="checkbox" required />
                         </label>
                         <label>
-                            <input type="hidden" name="token-supply" value="5">
+                            <input type="hidden" name="token-supply" value="1000">
                             <input type="hidden" name="token-id" value="69" />
                             <input type="submit" />
                         </label>

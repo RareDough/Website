@@ -144,126 +144,137 @@
 
 	// File select handler
 	customImage.addEventListener('change', async (event) => {
+
+		let validImage = $('#custom-image').valid();
 		
-		userFile = {};
-		userFileReady = false;
+		if (validImage) {
+			userFile = {};
+			userFileReady = false;
 
-		const inputKey = customImage.getAttribute('name')
-		let files = event.srcElement.files;
-		const filePromises = Object.entries(files).map(item => {
-			return new Promise((resolve, reject) => {
-			const [index, file] = item;
-			const reader = new FileReader();
-			reader.readAsBinaryString(file);
+			const inputKey = customImage.getAttribute('name')
+			let files = event.srcElement.files;
+			const filePromises = Object.entries(files).map(item => {
+				return new Promise((resolve, reject) => {
+					const [index, file] = item;
+					const reader = new FileReader();
+					reader.readAsBinaryString(file);
 
-			reader.onload = function(event) {
-				const fileKey = `${inputKey}${files.length > 1 ? `[${index}]` : ''}`
-				userFile[fileKey] = `data:${file.type};base64,${btoa(event.target.result)}`
-				let userImage = new Image();
-				userImage.id = 'user-image';
-				userImage.src = userFile[fileKey];
-				document.getElementById('pizza-container').appendChild(userImage);
-				fileInput.style.display = 'none';
-				resolve();
-			};
+					reader.onload = function(event) {
+						const fileKey = `${inputKey}${files.length > 1 ? `[${index}]` : ''}`
+						userFile[fileKey] = `data:${file.type};base64,${btoa(event.target.result)}`
+						let userImage = new Image();
+						userImage.id = 'user-image';
+						userImage.src = userFile[fileKey];
+						document.getElementById('pizza-container').appendChild(userImage);
+						fileInput.style.display = 'none';
+						resolve();
+					};
 
-			reader.onerror = function() {
-				console.log('File not read');
-				reject();
-			};
-		});
+					reader.onerror = function() {
+						console.log('File not read');
+						reject();
+					};
+				});
 
-	});
+			});
 
-	Promise.all(filePromises)
-		.then(() => {
-			console.log('Ready to submit');
-			userFileReady = true;
-		})
-		.catch((error) => {
-			console.log(error);
-			console.log('Something went wrong');
-		})
-	});
-
-	const handleForm = async (event) => {
-		event.preventDefault();
-
-		if(!userFileReady) {
-			console.log('Files being processed');
-			return
+			Promise.all(filePromises)
+			.then(() => {
+				console.log('Ready to submit');
+				userFileReady = true;
+			})
+			.catch((error) => {
+				console.log(error);
+				console.log('Something went wrong');
+			});
 		}
+	});
+
+	// Custom text on a curve
+	const tokenTitleInput = document.getElementById('token-title');
+	function updateName() {
+		let tokenTitleVal = tokenTitleInput.value;
+
+		const customText = document.getElementById('custom-text');
+		customText.textContent = tokenTitleVal;
 	}
+	tokenTitleInput.addEventListener('keyup', updateName);
+
+	// Add filesize check
+	$.validator.addMethod('filesize', function (value, element, param) {
+		return this.optional(element) || (element.files[0].size <= param)
+	}, 'File size must be less than {0}');
 
 	// Check for errors
-	// $form.validate({
-	// 	rules: {
-	// 		'custom-image': {
-	// 			required: true,
-    //         	accept: 'image/jpeg, image/png, image/gif, image/webp, image/svg+xml'
-	// 		},
-	//         'token-name': {
-	//         	required: true,
-	//         	maxlength: 18
-	//         },
-	//         'token-title': {
-	//         	maxlength: 25
-	//         },
-	//         'token-desc': {
-	//         	required: true,
-	//         	maxlength: 1000
-	//         },
-	//         'twitter-username': {
-	//         	required: true
-	//         },
-	//         'discord-username': {
-	//         	required: true
-	//         },
-	//         'discord-joined': {
-	//         	required: true
-	//         }
-	//     },
-	//     messages: {
-	//     	'custom-image': {
-	// 			required: true,
-    //         	accept: 'Accepted filetypes: JPG, PNG, GIF, WEBP, SVG'
-	// 		},
-	//         'token-name': {
-	//         	required: 'Please name your pizza',
-	//         	maxlength: 'Pizza name must be 18 characters or less'
-	//         },
-	//         'token-title': {
-	//         	maxlength: 'Pizza title must be 25 characters or less'
-	//         },
-	//         'token-desc': {
-	//         	required: 'Please name your pizza',
-	//         	maxlength: 'Pizza name must be 50 characters or less'
-	//         },
-	//         'twitter-username': {
-	//         	required: 'Please enter your Twitter username',
-	//         },
-	//         'discord-username': {
-	//         	required: 'Please enter your Discord username',
-	//         },
-	//         'discord-joined': {
-	//         	required: 'Please confirm that you have joined our Discord server'
-	//         }
-	//     },
-	// 	errorPlacement: function(error, element) {
-	// 		if (element.attr('name') == 'custom-image') {
-	// 			error.insertAfter('#image-upload');
-	// 		} else {
-	// 			error.insertAfter(element);
-	// 		}
-	// 	}
-	// });
+	$form.validate({
+		rules: {
+			'custom-image': {
+				required: true,
+            	extension: 'jpg|jpeg|gif|png|webp',
+            	filesize: 5
+			},
+	        'token-name': {
+	        	required: true,
+	        	maxlength: 18
+	        },
+	        'token-title': {
+	        	maxlength: 26
+	        },
+	        'token-desc': {
+	        	required: true,
+	        	maxlength: 1000
+	        },
+	        'twitter-username': {
+	        	required: true
+	        },
+	        'discord-username': {
+	        	required: true
+	        },
+	        'discord-joined': {
+	        	required: true
+	        }
+	    },
+	    messages: {
+	    	'custom-image': {
+				required: 'Please provide your custom artwork',
+            	extension: 'Accepted filetypes: JPG, PNG, GIF, WEBP',
+            	filesize: 'Filesize must be ≤ 5MB'
+			},
+	        'token-name': {
+	        	required: 'Please name your pizza',
+	        	maxlength: 'Pizza name must be 18 characters or less'
+	        },
+	        'token-title': {
+	        	maxlength: 'Pizza title must be 26 characters or less'
+	        },
+	        'token-desc': {
+	        	required: 'Please name your pizza',
+	        	maxlength: 'Pizza name must be 1000 characters or less'
+	        },
+	        'twitter-username': {
+	        	required: 'Please enter your Twitter username',
+	        },
+	        'discord-username': {
+	        	required: 'Please enter your Discord username',
+	        },
+	        'discord-joined': {
+	        	required: 'Please confirm that you have joined our Discord server'
+	        }
+	    },
+		errorPlacement: function(error, element) {
+			if (element.attr('name') == 'custom-image') {
+				error.insertAfter('#image-upload');
+			} else {
+				error.insertAfter(element);
+			}
+		}
+	});
 
 	// Submit form if valid
 	$form.on('submit', function(e) {
 		e.preventDefault();
 
-		//let isvalid = $form.valid();
-		let isvalid = true;
+		let isvalid = $form.valid();
 		if (isvalid) {
 			// Check if form is already submitting
 			if ($form.hasClass('is-uploading')) return false;

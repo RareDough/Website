@@ -60,13 +60,14 @@
                 }
 
             #pizza-container svg {
-                display:none;
                 position:absolute;
                 left:0;
                 top:0;
                 z-index:10;
             }
                 #pizza-container svg text {
+                    font-family:'Rubik', sans-serif;
+                    font-size:25px;
                     text-transform:uppercase;
                 }
 
