@@ -140,19 +140,31 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                     <div class="form-fields">
                         <label>
                             Name
-                            <input id="pizza-name" type="text" maxlength="18" required />
+                            <input id="token-name" name="token-name" type="text" maxlength="18" required />
                         </label>
-                        <label class="small">
-                            <input name="show-name" type="checkbox" />
-                            <span>Show name on pizza</span>
+                        <label>
+                            Title (optional text on plate)
+                            <input id="token-title" type="text" maxlength="25" />
                         </label>
                         <label>
                             Description
-                            <textarea id="pizza-desc" name="pizza-desc" rows="5" cols="33" maxlength="1000" required></textarea>
+                            <textarea id="token-desc" name="pizza-desc" rows="5" cols="33" maxlength="1000" required></textarea>
                         </label>
                         <label>
-                            <input type="hidden" name="token-quantity">
-                            <input type="hidden" name="token-id" />
+                            Twitter Username
+                            <input name="twitter-username" type="text" required />
+                        </label>
+                        <label>
+                            Discord Username
+                            <input name="discord-username" type="text" required />
+                        </label>
+                        <label>
+                            Please make sure to <a href="https://discord.com/invite/GbwykC99N6" target="_blank">join our discord server</a> for further communication.
+                            <input name="discord-joined" type="checkbox" required />
+                        </label>
+                        <label>
+                            <input type="hidden" name="token-supply" value="5">
+                            <input type="hidden" name="token-id" value="69" />
                             <input type="submit" />
                         </label>
                     </div>

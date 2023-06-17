@@ -41,12 +41,12 @@
 
 	// Update token preview and background image
 	function swapTokenBackground() {
-		let backgroundImage = $('input[name="pizza-supply"]:checked').siblings('img').attr('src');
+		let backgroundImage = $('input[name="token-supply"]:checked').siblings('img').attr('src');
 		$('.token-preview img').attr('src', backgroundImage);
 	}
 
 	// Step 1 
-	$('input[name="pizza-supply"]').on('change', function() {
+	$('input[name="token-supply"]').on('change', function() {
 		let $this = $(this);
 		// Enable buy button once supply is selected
 		$('#buy-token').attr('disabled', false);
@@ -56,8 +56,8 @@
 
 	$('#buy-token').click(function(e) {
 		e.preventDefault();
-		// Get quantiy value
-		let pizzaSupply = $('input[name="pizza-supply"]:checked').val();
+		// Get supply value
+		let tokenSupply = $('input[name="token-supply"]:checked').val();
 
 		// Hide buy button
 		$('#buy-token').hide();
@@ -66,9 +66,9 @@
 		// Initialize transaction
 		// Get all TokenIDs that do not have complete metadata yet
 		// Populate token select dropdown with aforementioned token IDs
-		let tokenArray = [{id:69, quantity:1000}, {id:420, quantity:500}];
+		let tokenArray = [{id:69, supply:1000}, {id:420, supply:500}];
 		tokenArray.forEach(function(token) {
-			$('select[name="token-select"]').append('<option data-quantity="' + token['quantity'] + '" value="' + token['id'] + '">Token #' + token['id'] + '</option>');
+			$('select[name="token-select"]').append('<option data-supply="' + token['supply'] + '" value="' + token['id'] + '">Token #' + token['id'] + '</option>');
 		});
 
 
@@ -83,14 +83,14 @@
 	// Step 2
 	$('select[name="token-select"]').change(function() {
 		let $this = $(this),
-			tokenQuantity = $('option:selected', $this).attr('data-quantity'),
+			tokenSupply = $('option:selected', $this).attr('data-supply'),
 			tokenID = $this.val();
 
 		// Show preview
 		$('.token-preview').show();
 
 		// Update hidden fields with selected values
-		$('input[name="token-quantity"]').val(tokenQuantity);
+		$('input[name="token-supply"]').val(tokenSupply);
 		$('input[name="token-id"]').val(tokenID);
 
 		// Enable and show continue button
@@ -195,85 +195,75 @@
 		}
 	}
 
-	// Custom text on a curve
-	const pizzaNameInput = document.getElementById('pizza-name');
-	function updateName() {
-		let pizzaNameVal = pizzaNameInput.value;
-
-		const customText = document.getElementById('custom-text');
-		customText.textContent = pizzaNameVal;
-	}
-	pizzaNameInput.addEventListener('keyup', updateName);
-
-	// Show name on pizza
-	const textPath = document.getElementById('text-path');
-	const nameToggle = document.getElementsByName('show-name')[0];
-
-	let show = function (elem) {
-		elem.style.display = 'block';
-	};
-
-	let hide = function (elem) {
-		elem.style.display = 'none';
-	};
-
-	let toggleName = function(elem) {
-		if (window.getComputedStyle(elem).display === 'block') {
-			hide(elem);
-			return;
-		}
-
-		show(elem);
-	};
-
-	nameToggle.addEventListener('change', function() {
-		toggleName(textPath);
-	});
-
 	// Check for errors
-	$form.validate({
-		rules: {
-			'custom-image': {
-				required: true,
-            	accept: 'image/jpeg, image/png, image/gif, image/webp, image/svg+xml'
-			},
-	        'pizza-name': {
-	        	required: true,
-	        	maxlength: 18
-	        },
-	        'pizza-desc': {
-	        	required: true,
-	        	maxlength: 1000
-	        }
-	    },
-	    messages: {
-	    	'custom-image': {
-				required: true,
-            	accept: 'Accepted filetypes: JPG, PNG, GIF, WEBP, SVG'
-			},
-	        'pizza-name': {
-	        	required: 'Please name your pizza',
-	        	maxlength: 'Pizza name must be 18 characters or less'
-	        },
-	        'pizza-desc': {
-	        	required: 'Please name your pizza',
-	        	maxlength: 'Pizza name must be 50 characters or less'
-	        }
-	    },
-		errorPlacement: function(error, element) {
-			if (element.attr('name') == 'custom-image') {
-				error.insertAfter('#image-upload');
-			} else {
-				error.insertAfter(element);
-			}
-		}
-	});
+	// $form.validate({
+	// 	rules: {
+	// 		'custom-image': {
+	// 			required: true,
+    //         	accept: 'image/jpeg, image/png, image/gif, image/webp, image/svg+xml'
+	// 		},
+	//         'token-name': {
+	//         	required: true,
+	//         	maxlength: 18
+	//         },
+	//         'token-title': {
+	//         	maxlength: 25
+	//         },
+	//         'token-desc': {
+	//         	required: true,
+	//         	maxlength: 1000
+	//         },
+	//         'twitter-username': {
+	//         	required: true
+	//         },
+	//         'discord-username': {
+	//         	required: true
+	//         },
+	//         'discord-joined': {
+	//         	required: true
+	//         }
+	//     },
+	//     messages: {
+	//     	'custom-image': {
+	// 			required: true,
+    //         	accept: 'Accepted filetypes: JPG, PNG, GIF, WEBP, SVG'
+	// 		},
+	//         'token-name': {
+	//         	required: 'Please name your pizza',
+	//         	maxlength: 'Pizza name must be 18 characters or less'
+	//         },
+	//         'token-title': {
+	//         	maxlength: 'Pizza title must be 25 characters or less'
+	//         },
+	//         'token-desc': {
+	//         	required: 'Please name your pizza',
+	//         	maxlength: 'Pizza name must be 50 characters or less'
+	//         },
+	//         'twitter-username': {
+	//         	required: 'Please enter your Twitter username',
+	//         },
+	//         'discord-username': {
+	//         	required: 'Please enter your Discord username',
+	//         },
+	//         'discord-joined': {
+	//         	required: 'Please confirm that you have joined our Discord server'
+	//         }
+	//     },
+	// 	errorPlacement: function(error, element) {
+	// 		if (element.attr('name') == 'custom-image') {
+	// 			error.insertAfter('#image-upload');
+	// 		} else {
+	// 			error.insertAfter(element);
+	// 		}
+	// 	}
+	// });
 
 	// Submit form if valid
 	$form.on('submit', function(e) {
 		e.preventDefault();
 
-		let isvalid = $form.valid();
+		//let isvalid = $form.valid();
+		let isvalid = true;
 		if (isvalid) {
 			// Check if form is already submitting
 			if ($form.hasClass('is-uploading')) return false;
@@ -298,9 +288,12 @@
 	                data: {
 	                	userWallet: walletAddress,
 	                    imgBase64: dataURL,
-	                    name: pizzaNameInput.value,
-	                    supply: document.getElementsByName('supply')[0].value,
-	                    description: document.getElementById('pizza-desc').value
+	                    id: document.getElementsByName('token-id')[0].value,
+	                    supply: document.getElementsByName('token-supply')[0].value,
+	                    name: document.getElementsByName('token-name')[0].value,
+	                    description: document.getElementById('token-desc').value,
+	                    twitter: document.getElementsByName('twitter-username')[0].value,
+	                    discord: document.getElementsByName('discord-username')[0].value
 	                }
 	            }).done(function(data) {
 	                console.log(data);
