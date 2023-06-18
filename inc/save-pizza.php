@@ -13,10 +13,13 @@
     $imageData = $_POST['imgBase64'];
     $userWallet = $_POST['userWallet'];
     $folderPath = null;
+    $serverPath = null;
 
 	function generateImage($img, $wallet) {
-		// Set directory for saved images
         global $folderPath;
+        global $serverPath;
+
+		// Set directory for saved images
         $folderPath = $_SERVER['DOCUMENT_ROOT'].'/custom-mint/creations/' . $wallet . '/';
 
         // If user's directory does not exist - create it
@@ -33,14 +36,18 @@
         $image_base64 = base64_decode($image_parts[1]);
 
         // Generate unique filename
-        $file = $folderPath . uniqid() . '.jpg';
+        $filename = uniqid() . '.jpg';
+        $file = $folderPath . $filename;
 
         // Store the image on the server
         $result = file_put_contents($file, $image_base64);
 
         // Check if successful
         if ($result) :
-        	echo json_encode( array('saved' => true, 'path' => $file, 'message' => 'Image saved successfully!') );
+            // Set server path
+            $serverPath = __DIR__ . $filename;
+
+        	echo json_encode( array('saved' => true, 'path' => $serverPath, 'message' => 'Image saved successfully!') );
         else :
         	echo json_encode( array('saved' => false, 'message' => 'There was an error saving the image :(') );
         endif;
@@ -91,13 +98,13 @@
     if ($token) {
         // Token already exists, update it
         $stmt = $pdo->prepare('UPDATE submissions SET image_path = ?, name = ?, description = ?, submission_date = ?, status = ? WHERE token_id = ?');
-        $stmt->execute([ $folderPath, $tokenName, $tokenDesc, date('Y-m-d H:i:s'), 'pending', $token['token_id'] ]);
+        $stmt->execute([ $serverPath, $tokenName, $tokenDesc, date('Y-m-d H:i:s'), 'pending', $token['token_id'] ]);
 
         echo json_encode( array('token_status' => 'existing', 'message' => 'Existing token has been updated.') );
     } else {
         // New token, add it
         $stmt = $pdo->prepare('INSERT INTO submissions (user_id, token_id, image_path, supply, name, description, price, submission_date, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
-        $stmt->execute([ $userID, $tokenID, $folderPath, $tokenSupply, $tokenName, $tokenDesc, 500, date('Y-m-d H:i:s'), 'pending' ]);
+        $stmt->execute([ $userID, $tokenID, $serverPath, $tokenSupply, $tokenName, $tokenDesc, 500, date('Y-m-d H:i:s'), 'pending' ]);
 
         echo json_encode( array('token_status' => 'new', 'message' => 'New token has been added.') );
     }

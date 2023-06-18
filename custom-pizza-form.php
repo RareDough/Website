@@ -6,23 +6,6 @@
 
 include 'header.php';
 
-// // Connect to database and check wallet address
-// include_once 'inc/functions.php';
-// $pdo = pdo_connect_mysql();
-// $stmt = $pdo->prepare('SELECT * FROM users WHERE user_address = ?');
-// $stmt->execute(['0xf39CEB8Ab0DE75Dca31e988fD59D53cC009803E4']);
-
-// // Check if user exists
-// $user = $stmt->fetch(PDO::FETCH_ASSOC);
-// if ($user) {
-//   echo '<pre style="color:white;">';
-//   echo 'User Level: ' . $user['user_level'];
-//   echo '</pre>';
-// } else {
-//   // User does not exist
-//   exit('User does not exist');
-// }
-
 $path = 'custom-mint/backgrounds';
 $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
 
@@ -33,6 +16,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 text-center">
                 <h1 class="mainHeading">Mint your RareDough Pizza in a few simple steps!</h1>
+                <h3 id="return-user-heading"></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a elementum turpis, non volutpat est. Nulla aliquam elementum quam ac dignissim. Sed mattis ultricies leo sagittis luctus.</p>
             </div>
         </div>
@@ -62,22 +46,22 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                     <div class="form-fields form-fields__row">
                         <label class="radio-label">
                             <?= number_format(500); ?>
-                            <input name="pizza-supply" value="500" type="radio" />
+                            <input name="token-supply" value="500" type="radio" />
                             <img src="/custom-mint/backgrounds/purple-background.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(1000); ?>
-                            <input name="pizza-supply" value="1000" type="radio" />
+                            <input name="token-supply" value="1000" type="radio" />
                             <img src="/custom-mint/backgrounds/purple-background.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(5000); ?>
-                            <input name="pizza-supply" value="5000" type="radio" />
+                            <input name="token-supply" value="5000" type="radio" />
                             <img src="/custom-mint/backgrounds/purple-background.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(10000); ?>
-                            <input name="pizza-supply" value="10000" type="radio" />
+                            <input name="token-supply" value="10000" type="radio" />
                             <img src="/custom-mint/backgrounds/purple-background.png" />
                         </label>
                     </div>

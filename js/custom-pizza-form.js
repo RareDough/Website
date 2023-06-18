@@ -2,6 +2,29 @@
 
 (function($, window, document, undefined) {
 
+	// Wait for wallet address to be defined
+	(async() => {
+		while(!window.hasOwnProperty('walletAddress')) {
+			await new Promise(resolve => setTimeout(resolve, 1000));
+		}
+
+		// Check if returning user
+		$.ajax({
+			type: 'POST',
+			url: '/inc/check-user',
+			dataType: 'json',
+			data: {
+				userWallet: window.walletAddress
+			}
+		}).done(function(data) {
+			if (data.return_user) {
+				// Return user detected add welcome message and hide Twitter/Discord fields
+				$('#return-user-heading').text('Welcome back, ' + truncateAddress(window.walletAddress) +'!').show();
+				$('input[name="twitter-username"], input[name="discord-username"]').parent().hide();
+			}
+		});
+	})();
+
 	// Custom Pizza Nav
 	$('#mint-nav a').click(function(e) {
 		e.preventDefault();
@@ -296,6 +319,7 @@
 	            $.ajax({
 	                type: 'POST',
 	                url: '/inc/save-pizza',
+	                dataType: 'json',
 	                data: {
 	                	userWallet: walletAddress,
 	                    imgBase64: dataURL,

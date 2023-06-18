@@ -3,6 +3,13 @@
     margin: 2em 0 60px;
 }
 
+#return-user-heading {
+    font-size:20px;
+    line-height:25px;
+    color:#fff;
+    margin:1.5em 0 0;
+}
+
 .custom-pizza-form h2 {
     font-size:24px;
     line-height:30px;

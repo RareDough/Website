@@ -88,6 +88,7 @@ async function connectWallet() {
       await window.ethereum.request({ method: 'eth_requestAccounts' });
       const account = web3.eth.accounts;
       walletAddress = account.givenProvider.selectedAddress;
+      window.walletAddress = walletAddress;
 
       // POPULATE WALLET DATA
       populateWalletData();
