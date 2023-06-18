@@ -374,3 +374,67 @@ section[data-step="2"] .token-preview {
         border: 1px solid #fdc500;
         box-shadow: 0px 0px 10px #ff1f00;
     }
+
+
+/* Pizza Oven */
+#pizza-oven {
+    color:#fff;
+}
+.pizza-oven-headings > *, .pizza-item-container > * {
+    width:calc(65% / 4);
+}
+.pizza-oven-headings > *:first-child, .pizza-item-container > *:first-child {
+    width:35%;
+}
+.pizza-oven-headings {
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 0;
+    border-bottom: 1px solid #4A4555;
+}
+.pizza-item-container {
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 0;
+    border-bottom: 1px solid #292437;
+}
+    .pizza-item {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+        .token-image {
+            width:80px;
+            border: 1px solid #292437;
+            border-radius: 10px;
+        }
+        .token-name {
+            width:256px;
+        }
+        a.token-details {
+            width:auto;
+            font-size:12px;
+            text-transform:uppercase;
+            padding:8px;
+            margin:0 30px 0 0;
+        }
+
+    span.token-status i {
+        display:inline-block;
+        width:12px;
+        height:12px;
+        border-radius:12px;
+    }
+        span.status-approved i {
+            background: #42FA5F;
+        }
+        span.status-pending i {
+            background: #FDC500;
+        }
+        span.status-rejected i {
+            background: #FF3B3B;
+        }
