@@ -2,6 +2,17 @@
 
 (function($, window, document, undefined) {
 
+	// Function to get owned token IDs
+	async function getTokenIDs() {
+		let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
+
+		// Call the smart contract to retrieve the TokenIDs associated with the wallet
+		const tokenIDs = await pizzomaticTxn.methods.getTokensCreatedBy(window.walletAddress).call();
+
+		// Display the TokenIDs in the console
+		console.log('TokenIDs:', tokenIDs);
+	}
+
 	// Wait for wallet address to be defined
 	(async() => {
 		while(!window.hasOwnProperty('walletAddress')) {
@@ -21,6 +32,9 @@
 				// Return user detected add welcome message and hide Twitter/Discord fields
 				$('#return-user-heading').text('Welcome back, ' + truncateAddress(window.walletAddress) +'!').show();
 				$('input[name="twitter-username"], input[name="discord-username"]').parent().hide();
+
+				// Get owned token IDs
+				getTokenIDs();
 			}
 		});
 	})();

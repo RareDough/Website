@@ -20,17 +20,6 @@ const USDC_ABI = top.abi_usdc;
 const PIZZOMATIC_ABI = top.abi_pizzomatic;
 const PIZZOMATIC = '0x1d18038A4FFD3B165Ac98b52e94504E78FD6B52f';
 
-async function getTokenIDs() {
-  
-   let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
- 
-   // Call the smart contract to retrieve the TokenIDs associated with the wallet
-   const tokenIDs = await pizzomaticTxn.methods.getTokensCreatedBy().call({ from: walletAddress });
- 
-   // Display the TokenIDs in the console
-   console.log('TokenIDs:', tokenIDs);
- }
-
 // Specify which libray/oven to use
 let LIBRARY = null,
     OVEN = null,
