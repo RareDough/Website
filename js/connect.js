@@ -17,6 +17,8 @@ const BREAD_IMG = 'https://www.raredough.com/img/BAPC-coin.svg';
 const inventoryContainer = document.getElementById('inventoryContainer');
 const USDC = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
 const USDC_ABI = top.abi_usdc;
+const PIZZOMATIC_ABI = top.abi_pizzomatic;
+const PIZZOMATIC = '0x1d18038A4FFD3B165Ac98b52e94504E78FD6B52f';
 
 async function getTokenIDs() {
   
