@@ -18,6 +18,17 @@ const inventoryContainer = document.getElementById('inventoryContainer');
 const USDC = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
 const USDC_ABI = top.abi_usdc;
 
+async function getTokenIDs() {
+  
+   let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
+ 
+   // Call the smart contract to retrieve the TokenIDs associated with the wallet
+   const tokenIDs = await pizzomaticTxn.methods.getTokensCreatedBy().call({ from: walletAddress });
+ 
+   // Display the TokenIDs in the console
+   console.log('TokenIDs:', tokenIDs);
+ }
+
 // Specify which libray/oven to use
 let LIBRARY = null,
     OVEN = null,
