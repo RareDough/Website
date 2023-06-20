@@ -19,6 +19,7 @@ const USDC = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
 const USDC_ABI = top.abi_usdc;
 const PIZZOMATIC_ABI = top.abi_pizzomatic;
 const PIZZOMATIC = '0x1d18038A4FFD3B165Ac98b52e94504E78FD6B52f';
+const PIZZOMATICTESTNET = '0xcFe7A0F04c48fC2cbF17de5e92C109527f395DdB';
 
 // Specify which libray/oven to use
 let LIBRARY = null,
@@ -49,7 +50,7 @@ function truncateAddress(address) {
 async function populateWalletData() {
    // CHECK IF USER IS ON CORRECT CHAIN
    chainID = await web3.eth.getChainId();
-   if (chainID != 137) {
+   if (chainID != 137 && chainID != 80001) {
       await window.ethereum.request({
          method: 'wallet_switchEthereumChain',
          params: [{chainId: '0x89'}],

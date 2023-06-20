@@ -2,15 +2,44 @@
 
 (function($, window, document, undefined) {
 
+	let ownedTokens = [];
+
 	// Function to get owned token IDs
 	async function getTokenIDs() {
-		let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
+		// let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
+		let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
 		// Call the smart contract to retrieve the TokenIDs associated with the wallet
-		const tokenIDs = await pizzomaticTxn.methods.getTokensCreatedBy(window.walletAddress).call();
+		ownedTokens = await pizzomaticTxn.methods.getTokensCreatedBy(window.walletAddress).call();
 
-		// Display the TokenIDs in the console
-		console.log('TokenIDs:', tokenIDs);
+		console.log(ownedTokens);
+	}
+
+	// Create pizza token
+	async function createPizza(price, supply) {
+		// Initialize transaction
+		let gas = await web3.eth.getGasPrice();
+		//let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
+		let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+		createPizzaTxn.methods.createPizza(price, supply).send({ from:window.walletAddress, amount:0, gasPrice:(gas)})
+		.once('transactionHash', function(hash) {
+			console.log(hash);
+		})
+		.once('receipt', function(receipt) {
+			console.log(receipt);
+		})
+		.once('confirmation', function(confirmationNumber, receipt) {
+			// console.log(confirmationNumber);
+			// console.log(receipt);
+
+			// Once confirmations start rolling in - get token IDs and add to database entry
+			getTokenIDs();
+
+			// Enable the user to continue
+			$('#buy-token').hide();
+			$('a#next-step').attr('disabled', false);
+			$('a#next-step').css('display', 'inline-block');
+		});
 	}
 
 	// Wait for wallet address to be defined
@@ -32,9 +61,6 @@
 				// Return user detected add welcome message and hide Twitter/Discord fields
 				$('#return-user-heading').text('Welcome back, ' + truncateAddress(window.walletAddress) +'!').show();
 				$('input[name="twitter-username"], input[name="discord-username"]').parent().hide();
-
-				// Get owned token IDs
-				getTokenIDs();
 			}
 		});
 	})();
@@ -69,9 +95,8 @@
 			let currentStep = $('section.mint-section.active-step').attr('data-step'),
 				nextStep = parseInt(currentStep) + 1;
 
-			// Disable and hide continue button
+			// Disable the continue button
 			$this.attr('disabled', true);
-			$this.hide();
 
 			// Hide current section and show next
 			$('section.mint-section, #mint-nav a').removeClass('active-step');
@@ -118,24 +143,22 @@
 			let tokenSupply = $('input[name="token-supply"]:checked').val();
 
 			// Hide buy button
-			$('#buy-token').hide();
+			$('#buy-token').attr('disabled', true);
 			
-			// GECKO DO YOUR MAGIC HERE
-			// Initialize transaction
-			// Get all TokenIDs that do not have complete metadata yet
-			// Populate token select dropdown with aforementioned token IDs
-			let tokenArray = [{id:69, supply:1000}, {id:420, supply:500}];
-			tokenArray.forEach(function(token) {
-				$('select[name="token-select"]').append('<option data-supply="' + token['supply'] + '" value="' + token['id'] + '">Token #' + token['id'] + '</option>');
-			});
+			createPizza(100, tokenSupply);
+
+			// let tokenArray = [{id:69, supply:1000}, {id:420, supply:500}];
+			// tokenArray.forEach(function(token) {
+			// 	$('select[name="token-select"]').append('<option data-supply="' + token['supply'] + '" value="' + token['id'] + '">Token #' + token['id'] + '</option>');
+			// });
 
 
-			// Enable and show continue button
-			$('a#next-step').attr('disabled', false);
-			$('a#next-step').css('display', 'inline-block');
+			// // Enable and show continue button
+			// $('a#next-step').attr('disabled', false);
+			// $('a#next-step').css('display', 'inline-block');
 
-			// Update images
-			swapTokenBackground();
+			// // Update images
+			// swapTokenBackground();
 		}
 	});
 
