@@ -334,7 +334,7 @@ a.link {
 .mainText span {
   font-weight: 700;
 }
-a.mainBtn {
+a.mainBtn, button.mainBtn, input.mainBtn {
   display: inline-block;
   padding: 0.9em 0.5em;
   text-align: center;
@@ -342,6 +342,7 @@ a.mainBtn {
   transition: 250ms all ease-in-out;
   color: black;
   background-color: #f7c36f;
+  border:none;
   border-radius: 0.7em;
   text-decoration: none;
   margin-top: 1.5em;
@@ -349,11 +350,12 @@ a.mainBtn {
   width: 100%;
   line-height: 0.9;
   max-width: 250px;
+  -webkit-appearance: none;
 }
-  a.mainBtn:focus {
+  a.mainBtn:focus, button.mainBtn:focus, input.mainBtn:focus {
     outline:none;
   }
-  a.mainBtn:hover:enabled {
+  a.mainBtn:hover:enabled, button.mainBtn:hover:enabled, input.mainBtn:hover:enabled {
     color: black;
     background-color: white;
   }

@@ -146,10 +146,10 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                             Please make sure to <a href="https://discord.com/invite/GbwykC99N6" target="_blank">join our discord server</a> for further communication.
                             <input name="discord-joined" type="checkbox" required />
                         </label>
-                        <label>
+                        <label class="submit-label">
                             <input type="hidden" name="token-supply" value="1000">
                             <input type="hidden" name="token-id" value="69" />
-                            <input type="submit" />
+                            <input type="submit" class="mainBtn light" />
                         </label>
                     </div>
                 </div>
