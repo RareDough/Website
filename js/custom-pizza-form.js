@@ -5,14 +5,27 @@
 	let ownedTokens = [];
 
 	// Function to get owned token IDs
-	async function getTokenIDs() {
+	async function getTokenIDs(supply) {
 		// let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
 		let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
 		// Call the smart contract to retrieve the TokenIDs associated with the wallet
 		ownedTokens = await pizzomaticTxn.methods.getTokensCreatedBy(window.walletAddress).call();
 
-		console.log(ownedTokens);
+		// Get the last token created and add it to database with supply
+		let lastTokenID = ownedTokens[ownedTokens.length - 1];
+		$.ajax({
+			type: 'POST',
+			url: '/inc/add-token',
+			dataType: 'json',
+			data: {
+				userWallet: window.walletAddress,
+				tokenID: lastTokenID,
+				supply: supply
+			}
+		}).done(function(data) {
+			console.log(data);
+		});
 	}
 
 	// Create pizza token
@@ -32,8 +45,8 @@
 			// console.log(confirmationNumber);
 			// console.log(receipt);
 
-			// Once confirmations start rolling in - get token IDs and add to database entry
-			getTokenIDs();
+			// Once confirmations start rolling in - get token IDs
+			getTokenIDs(supply);
 
 			// Enable the user to continue
 			$('#buy-token').hide();
@@ -59,8 +72,11 @@
 		}).done(function(data) {
 			if (data.return_user) {
 				// Return user detected add welcome message and hide Twitter/Discord fields
-				$('#return-user-heading').text('Welcome back, ' + truncateAddress(window.walletAddress) +'!').show();
-				$('input[name="twitter-username"], input[name="discord-username"]').parent().hide();
+				// $('#return-user-heading').text('Welcome back, ' + truncateAddress(window.walletAddress) +'!').show();
+				// $('input[name="twitter-username"], input[name="discord-username"]').parent().hide();
+
+				// Get owned tokens
+				ownedTokens = JSON.parse(data.owned_tokens);
 			}
 		});
 	})();
