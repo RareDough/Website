@@ -4,7 +4,7 @@
 
 	let ownedTokens = [];
 
-	// Function to get owned token IDs
+	// Get owned token IDs from contract
 	async function getTokenIDs(supply) {
 		// let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
 		let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
@@ -25,6 +25,32 @@
 			}
 		}).done(function(data) {
 			console.log(data);
+		});
+	}
+
+	// Get created tokens from database
+	function getCreatedTokens(userID) {
+		$.ajax({
+			type: 'POST',
+			url: '/inc/get-created-tokens',
+			dataType: 'json',
+			data: {
+				userID: userID,
+			}
+		}).done(function(data) {
+			let createdTokens = data.created_tokens;
+			if (createdTokens.length) {
+				// User has created tokens awaiting metadata
+				$.each(createdTokens, function( index, token ) {
+					let tokenID = token['token_id'],
+						tokenSupply = token['supply'];
+
+					$('select[name="token-select"]').append('<option data-supply="' + tokenSupply + '" value="' + tokenID + '">Token #' + tokenID + '</option>');
+				});
+
+				// Show continue button to allow them to skip
+				$('a#next-step').attr('disabled', false).css('display', 'inline-block');
+			}
 		});
 	}
 
@@ -50,8 +76,7 @@
 
 			// Enable the user to continue
 			$('#buy-token').hide();
-			$('a#next-step').attr('disabled', false);
-			$('a#next-step').css('display', 'inline-block');
+			$('a#next-step').attr('disabled', false).css('display', 'inline-block');
 		});
 	}
 
@@ -71,12 +96,20 @@
 			}
 		}).done(function(data) {
 			if (data.return_user) {
-				// Return user detected add welcome message and hide Twitter/Discord fields
-				// $('#return-user-heading').text('Welcome back, ' + truncateAddress(window.walletAddress) +'!').show();
-				// $('input[name="twitter-username"], input[name="discord-username"]').parent().hide();
+				// User ID
+				let userID = data.user_id;
 
-				// Get owned tokens
-				ownedTokens = JSON.parse(data.owned_tokens);
+				// Get created tokens
+				getCreatedTokens(userID);
+
+				// Check if user has already provided Twitter/Discord and hide fields if so
+				if (data.user_twitter) {
+					$('input[name="twitter-username"]').parent().hide();
+				}
+
+				if (data.user_discord) {
+					$('input[name="discord-username"]').parent().hide();
+				}
 			}
 		});
 	})();
@@ -131,6 +164,9 @@
 			} else {
 				$('#mint-section-buttons').show();
 			}
+
+			// Hide buy button
+			$('#buy-token').hide();
 		}
 	});
 
@@ -160,21 +196,11 @@
 
 			// Hide buy button
 			$('#buy-token').attr('disabled', true);
+
+			// Disable supply inputs
+			$('input[name="token-supply"]').attr('disabled', true);
 			
 			createPizza(100, tokenSupply);
-
-			// let tokenArray = [{id:69, supply:1000}, {id:420, supply:500}];
-			// tokenArray.forEach(function(token) {
-			// 	$('select[name="token-select"]').append('<option data-supply="' + token['supply'] + '" value="' + token['id'] + '">Token #' + token['id'] + '</option>');
-			// });
-
-
-			// // Enable and show continue button
-			// $('a#next-step').attr('disabled', false);
-			// $('a#next-step').css('display', 'inline-block');
-
-			// // Update images
-			// swapTokenBackground();
 		}
 	});
 
@@ -196,6 +222,8 @@
 		$('a#next-step').css('display', 'inline-block');
 	});
 
+
+	// Step 3
 	var isAdvancedUpload = function() {
 		var div = document.createElement('div');
 		return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window;
@@ -401,7 +429,7 @@
 	                    id: document.getElementsByName('token-id')[0].value,
 	                    supply: document.getElementsByName('token-supply')[0].value,
 	                    name: document.getElementsByName('token-name')[0].value,
-	                    description: document.getElementById('token-desc').value,
+	                    description: document.getElementsByName('token-desc')[0].value,
 	                    twitter: document.getElementsByName('twitter-username')[0].value,
 	                    discord: document.getElementsByName('discord-username')[0].value
 	                }

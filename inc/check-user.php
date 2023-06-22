@@ -12,5 +12,12 @@ $stmt->execute([ $userWallet ]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user) {
-	echo json_encode( array('return_user' => true) );
+	echo json_encode( 
+		array(
+			'return_user' => true, 
+			'user_id' => $user['ID'], 
+			'user_twitter' => $user['twitter_username'], 
+			'user_discord' => $user['discord_username']
+		) 
+	);
 }
