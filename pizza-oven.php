@@ -9,8 +9,9 @@ include 'header.php';
 include_once 'inc/functions.php';
 $pdo = pdo_connect_mysql();
 
-// Add/Update the submission in the database
-$stmt = $pdo->prepare('SELECT * FROM submissions WHERE status != ?');
+// Get submissions sorted by token ID
+$stmt = $pdo->prepare('SELECT * FROM submissions WHERE status != ? ORDER BY ID DESC');
+
 $stmt->execute([ 'created' ]);
 $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -71,7 +72,7 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                             $userID = $pizza['user_id'];
                         ?>
-                            <div class="pizza-item-container" data-user-id="<?= $userID; ?>">
+                            <div class="pizza-item-container" data-user-id="<?= $userID; ?>" data-status="<?= $status; ?>">
                                 <div class="pizza-item">
                                     <div class="token-image">
                                         <img src="<?= $image; ?>" alt="<?= $name; ?>" />
@@ -79,19 +80,19 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="token-name">
                                         <?= $name; ?>
                                     </div>
-                                    <a class="token-details mainBtn dark" href="#" class="mainBtn dark">Details</a>
+                                    <a class="oven-btn mainBtn dark" href="#">Details</a>
                                 </div>
-                                <div class="token-id-heading">
+                                <div class="pizza-id">
                                     <?= $pizza['token_id']; ?>
                                 </div>
-                                <div class="rarity-heading">
+                                <div class="pizza-rarity">
                                     Rarity
                                 </div>
-                                <div class="supply-heading">
+                                <div class="pizza-supply">
                                     <?= number_format($supply); ?>
                                 </div>
-                                <div class="status-heading">
-                                    <span class="token-status status-<?= $status; ?>"><i></i> <?= ucwords($statusCopy); ?></span>
+                                <div class="pizza-status status-<?= $status; ?>">
+                                    <i></i> <span><?= ucwords($statusCopy); ?></span>
                                 </div>
                             </div>
                         <?php endforeach; ?>

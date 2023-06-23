@@ -390,7 +390,11 @@ section[data-step="2"] .token-preview {
     color:#fff;
 }
 .pizza-oven-headings > *, .pizza-item-container > * {
+    display:flex;
     width:calc(65% / 4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 .pizza-oven-headings > *:first-child, .pizza-item-container > *:first-child {
     width:35%;
@@ -412,38 +416,46 @@ section[data-step="2"] .token-preview {
     border-bottom: 1px solid #292437;
 }
     .pizza-item {
-        display:flex;
-        align-items:center;
         justify-content:space-between;
     }
         .token-image {
             width:80px;
+            height:80px;
             border: 1px solid #292437;
             border-radius: 10px;
         }
         .token-name {
             width:256px;
         }
-        a.token-details {
+        a.oven-btn {
             width:auto;
             font-size:12px;
             text-transform:uppercase;
             padding:8px;
             margin:0 30px 0 0;
         }
+    .pizza-status {
 
-    span.token-status i {
-        display:inline-block;
-        width:12px;
-        height:12px;
-        border-radius:12px;
     }
-        span.status-approved i {
-            background: #42FA5F;
+        .pizza-status a.oven-btn {
+            margin:0 0 0 15px;
         }
-        span.status-pending i, span.status-created i {
-            background: #FDC500;
+        .pizza-status span {
+            display:block;
+            margin-left:5px;
         }
-        span.status-rejected i {
-            background: #FF3B3B;
+        .pizza-status i {
+            display:inline-block;
+            width:12px;
+            height:12px;
+            border-radius:12px;
         }
+            .pizza-status.status-approved i {
+                background: #42FA5F;
+            }
+            .pizza-status.status-pending i {
+                background: #FDC500;
+            }
+            .pizza-status.status-rejected i {
+                background: #FF3B3B;
+            }

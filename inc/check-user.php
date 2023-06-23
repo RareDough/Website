@@ -15,7 +15,8 @@ if ($user) {
 	echo json_encode( 
 		array(
 			'return_user' => true, 
-			'user_id' => $user['ID'], 
+			'user_id' => $user['ID'],
+			'user_level' => $user['user_level'],
 			'user_twitter' => $user['twitter_username'], 
 			'user_discord' => $user['discord_username']
 		) 

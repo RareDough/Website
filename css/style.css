@@ -355,7 +355,7 @@ a.mainBtn, button.mainBtn, input.mainBtn {
   a.mainBtn:focus, button.mainBtn:focus, input.mainBtn:focus {
     outline:none;
   }
-  a.mainBtn:hover:enabled, button.mainBtn:hover:enabled, input.mainBtn:hover:enabled {
+  a.mainBtn:hover:not([disabled]), button.mainBtn:hover:not([disabled]), input.mainBtn:hover:not([disabled]) {
     color: black;
     background-color: white;
   }

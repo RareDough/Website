@@ -2,7 +2,9 @@
 
 (function($, window, document, undefined) {
 
-	let ownedTokens = [];
+	let userID = null,
+		ownedTokens = [],
+		userLevel = null;
 
 	// Get owned token IDs from contract
 	async function getTokenIDs(supply) {
@@ -96,8 +98,11 @@
 			}
 		}).done(function(data) {
 			if (data.return_user) {
-				// User ID
-				let userID = data.user_id;
+				// Set user ID
+				userID = data.user_id;
+
+				// Set user level
+				userLevel = data.user_level;
 
 				// Get created tokens
 				getCreatedTokens(userID);
