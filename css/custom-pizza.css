@@ -441,7 +441,7 @@ section[data-step="2"] .token-preview {
         span.status-approved i {
             background: #42FA5F;
         }
-        span.status-pending i {
+        span.status-pending i, span.status-created i {
             background: #FDC500;
         }
         span.status-rejected i {

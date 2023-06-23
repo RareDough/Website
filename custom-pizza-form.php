@@ -47,22 +47,22 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                         <label class="radio-label">
                             <?= number_format(500); ?>
                             <input name="token-supply" value="500" type="radio" />
-                            <img src="/custom-mint/backgrounds/purple-background.png" />
+                            <img src="/custom-mint/backgrounds/500.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(1000); ?>
                             <input name="token-supply" value="1000" type="radio" />
-                            <img src="/custom-mint/backgrounds/purple-background.png" />
+                            <img src="/custom-mint/backgrounds/1000.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(5000); ?>
                             <input name="token-supply" value="5000" type="radio" />
-                            <img src="/custom-mint/backgrounds/purple-background.png" />
+                            <img src="/custom-mint/backgrounds/5000.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(10000); ?>
                             <input name="token-supply" value="10000" type="radio" />
-                            <img src="/custom-mint/backgrounds/purple-background.png" />
+                            <img src="/custom-mint/backgrounds/10000.png" />
                         </label>
                     </div>
                 </div>

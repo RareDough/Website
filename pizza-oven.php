@@ -10,8 +10,8 @@ include_once 'inc/functions.php';
 $pdo = pdo_connect_mysql();
 
 // Add/Update the submission in the database
-$stmt = $pdo->prepare('SELECT * FROM submissions');
-$stmt->execute();
+$stmt = $pdo->prepare('SELECT * FROM submissions WHERE status != ?');
+$stmt->execute([ 'created' ]);
 $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -51,7 +51,7 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="pizza-oven-container">
                         <?php 
-                        foreach($pizzas as $pizza) : 
+                        foreach($pizzas as $pizza) :
                             $status = $pizza['status'];
                             if ($status == 'pending') :
                                 $statusCopy = 'Under Review';
@@ -60,14 +60,24 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             else :
                                 $statusCopy = $status;
                             endif;
+
+                            $supply = $pizza['supply'];
+                            $name = $pizza['name'];
+
+                            $image = $pizza['image_path'];
+                            if ($status == 'created') :
+                                $image = '/custom-mint/backgrounds/'.$supply.'.png';
+                            endif;
+
+                            $userID = $pizza['user_id'];
                         ?>
-                            <div class="pizza-item-container">
+                            <div class="pizza-item-container" data-user-id="<?= $userID; ?>">
                                 <div class="pizza-item">
                                     <div class="token-image">
-                                        <img src="<?= $pizza['image_path']; ?>" alt="">
+                                        <img src="<?= $image; ?>" alt="<?= $name; ?>" />
                                     </div>
                                     <div class="token-name">
-                                        <?= $pizza['name']; ?>
+                                        <?= $name; ?>
                                     </div>
                                     <a class="token-details mainBtn dark" href="#" class="mainBtn dark">Details</a>
                                 </div>
@@ -78,10 +88,10 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     Rarity
                                 </div>
                                 <div class="supply-heading">
-                                    <?= number_format($pizza['supply']); ?>
+                                    <?= number_format($supply); ?>
                                 </div>
                                 <div class="status-heading">
-                                    <span class="token-status status-<?= $pizza['status']; ?>"><i></i> <?= ucwords($statusCopy); ?></span>
+                                    <span class="token-status status-<?= $status; ?>"><i></i> <?= ucwords($statusCopy); ?></span>
                                 </div>
                             </div>
                         <?php endforeach; ?>

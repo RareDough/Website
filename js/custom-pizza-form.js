@@ -172,8 +172,8 @@
 
 	// Update token preview and background image
 	function swapTokenBackground() {
-		let backgroundImage = $('input[name="token-supply"]:checked').siblings('img').attr('src');
-		$('.token-preview img').attr('src', backgroundImage);
+		let backgroundImage = $('select[name="token-select"] option:selected').attr('data-supply');
+		$('.token-preview img').attr('src', '/custom-mint/backgrounds/' + backgroundImage + '.png');
 	}
 
 	// Step 1 
@@ -200,6 +200,7 @@
 			// Disable supply inputs
 			$('input[name="token-supply"]').attr('disabled', true);
 			
+			// Call create pizza method
 			createPizza(100, tokenSupply);
 		}
 	});
@@ -216,6 +217,9 @@
 		// Update hidden fields with selected values
 		$('input[name="token-supply"]').val(tokenSupply);
 		$('input[name="token-id"]').val(tokenID);
+
+		// Update the background image
+		swapTokenBackground();
 
 		// Enable and show continue button
 		$('a#next-step').attr('disabled', false);
