@@ -51,7 +51,8 @@ async function verifyUser(walletAddress) {
 		$('.pizza-item-container').each(function(i) {
 			let $this = $(this),
 				status = $this.attr('data-status'),
-				modButtons = null;
+				modButtons = null,
+				tokenID = $this.attr('data-token-id');
 
 			if (status == 'pending') {
 				modButtons = `
@@ -66,6 +67,14 @@ async function verifyUser(walletAddress) {
 			}
 
 			$('.pizza-status', this).append(modButtons);
+
+			// Get number of minted for each token
+			let pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+			pizzomaticContract.methods.getNumMintedForToken(tokenID).call().then(function(response) {
+				return response;
+			}).then(function(data) {
+				$('.pizza-supply span', $this).text(data + ' /');
+			})
 		});
 		
 	}
@@ -83,9 +92,9 @@ async function verifyUser(walletAddress) {
 				pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
 			if (action == 'enable') {
-				pizzomaticContract.methods.activateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)})
+				pizzomaticContract.methods.activateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
 			} else if (action == 'disable') {
-				pizzomaticContract.methods.deactivateToken(tokenID).call();
+				pizzomaticContract.methods.deactivateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
 			}
 		})
 		.catch(function(err) {

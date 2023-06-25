@@ -110,12 +110,12 @@ body.vip-pass {
   background:#09070c;
 }
 
-a {
+/*a {
     text-decoration: none!important;
 }
 a.link {
     text-decoration: none!important;
-}
+}*/
 
 .flagDropdown.dropdown {
   background: white;
@@ -350,6 +350,7 @@ a.mainBtn, button.mainBtn, input.mainBtn {
   width: 100%;
   line-height: 0.9;
   max-width: 250px;
+  position:relative;
   -webkit-appearance: none;
 }
   a.mainBtn:focus, button.mainBtn:focus, input.mainBtn:focus {
@@ -358,6 +359,19 @@ a.mainBtn, button.mainBtn, input.mainBtn {
   a.mainBtn:hover:not([disabled]), button.mainBtn:hover:not([disabled]), input.mainBtn:hover:not([disabled]) {
     color: black;
     background-color: white;
+  }
+  a.mainBtn.loading:after {
+    content:"";
+    display:block;
+    width:25px;
+    height:25px;
+    background-image: url("../img/spinner.svg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
   }
 .mainBtn.mobileBtn {
   display: none;

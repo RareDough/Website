@@ -90,7 +90,7 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     Rarity
                                 </div>
                                 <div class="pizza-supply">
-                                    <?= number_format($supply); ?>
+                                    <span></span>&nbsp;<?= number_format($supply); ?>
                                 </div>
                                 <div class="pizza-status status-<?= $status; ?>">
                                     <i></i> <span><?= ucwords($statusCopy); ?></span>

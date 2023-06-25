@@ -161,6 +161,49 @@
             cursor:pointer;
         }
 
+        #pizza-form label.checkbox-label {
+            display:flex;
+            flex-direction:row-reverse;
+            align-items:center;
+            position:relative;
+            user-select: none;
+            cursor:pointer;
+        }
+            #pizza-form label.checkbox-label a {
+                color:white;
+                text-decoration:underline;
+            }
+            #pizza-form label.checkbox-label input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            #pizza-form span.checkmark {
+                display:block;
+                height: 32px;
+                width: 32px;
+                background: #292437;
+                border-radius: 10px;
+                flex-shrink:0;
+                position:relative;
+                margin-right:16px;
+            }
+                #pizza-form input:checked ~ .checkmark:after {
+                    content:"";
+                    display:block;
+                    width:18px;
+                    height:12px;
+                    background-image: url("../img/checkmark.svg");
+                    background-size:cover;
+                    background-repeat:no-repeat;
+                    position:absolute;
+                    left:50%;
+                    top:50%;
+                    transform:translateX(-50%) translateY(-50%);
+                }
+
         #pizza-form label.error {
             align-self:flex-start;
             margin-top:.5rem;

@@ -61,11 +61,11 @@
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/custom-pizza-form.js?v=1.0.1"></script>
+      <script src="./js/custom-pizza-form.js?v=1.0.2"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>
-      <script src="./js/pizza-oven.js?v=1.0.1"></script>
+      <script src="./js/pizza-oven.js?v=1.0.2"></script>
     <?php endif; ?>
 
     <script src="./js/mint-button.js?v=1.0.7"></script>

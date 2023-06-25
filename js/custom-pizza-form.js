@@ -77,6 +77,7 @@
 			getTokenIDs(supply);
 
 			// Enable the user to continue
+			$('#buy-token').removeClass('loading');
 			$('#buy-token').hide();
 			$('a#next-step').attr('disabled', false).css('display', 'inline-block');
 		});
@@ -199,16 +200,19 @@
 			// Get supply value
 			let tokenSupply = $('input[name="token-supply"]:checked').val();
 
-			// Hide buy button
+			// Disable buy button and add loading animation
 			$('#buy-token').attr('disabled', true);
+			$('#buy-token').addClass('loading');
 
 			// Disable supply inputs
 			$('input[name="token-supply"]').attr('disabled', true);
 			
 			// Call create pizza method
-			createPizza(100, tokenSupply);
+			createPizza(web3.utils.toWei('100', 'ether'));
 		}
 	});
+
+	console.log(web3.utils.toWei('100', 'ether'))
 
 	// Step 2
 	$('select[name="token-select"]').change(function() {
