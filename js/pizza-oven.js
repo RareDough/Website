@@ -52,7 +52,8 @@ async function verifyUser(walletAddress) {
 			let $this = $(this),
 				status = $this.attr('data-status'),
 				modButtons = null,
-				tokenID = $this.attr('data-token-id');
+				tokenID = $this.attr('data-token-id'),
+				supply = $this.attr('data-supply');
 
 			if (status == 'pending') {
 				modButtons = `
@@ -64,6 +65,10 @@ async function verifyUser(walletAddress) {
 					<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="disable">Disable</a>
 					<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="pause">Pause</a>
 				`;
+			} else if (status == 'disabled') {
+				modButtons = `
+					<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="enable">Enable</a>
+				`;
 			}
 
 			$('.pizza-status', this).append(modButtons);
@@ -74,6 +79,13 @@ async function verifyUser(walletAddress) {
 				return response;
 			}).then(function(data) {
 				$('.pizza-supply span', $this).text(data + ' /');
+
+				// If token is sold out
+				if (Number(data) == Number(supply)) {
+					console.log('Sold Out');
+					$('.pizza-status', $this).addClass('status-sold-out');
+					$('.pizza-status span', $this).text('Sold Out');
+				}
 			})
 		});
 		
@@ -88,14 +100,35 @@ async function verifyUser(walletAddress) {
 			// User validated
 			let tokenID = $tokenRow.attr('data-token-id'),
 				action = $this.attr('data-action'),
+				status = null,
 				// pizzaContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC),
 				pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
 			if (action == 'enable') {
 				pizzomaticContract.methods.activateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				status = 'approved';
 			} else if (action == 'disable') {
 				pizzomaticContract.methods.deactivateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				status = 'disabled';
+			} else if (action == 'pause') {
+				pizzomaticContract.methods.deactivateSale(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				status = 'paused';
 			}
+
+			// Make changes in database
+			$.ajax({
+				type: 'POST',
+				url: '/inc/mod-tools',
+				dataType: 'json',
+				data: {
+					userWallet: window.walletAddress,
+					tokenID: tokenID,
+					action: action,
+					status: status
+				}
+			}).done(function(data) {
+				console.log(data);
+			});
 		})
 		.catch(function(err) {
 			// User not validated

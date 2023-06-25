@@ -73,7 +73,7 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                             $userID = $pizza['user_id'];
                         ?>
-                            <div class="pizza-item-container" data-user-id="<?= $userID; ?>" data-token-id="<?= $tokenID; ?>" data-status="<?= $status; ?>">
+                            <div class="pizza-item-container" data-user-id="<?= $userID; ?>" data-token-id="<?= $tokenID; ?>" data-supply="<?= $supply; ?>" data-status="<?= $status; ?>">
                                 <div class="pizza-item">
                                     <div class="token-image">
                                         <img src="<?= $image; ?>" alt="<?= $name; ?>" />

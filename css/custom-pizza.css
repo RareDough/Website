@@ -496,9 +496,9 @@ section[data-step="2"] .token-preview {
             .pizza-status.status-approved i {
                 background: #42FA5F;
             }
-            .pizza-status.status-pending i {
+            .pizza-status.status-pending i, .pizza-status.status-paused i {
                 background: #FDC500;
             }
-            .pizza-status.status-rejected i {
+            .pizza-status.status-rejected i, .pizza-status.status-disabled i, .pizza-status.status-sold-out i {
                 background: #FF3B3B;
             }
