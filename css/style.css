@@ -110,12 +110,12 @@ body.vip-pass {
   background:#09070c;
 }
 
-/*a {
-    text-decoration: none!important;
+a {
+  text-decoration: none;
 }
 a.link {
-    text-decoration: none!important;
-}*/
+  text-decoration: none;
+}
 
 .flagDropdown.dropdown {
   background: white;

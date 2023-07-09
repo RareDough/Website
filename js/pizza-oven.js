@@ -37,13 +37,37 @@ async function verifyUser(walletAddress) {
 				// Set user level
 				userLevel = data.user_level;
 
-				// Show moderator controls for approved users
-				showModeratorFunctions();
+				if (userLevel == 0) {
+					// Show user controls for tokens they own
+					showUserControls(userID);
+				} else if (userLevel == 10) {
+					// Show moderator controls for approved users
+					showModeratorControls();
+				}
 			}
 		});
 	})();
 
-	function showModeratorFunctions() {
+	function showUserControls(userID) {
+		$('.pizza-item-container').each(function(i) {
+			let $this = $(this),
+				status = $this.attr('data-status'),
+				creatorID = $this.attr('data-user-id'),
+				tokenID = $this.attr('data-token-id'),
+				supply = $this.attr('data-supply');
+
+			const userButtons = `
+				<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="activate">Activate</a>
+			`;
+
+			if (creatorID == userID) {
+				$('.pizza-status span', this).hide();
+				$('.pizza-status', this).append(userButtons);
+			}
+		});
+	}
+
+	function showModeratorControls() {
 		$('.status-heading').text('Actions');
 		$('.pizza-status span').hide();
 

@@ -199,7 +199,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css?v=1.0.4" />
+    <link rel="stylesheet" href="./css/style.css?v=1.0.5" />
     <?php if ( $page == 'custom-pizza-form' || $page == 'pizza-oven' ) : ?>
       <link rel="stylesheet" href="./css/custom-pizza.css?v=1.0.3" />
     <?php endif; ?>
