@@ -208,11 +208,9 @@
 			$('input[name="token-supply"]').attr('disabled', true);
 			
 			// Call create pizza method
-			createPizza(web3.utils.toWei('100', 'ether'));
+			createPizza(web3.utils.toWei('100', 'ether'), tokenSupply);
 		}
 	});
-
-	console.log(web3.utils.toWei('100', 'ether'))
 
 	// Step 2
 	$('select[name="token-select"]').change(function() {

@@ -39,28 +39,10 @@ if ($user) {
             	$jsonPath = $_SERVER['DOCUMENT_ROOT'].'/assets/custom/' . $tokenID . '.json';
 			    $jsonData = [
 		            "name" => $tokenName,
-		            "symbol" => "",
+		            "symbol" => $tokenID,
 		            "description" => $tokenDesc,
-		            "image" => "https://raredough.com/assets/images/" . $tokenID . ".jpg",
-		            "external_link" => "https://raredough.com/custom-pizza?id=" . $tokenID,
-		            "attributes" => [
-		                [
-		                    "trait_type" => "Category",
-		                    "value" => "custom pizza"
-		                ],
-		                [
-		                    "trait_type" => "Price",
-		                    "value" => "100 BREAD"
-		                ],
-		                [
-		                    "trait_type" => "Utility",
-		                    "value" => "Honorary"
-		                ],
-		                [
-		                    "trait_type" => "URL",
-		                    "value" => $userTwitter
-		                ]
-		            ]
+		            "image" => "https://raredough.com/assets/custom/images/" . $tokenID . ".jpg",
+		            "external_link" => "https://raredough.com/custom-pizza?id=" . $tokenID
 		        ];
 			    // Convert JSON
 			    $jsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
