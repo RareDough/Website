@@ -445,6 +445,7 @@
 	                    discord: document.getElementsByName('discord-username')[0].value
 	                }
 	            }).done(function(data) {
+					alert(data.message);
 	                console.log(data);
 	            });
 		    });

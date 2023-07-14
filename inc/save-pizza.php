@@ -45,7 +45,7 @@
 
         // Check if successful
         if ($result) :
-            // Set server path
+            // Set web path
             $websitePath = 'https://'.$_SERVER['HTTP_HOST'].'/custom-mint/creations/'. $wallet .'/'. $filename;
 
             // Add row to database
