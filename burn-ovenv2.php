@@ -252,7 +252,9 @@
       </div>
       <div class="col-lg-4 mt-5 text-center">
         <h1 class="commonHeading mb-3">Burn oven</h1>
-        <a id="" class="mainBtn lightwhite" href="./burn-oven">Switch to V1</a>
+        <!-- Disable V1 Button
+         <a id="" class="mainBtn lightwhite" href="./burn-oven">Switch to V1</a> 
+        -->
         <img src="./img/burn-oven-img.png" alt="" />
         <p class="commonText">
           By clicking approve, you are granting access to

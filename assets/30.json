@@ -3,23 +3,23 @@
     "symbol": "VIP",
     "description": "The Very Important Pizzas (VIP) Pass is the ultimate Access Pass for all your Pizza needs. This Utility NFT includes the following Benefits (but not limited to):
     
-    🍹 Free Mint Drink (1x Free Mint for the upcoming Collection)
+    🍹 Free Mint Drink (1x Free Mint for the future Collection)
     
     🧴 Whitelist Sauce (Additional Whitelist to share with a friend)
     
-    🎁 Airdrop Pass (Receive all future Pizza drops)
+    🎁 Airdrop Pass (Receive future Pizza drops)
 
-    🍕 Custom Pizzas (Mint your very own custom Pizza creation)
+    🍕 Custom Pizzas (Priority support at our Minting Platform)
     
     🎰 Pizza Raffles (Win HOLDER exclusive prizes)
     
-    Become an early supporter and let's grow together! 🚀",
-    "image": "https://raredough.com/assets/images/29.jpg",
-    "external_link": "https://raredough.com/jdoggpizza",
+    🚀 Early Bird (Get access to our services and products before everyone else)",
+    "image": "https://raredough.com/assets/images/30.jpg",
+    "external_link": "https://raredough.com/vip-pass",
     "attributes": [
       {
         "trait_type": "Category",
-        "value": "whitelist"
+        "value": "Whitelist"
       },
       {
         "trait_type": "Price",
@@ -44,6 +44,10 @@
       {
         "trait_type": "Utility 5",
         "value": "Custom Pizzas"
+      },
+      {
+        "trait_type": "Utility 6",
+        "value": "Early Bird Access"
       }
     ]
 }  

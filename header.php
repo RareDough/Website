@@ -352,7 +352,7 @@
         <br />
         <a class="hideMenuLink" tkey="get_btn" href="./vip-pass.php">Get Vip Pass</a>
         <br />
-        <a class="hideMenuLink" tkey="" href="./burn-oven.php">Burn oven</a>
+        <a class="hideMenuLink" tkey="" href="./burn-ovenv2.php">Burn oven</a>
         <br />
         <a class="hideMenuLink" tkey="leaderboard" href="./leaderboard.php">Leaderboard</a>
         <br />
@@ -413,7 +413,7 @@
                 <a tkey="get_btn" class="nav-link" href="./vip-pass.php">Get VIP Pass</a>
               </li>
               <li class="nav-item">
-                <a tkey="" class="nav-link" href="./burn-oven.php">Burn oven</a>
+                <a tkey="" class="nav-link" href="./burn-ovenv2.php">Burn oven</a>
               </li>
               <li class="nav-item">
                 <a tkey="leaderboard" class="nav-link" href="./leaderboard.php">Leaderboard</a>
