@@ -3,7 +3,7 @@
   $page = preg_replace("/(.+)\.php$/", "$1", $filename);
 
   // START SHOP PAGES
-  $shopPages = array('account', 'shop', 'burn-oven', 'freemint', 'infinity', 'whitelist-lvl1', 'whitelist-lvl2', 'whitelist-lvl3', 'airdrop-pass', 'custom-pizza-V1', 'twitter-promo', '100k-pizza', '50k-pizza', '10k-pizza', 'burn-ovenv2', 'bitcoin-pizza-80332', 'bitcoin-pizza-79831', 'bitcoin-pizza-80331', 'bitcoin-pizza-79944', 'bitcoin-pizza-79715', 'bitcoin-pizza-79921', 'bitcoin-pizza-79930', 'bitcoin-pizza-80348', 'coldpizza', 'redheadphone', 'vinnypizza', 'chesspizza', 'grafkaalpizza', 'easter23pizza', 'bulksenderpizza', 'minguspizza', 'corapizza', 'jdoggpizza','btcday23','vip', 'custom-pizza-form', 'pizza-oven');
+  $shopPages = array('account', 'shop', 'burn-oven', 'freemint', 'infinity', 'whitelist-lvl1', 'whitelist-lvl2', 'whitelist-lvl3', 'airdrop-pass', 'custom-pizza-V1', 'twitter-promo', '100k-pizza', '50k-pizza', '10k-pizza', 'burn-ovenv2', 'bitcoin-pizza-80332', 'bitcoin-pizza-79831', 'bitcoin-pizza-80331', 'bitcoin-pizza-79944', 'bitcoin-pizza-79715', 'bitcoin-pizza-79921', 'bitcoin-pizza-79930', 'bitcoin-pizza-80348', 'coldpizza', 'redheadphone', 'vinnypizza', 'chesspizza', 'grafkaalpizza', 'easter23pizza', 'bulksenderpizza', 'minguspizza', 'corapizza', 'jdoggpizza','btcday23','vip', 'custom-pizza', 'custom-pizzas', 'community-pizza', 'community-pizzas', 'community-pizza-form', 'pizza-oven');
   // END SHOP PAGES
 
   if ($page == 'index'):
@@ -200,8 +200,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css?v=1.0.5" />
-    <?php if ( $page == 'custom-pizza-form' || $page == 'pizza-oven' ) : ?>
-      <link rel="stylesheet" href="./css/custom-pizza.css?v=1.0.3" />
+    <?php if ( $page == 'community-pizza-form' || $page == 'pizza-oven' ) : ?>
+      <link rel="stylesheet" href="./css/community-pizza.css?v=1.0.3" />
     <?php endif; ?>
   </head>
   <body class="<?= $page; ?>" data-page="<?= $page; ?>" onload="connectWallet()">

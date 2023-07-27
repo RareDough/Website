@@ -33,16 +33,26 @@ if ($user) {
             if ($action == 'enable') {
             	// Move image to assets folder
 			    $source = $_SERVER['DOCUMENT_ROOT'].explode('https://raredough.com', $token['image_path'])[1];
-			    $destination = $_SERVER['DOCUMENT_ROOT'].'/assets/custom/images/'.$tokenID.'.jpg';
+			    $destination = $_SERVER['DOCUMENT_ROOT'].'/assets/community/images/'.$tokenID.'.jpg';
 			    copy($source, $destination);
 
-            	$jsonPath = $_SERVER['DOCUMENT_ROOT'].'/assets/custom/' . $tokenID . '.json';
+            	$jsonPath = $_SERVER['DOCUMENT_ROOT'].'/assets/community/' . $tokenID . '.json';
 			    $jsonData = [
 		            "name" => $tokenName,
 		            "symbol" => $tokenID,
 		            "description" => $tokenDesc,
-		            "image" => "https://raredough.com/assets/custom/images/" . $tokenID . ".jpg",
-		            "external_link" => "https://raredough.com/custom-pizza?id=" . $tokenID
+		            "image" => "https://raredough.com/assets/community/images/" . $tokenID . ".jpg",
+		            "external_link" => "https://raredough.com/community-pizza?id=" . $tokenID
+					"attributes" => [
+						[
+							"trait_type" => "Category",
+							"value" => "community pizza"
+						],
+						[
+							"trait_type" => "Price",
+							"value" => "100 BREAD"
+						],
+					]
 		        ];
 			    // Convert JSON
 			    $jsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);

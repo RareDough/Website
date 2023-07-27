@@ -1,5 +1,14 @@
 <?php include 'header.php'; ?>
 
+<script>
+    const pizzaArray = <?php $out = array();
+    foreach (glob('./assets/*.json') as $filename) {
+        $p = pathinfo($filename);
+        $out[] = $p['filename'];
+    }
+    echo json_encode($out); ?>;
+</script>
+
     <section id="shopSection" class="mt-lg-3" data-category="limited editions">
         <div class="container-fluid">
             <div class="row">
@@ -10,7 +19,8 @@
                             <a class="sideMenuLink" href="./shop">All Items</a>
                             <a class="sideMenuLink" href="./whitelist">Whitelist</a>
                             <a class="sideMenuLink active" href="./limited-editions">Limited Editions</a>
-                            <a class="sideMenuLink" href="./custom-pizza">Custom Pizzas</a>
+                            <a class="sideMenuLink" href="./custom-pizzas">Custom Pizzas</a>
+                            <a class="sideMenuLink" href="./community-pizzas">Community Pizzas</a>
                             <a class="sideMenuLink" href="./utilities">Utilities</a>
                         </div>
                       <!-- mobileView -->
@@ -23,7 +33,8 @@
                     <div class="card card-body">
                       <a class="sideMenuLink " href="./shop">All Items</a>
                       <a class="sideMenuLink" href="./whitelist">Whitelist</a>
-                      <a class="sideMenuLink" href="./custom-pizza">Custom Pizzas</a>
+                      <a class="sideMenuLink" href="./custom-pizzas">Custom Pizzas</a>
+                      <a class="sideMenuLink" href="./community-pizzas">Community Pizzas</a>
                       <a class="sideMenuLink" href="./utilities">Utilities</a>
                     </div>
                   </div>
