@@ -6,8 +6,8 @@
   "external_link": "https://raredough.com/shop-item?type=community&id=3",
   "attributes": [
     {
-      "trait_type": "Active",
-      "value": true
+      "trait_type": "Status",
+      "value": "active"
     },
     {
       "trait_type": "Category",
