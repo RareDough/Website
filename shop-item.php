@@ -77,10 +77,14 @@ $itemPrice = get_object_vars($itemAttributes[2])['value'];
                                         <?= str_replace(' BREAD', '', $itemPrice); ?>
                                     <?php endif; ?>
                                 </h1>
-                                <?php if ($itemStatus != 'soldout' && $itemStatus != 'inactive') : ?>
+                                <?php if ($itemStatus != 'inactive') : ?>
                                     <div class="row ">
                                         <div class="col-lg-6 ">
-                                            <a id="mintButton" data-id="25" class="mainBtn light" data-price="<?= str_replace(' BREAD', '', $itemPrice); ?>" href="#">Connect Wallet</a>
+                                            <?php if ($itemStatus == 'soldout') : ?>
+                                                <a class="mainBtn light" href="https://opensea.io/assets/matic/<?= $contract; ?>/<?= $id; ?>" target="_blank">Buy on Opensea</a>
+                                            <?php else : ?>
+                                                <a id="mintButton" data-id="<?= $id; ?>" class="mainBtn light" data-price="<?= str_replace(' BREAD', '', $itemPrice); ?>" href="#">Connect Wallet</a>
+                                            <?php endif; ?>
                                         </div>
                                         <div class="col-lg-6 ">
                                             <a href="https://app.uniswap.org/#/tokens/polygon/0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f" target="_blank" class="mainBtn dark">Buy BREAD</a>
