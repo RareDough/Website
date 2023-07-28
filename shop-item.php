@@ -29,7 +29,8 @@ $itemImage = $itemDecoded->image;
 $itemDescription = $itemDecoded->description;
 $itemImage = $itemDecoded->image;
 $itemAttributes = $itemDecoded->attributes;
-$itemPrice = get_object_vars($itemAttributes[1])['value'];
+$itemStatus = get_object_vars($itemAttributes[0])['value'];
+$itemPrice = get_object_vars($itemAttributes[2])['value'];
 ?>
 
 <!-- Infinity Section -->
@@ -63,19 +64,29 @@ $itemPrice = get_object_vars($itemAttributes[1])['value'];
                             <h1 class="subHeading">Description</h1>
                             <div class="descriptionBody">
                                 <p class="mainText itemDescription"><?= $itemDescription ?></p>
-                                <div class="mainText">Current Price</div>
+                                <?php if ($itemStatus != 'soldout' && $itemStatus != 'inactive') : ?>
+                                    <div class="mainText">Current Price</div>
+                                <?php endif; ?>
                                 <h1 class="mainHeading">
-                                    <img src="./img/bpac-lg-icon.svg" alt=""/>
-                                    <?= str_replace(' BREAD', '', $itemPrice); ?>
+                                    <?php if ($itemStatus == 'soldout') : ?>
+                                        Sold Out
+                                    <?php elseif ($itemStatus == 'inactive') : ?>
+                                        Unavailable
+                                    <?php else : ?>
+                                        <img src="./img/bpac-lg-icon.svg" alt=""/>
+                                        <?= str_replace(' BREAD', '', $itemPrice); ?>
+                                    <?php endif; ?>
                                 </h1>
-                                <div class="row ">
-                                    <div class="col-lg-6 ">
-                                        <a id="mintButton" data-id="25" class="mainBtn light" data-price="<?= str_replace(' BREAD', '', $itemPrice); ?>" href="#">Connect Wallet</a>
+                                <?php if ($itemStatus != 'soldout' && $itemStatus != 'inactive') : ?>
+                                    <div class="row ">
+                                        <div class="col-lg-6 ">
+                                            <a id="mintButton" data-id="25" class="mainBtn light" data-price="<?= str_replace(' BREAD', '', $itemPrice); ?>" href="#">Connect Wallet</a>
+                                        </div>
+                                        <div class="col-lg-6 ">
+                                            <a href="https://app.uniswap.org/#/tokens/polygon/0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f" target="_blank" class="mainBtn dark">Buy BREAD</a>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6 ">
-                                        <a href="https://app.uniswap.org/#/tokens/polygon/0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f" target="_blank" class="mainBtn dark">Buy BREAD</a>
-                                    </div>
-                                </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -91,7 +102,7 @@ $itemPrice = get_object_vars($itemAttributes[1])['value'];
                                 <div class="cardContainer">
                                     <div class="row">
                                         <?php foreach ($itemAttributes as $attribute):
-                                            if (get_object_vars($attribute)['trait_type'] !== 'Price'): ?>
+                                            if (get_object_vars($attribute)['trait_type'] !== 'Price' && get_object_vars($attribute)['trait_type'] !== 'Status'): ?>
                                                 <div class="col">
                                                     <div class="collapesCard">
                                                         <div class="smText"><?= get_object_vars($attribute)['trait_type']; ?></div>
