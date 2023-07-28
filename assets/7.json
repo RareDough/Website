@@ -6,6 +6,10 @@
     "external_link": "https://raredough.com/custom-pizza-V1",
     "attributes": [
       {
+        "trait_type": "Status",
+        "value": "active"
+      },
+      {
         "trait_type": "Category",
         "value": "custom pizza"
       },

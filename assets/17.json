@@ -6,6 +6,10 @@
     "external_link": "https://raredough.com/bitcoin-pizza-80331",
     "attributes": [
       {
+        "trait_type": "Status",
+        "value": "inactive"
+      },
+      {
         "trait_type": "Category",
         "value": "limited editions"
       },

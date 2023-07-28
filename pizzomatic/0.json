@@ -6,6 +6,10 @@
     "external_link": "https://raredough.com/pizzomatic",
     "attributes": [
       {
+        "trait_type": "Status",
+        "value": "active"
+      },
+      {
         "trait_type": "FullName",
         "value": "Genesis PizzOmatic Pizza"
       },
