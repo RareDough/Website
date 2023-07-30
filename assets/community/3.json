@@ -1,0 +1,22 @@
+{
+  "name": "Sappy Seal #5469",
+  "symbol": "",
+  "description": "This is a pizza commemorating my Sappy Seal #5469",
+  "image": "https://raredough.com/assets/community/images/3.jpg",
+  "external_link": "https://raredough.com/shop-item?type=community&id=3",
+  "attributes": [
+    {
+      "trait_type": "Status",
+      "value": "inactive",
+      "soldout": false
+    },
+    {
+      "trait_type": "Category",
+      "value": "community pizza"
+    },
+    {
+      "trait_type": "Price",
+      "value": "100 BREAD"
+    }
+  ]
+}

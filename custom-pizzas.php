@@ -9,7 +9,7 @@
     echo json_encode($out); ?>;
 </script>
 
-    <section id="shopSection" class="mt-lg-3" data-category="utilities">
+    <section id="shopSection" class="mt-lg-3" data-category="custom pizza">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2 smallSectionBorder py-lg-5">
@@ -19,21 +19,23 @@
                             <a class="sideMenuLink" href="./shop">All Items</a>
                             <a class="sideMenuLink" href="./whitelist">Whitelist</a>
                             <a class="sideMenuLink" href="./limited-editions">Limited Editions</a>
-                            <a class="sideMenuLink" href="./custom-pizzas">Custom Pizzas</a>
-                            <a class="sideMenuLink active" href="./utilities">Utilities</a>
+                            <a class="sideMenuLink active" href="./custom-pizzas">Custom Pizzas</a>
+                            <a class="sideMenuLink" href="./community-pizzas">Community Pizzas</a>
+                            <a class="sideMenuLink" href="./utilities">Utilities</a>
                         </div>
                       <!-- mobileView -->
                 <div class="sideMenuLinks mobileView">
                   <a class="sideMenuLink active" data-bs-toggle="collapse" href="#sideMenu" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
-                    Utilities
+                    Custom Pizzas
                   </a>
                   <div class="collapse collapsebg" id="sideMenu">
                     <div class="card card-body">
                       <a class="sideMenuLink " href="./shop">All Items</a>
                       <a class="sideMenuLink" href="./whitelist">Whitelist</a>
                       <a class="sideMenuLink" href="./limited-editions">Limited Editions</a>
-                      <a class="sideMenuLink" href="./custom-pizzas">Custom Pizzas</a>
+                      <a class="sideMenuLink" href="./community-pizzas">Community Pizzas</a>
+                      <a class="sideMenuLink" href="./utilities">Utilities</a>
                     </div>
                   </div>
                 </div>
@@ -61,7 +63,7 @@
                             </div>
                         </div>
 
-                      -->
+                        -->
                       
                     </div>
                     <div id="shopContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"></div>

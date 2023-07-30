@@ -3,8 +3,13 @@
     "symbol": "PROMO",
     "description": "RareDough will host a Giveaway to promote you or your project through Twitter or Discord. This NFT can only be used in combination with a Custom Pizza Creation NFT. ONLY RareDough Pizza NFTs are allowed, you will have to send us your previously minted Pizzas (from our Smart Contract), we will take care of the distribution (including transactionfees). We reserve the right to deny promotion of questionable or harmful accounts.",
     "image": "https://raredough.com/assets/images/8.jpg",
-    "external_link": "https://raredough.com/twitter-promo",
+    "external_link": "https://raredough.com/shop-item?&id=8",
     "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "active",
+        "soldout": false
+      },
       {
         "trait_type": "Category",
         "value": "Utilities"

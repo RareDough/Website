@@ -4,3 +4,27 @@ RewriteRule ^ /%1 [NC,L,R]
 
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+
+# Shop page redirects
+Redirect /freemint /shop-item?id=1
+Redirect /infinity /shop-item?id=2
+Redirect /whitelist-lvl1 /shop-item?id=3
+Redirect /whitelist-lvl2 /shop-item?id=4
+Redirect /whitelist-lvl3 /shop-item?id=5
+Redirect /airdrop-pass /shop-item?id=6
+Redirect /custom-pizza-V1 /shop-item?id=7
+Redirect /twitter-promo /shop-item?id=8
+Redirect /100k-pizza /shop-item?id=9
+Redirect /50k-pizza /shop-item?id=10
+Redirect /10k-pizza /shop-item?id=11
+Redirect /bitcoin-pizza-80332 /shop-item?id=18
+Redirect /bitcoin-pizza-80348 /shop-item?id=19
+Redirect /coldpizza /shop-item?id=20
+Redirect /redheadphone /shop-item?id=21
+Redirect /vinnypizza /shop-item?id=22
+Redirect /chesspizza /shop-item?id=23
+Redirect /grafkaalpizza /shop-item?id=24
+Redirect /bulksenderpizza /shop-item?id=26
+Redirect /minguspizza /shop-item?id=27
+Redirect /corapizza /shop-item?id=28
+Redirect /jdoggpizza /shop-item?id=29

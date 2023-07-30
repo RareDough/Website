@@ -1023,6 +1023,7 @@ body.infinityPage {
   font-weight: 300;
   color: white;
   margin-bottom: 0.2em;
+  text-transform:capitalize;
 }
 .shopCard .cardText {
   font-size: 0.9em;

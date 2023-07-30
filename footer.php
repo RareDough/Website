@@ -49,7 +49,7 @@
       <script src="./js/leaderboard.js"></script>
     <?php endif; ?>
 
-    <?php if ($page == 'shop' || $page == 'utilities' || $page == 'whitelist' || $page == 'limited-editions' || $page == 'custom-pizza'): ?>
+    <?php if ($page == 'shop' || $page == 'utilities' || $page == 'whitelist' || $page == 'limited-editions' || $page == 'custom-pizzas' || $page == 'community-pizzas'): ?>
       <script src="./js/shop.js?v=1.0.1"></script>
     <?php endif; ?>
 
@@ -57,11 +57,11 @@
       <script src="./js/burn-oven.js?v=1.0.2"></script>
     <?php endif; ?>
 
-    <?php if ($page == 'custom-pizza-form'): ?>
+    <?php if ($page == 'community-pizza-form'): ?>
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/custom-pizza-form.js?v=1.0.4"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.4"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>

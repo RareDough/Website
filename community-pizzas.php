@@ -1,6 +1,15 @@
 <?php include 'header.php'; ?>
 
-    <section id="shopSection" class="mt-lg-3" data-category="custom pizza">
+<script>
+    const pizzaArray = <?php $out = array();
+    foreach (glob('./assets/community/*.json') as $filename) {
+        $p = pathinfo($filename);
+        $out[] = $p['filename'];
+    }
+    echo json_encode($out); ?>;
+</script>
+
+    <section id="shopSection" class="mt-lg-3" data-category="community pizza">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2 smallSectionBorder py-lg-5">
@@ -10,20 +19,22 @@
                             <a class="sideMenuLink" href="./shop">All Items</a>
                             <a class="sideMenuLink" href="./whitelist">Whitelist</a>
                             <a class="sideMenuLink" href="./limited-editions">Limited Editions</a>
-                            <a class="sideMenuLink active" href="./custom-pizza">Custom Pizzas</a>
+                            <a class="sideMenuLink" href="./custom-pizzas">Custom Pizzas</a>
+                            <a class="sideMenuLink active" href="./community-pizzas">Community Pizzas</a>
                             <a class="sideMenuLink" href="./utilities">Utilities</a>
                         </div>
                       <!-- mobileView -->
                 <div class="sideMenuLinks mobileView">
                   <a class="sideMenuLink active" data-bs-toggle="collapse" href="#sideMenu" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
-                    Custom Pizzas
+                    Community Pizzas
                   </a>
                   <div class="collapse collapsebg" id="sideMenu">
                     <div class="card card-body">
                       <a class="sideMenuLink " href="./shop">All Items</a>
                       <a class="sideMenuLink" href="./whitelist">Whitelist</a>
                       <a class="sideMenuLink" href="./limited-editions">Limited Editions</a>
+                      <a class="sideMenuLink" href="./custom-pizzas">Custom Pizzas</a>
                       <a class="sideMenuLink" href="./utilities">Utilities</a>
                     </div>
                   </div>

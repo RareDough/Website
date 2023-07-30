@@ -3,8 +3,13 @@
     "symbol": "AIRDROP",
     "description": "Never miss out on new Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)",
     "image": "https://raredough.com/assets/images/6.jpg",
-    "external_link": "https://raredough.com/airdrop-pass",
+    "external_link": "https://raredough.com/shop-item?&id=6",
     "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "active",
+        "soldout": false
+      },
       {
         "trait_type": "Category",
         "value": "Utilities"

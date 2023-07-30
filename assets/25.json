@@ -3,8 +3,13 @@
     "symbol": "EASTER23",
     "description": "Celebrating Easter 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.",
     "image": "https://raredough.com/assets/images/25.jpg",
-    "external_link": "https://raredough.com/easter23pizza",
+    "external_link": "https://raredough.com/shop-item?&id=25",
     "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "inactive",
+        "soldout": false
+      },
       {
         "trait_type": "Category",
         "value": "limited edition"

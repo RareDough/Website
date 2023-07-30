@@ -3,8 +3,13 @@
     "symbol": "FREEPIZZA",
     "description": "Mint your free Pizza NFT in the RareDough Shop. You can burn this Pizza in the Burn Oven V2 to receive 1 BREAD Token for free. Use it to buy a Infinity Pizza and get BASIC access to the private Sale.",
     "image": "https://raredough.com/assets/images/1.png",
-    "external_link": "https://raredough.com/freemint",
+    "external_link": "https://raredough.com/shop-item?&id=1",
     "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "active",
+        "soldout": false
+      },
       {
         "trait_type": "Category",
         "value": "Utilities"

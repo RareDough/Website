@@ -3,8 +3,13 @@
     "symbol": "CUSTOMV1",
     "description": "Holders of this NFT are eligible for 1x Custom Pizza Creation. We will create and mint a Pizza NFT through our Collection for you. Contact us via Discord to redeem your Voucher. You will have to provide us your artworks & logo to include in the center of the Pizza. We reserve the right to deny abusive and illegal images.",
     "image": "https://raredough.com/assets/images/7.jpg",
-    "external_link": "https://raredough.com/custom-pizza-V1",
+    "external_link": "https://raredough.com/shop-item?&id=7",
     "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "active",
+        "soldout": false
+      },
       {
         "trait_type": "Category",
         "value": "Utilities"

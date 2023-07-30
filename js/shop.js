@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
    const category = shopSection.dataset.category;
-   console.log(category);
-   for (a = 1; a < 32; a++) {
-     if (a === 10 || a === 11 || a === 12 || a === 13 || a === 14 || a === 15 || a === 16 || a === 17 || a === 25 || a === 31) {
-         continue;
-      }
-      let itemIndex = a;
-      fetch(`./assets/${a}.json`)
+
+   if (category == 'all') {
+      for (var i = 0; i < pizzaArray.length; i++) {
+         fetch(`./assets/${pizzaArray[i]}.json`)
          .then((response) => {
             return response.json()
          }).then(function(item) {
-            let itemName = item.name,
-                itemPrice = item.attributes[1].value.split(' '),
-                itemCategory = item.attributes[0].value,
-                itemLink = item.external_link,
-                shopItem = `<div class="col mt-4">
-                            <a class="link" href="${itemLink}">
+            console.log(item);
+            let itemStatus = item.attributes[0].value,
+               itemName = item.name,
+               itemImage = item.image,
+               itemPrice = item.attributes[2].value.split(' '),
+               itemCategory = item.attributes[1].value,
+               itemLink = item.external_link,
+               shopItem = `<div class="col mt-4">
+                           <a class="link" href="${itemLink}">
                               <div class="shopCard">
-                                 <img class="shopCardImg" src="./img/pizzas/${itemName.replace(/\s+/g, '-').toLowerCase()}.webp" alt="${itemName}">
+                                 <img class="shopCardImg" src="${itemImage}" alt="${itemName}" />
                                  <div class="shopCardFooter">
                                     <p class="category">${itemCategory}</p>
                                     <p class="cardText">${itemName}</p>
@@ -25,17 +25,81 @@ document.addEventListener('DOMContentLoaded', function () {
                                  </div>
                                  </a>
                            </div>`;
-                    
-
-           
-            // populate inventory and value
-            if (category === 'all') {
-               shopContainer.insertAdjacentHTML('beforeend', shopItem);
-            } else if (category === itemCategory.toLowerCase()) {
+                           
+            if (itemStatus != 'inactive') {
                shopContainer.insertAdjacentHTML('beforeend', shopItem);
             }
          }).catch((ex) => {
             console.log('parsing failed', ex);
          });
+      }
+
+      for (var i = 0; i < communityPizzas.length; i++) {
+         fetch(`./assets/community/${communityPizzas[i]}.json`)
+         .then((response) => {
+            return response.json()
+         }).then(function(item) {
+            let itemStatus = item.attributes[0].value,
+               itemName = item.name,
+               itemImage = item.image,
+               itemPrice = item.attributes[2].value.split(' '),
+               itemCategory = item.attributes[1].value,
+               itemLink = item.external_link,
+               shopItem = `<div class="col mt-4">
+                           <a class="link" href="${itemLink}">
+                              <div class="shopCard">
+                                 <img class="shopCardImg" src="${itemImage}" alt="${itemName}" />
+                                 <div class="shopCardFooter">
+                                    <p class="category">${itemCategory}</p>
+                                    <p class="cardText">${itemName}</p>
+                                    <p class="cardText odd d-flex align-items-center justify-content-start"><img class="me-2" src="./img/bpac-sm-icon.svg" alt="">${parseInt(itemPrice[0]).toLocaleString()}</p>
+                                 </div>
+                                 </a>
+                           </div>`;
+   
+            if (itemStatus != 'inactive') {
+               shopContainer.insertAdjacentHTML('beforeend', shopItem);
+            }
+         }).catch((ex) => {
+            console.log('parsing failed', ex);
+         });
+      }
+   } else {
+      if (category == 'community pizza') {
+         pizzaDir = './assets/community/';
+      } else {
+         pizzaDir = './assets/';
+      }
+
+      for (var i = 0; i < pizzaArray.length; i++) {
+         fetch(`${pizzaDir}${pizzaArray[i]}.json`)
+         .then((response) => {
+            return response.json()
+         }).then(function(item) {
+            let itemStatus = item.attributes[0].value,
+               itemName = item.name,
+               itemImage = item.image,
+               itemPrice = item.attributes[2].value.split(' '),
+               itemCategory = item.attributes[1].value,
+               itemLink = item.external_link,
+               shopItem = `<div class="col mt-4">
+                           <a class="link" href="${itemLink}">
+                              <div class="shopCard">
+                                 <img class="shopCardImg" src="${itemImage}" alt="${itemName}" />
+                                 <div class="shopCardFooter">
+                                    <p class="category">${itemCategory}</p>
+                                    <p class="cardText">${itemName}</p>
+                                    <p class="cardText odd d-flex align-items-center justify-content-start"><img class="me-2" src="./img/bpac-sm-icon.svg" alt="">${parseInt(itemPrice[0]).toLocaleString()}</p>
+                                 </div>
+                                 </a>
+                           </div>`;
+            
+            if (category === itemCategory.toLowerCase() && itemStatus != 'inactive') {
+               shopContainer.insertAdjacentHTML('beforeend', shopItem);
+            }
+         }).catch((ex) => {
+            console.log('parsing failed', ex);
+         });
+      }
    }
 }, false);

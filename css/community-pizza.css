@@ -1,4 +1,4 @@
-.custom-pizza-form .mainHeading {
+.community-pizza-form .mainHeading {
     text-transform: uppercase;
     margin: 2em 0 60px;
 }
@@ -10,7 +10,7 @@
     margin:1.5em 0 0;
 }
 
-.custom-pizza-form h2 {
+.community-pizza-form h2 {
     font-size:24px;
     line-height:30px;
     font-weight:bold;
@@ -18,19 +18,19 @@
     margin-bottom:32px;
 }
 
-.custom-pizza-form form {
+.community-pizza-form form {
     display:flex;
     flex-direction:column;
     color:#fff;
     margin-bottom:50px;
 }
 
-    .custom-pizza-form form label.instructions {
+    .community-pizza-form form label.instructions {
         font-size:12px;
         line-height:15px;
         font-weight: 300;
     }
-    .custom-pizza-form form label.instructions:first-child {
+    .community-pizza-form form label.instructions:first-child {
         margin-bottom:16px;
     }
 
