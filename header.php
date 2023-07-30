@@ -3,7 +3,7 @@
   $page = preg_replace("/(.+)\.php$/", "$1", $filename);
 
   // START SHOP PAGES
-  $shopPages = array('account', 'shop', 'burn-oven', 'freemint', 'infinity', 'whitelist-lvl1', 'whitelist-lvl2', 'whitelist-lvl3', 'airdrop-pass', 'custom-pizza-V1', 'twitter-promo', '100k-pizza', '50k-pizza', '10k-pizza', 'burn-ovenv2', 'bitcoin-pizza-80332', 'bitcoin-pizza-79831', 'bitcoin-pizza-80331', 'bitcoin-pizza-79944', 'bitcoin-pizza-79715', 'bitcoin-pizza-79921', 'bitcoin-pizza-79930', 'bitcoin-pizza-80348', 'coldpizza', 'redheadphone', 'vinnypizza', 'chesspizza', 'grafkaalpizza', 'easter23pizza', 'bulksenderpizza', 'minguspizza', 'corapizza', 'jdoggpizza','btcday23','vip', 'custom-pizza', 'custom-pizzas', 'community-pizza', 'community-pizzas', 'community-pizza-form', 'pizza-oven');
+  $shopPages = array('account', 'shop', 'shop-item', 'burn-oven', 'burn-ovenv2', 'custom-pizza', 'custom-pizzas', 'community-pizzas', 'community-pizza-form', 'pizza-oven');
   // END SHOP PAGES
 
   if ($page == 'index'):
