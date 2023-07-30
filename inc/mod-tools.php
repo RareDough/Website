@@ -45,6 +45,11 @@ if ($user) {
 		            "external_link" => "https://raredough.com/community-pizza?id=" . $tokenID
 					"attributes" => [
 						[
+							"trait_type": "Status",
+							"value": "active",
+							"soldout": false
+						],
+						[
 							"trait_type" => "Category",
 							"value" => "community pizza"
 						],
