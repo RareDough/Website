@@ -19,7 +19,8 @@
     "attributes": [
       {
         "trait_type": "Status",
-        "value": "active"
+        "value": "active",
+        "soldout": false
       },
       {
         "trait_type": "Category",

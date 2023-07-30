@@ -22,114 +22,27 @@
   elseif ($page == 'leaderboard'):
     $title = 'RareDough | Leaderboard';
     $description = 'Displaying the TOP Supporters on Twitter. Interact with our official RareDough Account or post Tweets including #RareDough and @RareDough to climb the Twitter Engagement Leaderboard! ';
-  elseif ($page == 'freemint'):
-    $title = 'RareDough | Freemint';
-    $description = 'Mint your FREE RareDough Pizza here. You can mint as many Free Pizzas as you like, please share with your friends!';
-  elseif ($page == 'vip-pass'):
-    $title = 'RareDough | VIP Pass';
-    $description = 'Support us and enjoy privileged benefits in the RareDough Community.';
-  elseif ($page == 'infinity'):
-    $title = 'RareDough | Infinity';
-    $description = 'This Pizza serves as BASIC access token to the RareDough Ecosystem. Holders may participate in the Private Sale AFTER the Whitelist lvl 1 mint (No guaranteed NFT).';
-  elseif ($page == 'whitelist-lvl1'):
-    $title = 'RareDough | Whitelist-lvl1';
-    $description = 'This NFT serves as ELEVATED access token to the RareDough Ecosystem. Holders may buy 1x NFT during the Private Sale. A time window of 24 hours grants exclusive minting permissions AFTER the Whitelist lvl 2 mint.';
-  elseif ($page == 'whitelist-lvl2'):
-    $title = 'RareDough | Whitelist-lvl2';
-    $description = 'This NFT serves as PRIVILEGED access token for the RareDough Ecosystem. Holders may buy up to 3x NFTs during the Private Sale. A time window of 24 hours grants exclusive minting permissions AFTER the Whitelist lvl 3 mint.';
-  elseif ($page == 'whitelist-lvl3'):
-    $title = 'RareDough | Whitelist-lvl3';
-    $description = 'This NFT serves as PREMIUM access token for the RareDough Ecosystem. Holders are guaranteed to be the first to buy up to 5x NFTs during the Private Sale. A time window of 48 hours guarantees exclusive minting permissions before everyone else.';
-  elseif ($page == 'twitter-promo'):
-    $title = 'RareDough | Twitter Promo';
-    $description = 'RareDough will host a Giveaway to promote you or your project through Twitter or Discord. This NFT can only be used in combination with a Custom Pizza Creation NFT. ONLY RareDough Pizza NFTs are allowed, you will have to send us your previously minted Pizzas (from our Smart Contract), we will take care of the distribution (including transactionfees). We reserve the right to deny promotion of questionable or harmful accounts.';
-  elseif ($page == 'custom-pizza-V1'):
-    $title = 'RareDough | Custom Pizza V1';
-    $description = 'Holders of this NFT are eligible for 1x Custom Pizza Creation. RareDough will create and mint a Pizza NFT through our Collection for you. Contact us via Discord to redeem your Voucher. You will have to provide us your artworks & logo to include in the center of the Pizza. We reserve the right to deny abusive and illegal images.';
-  elseif ($page == 'airdrop-pass'):
-    $title = 'RareDough | Airdrop Pass';
-    $description = 'Never miss out on new RareDough Pizza collaborations anymore. Holders of this NFT are guaranteed to be included in all future PUBLIC Airdrops and Giveaways involving custom-made Pizzas for other Communities. (Exceptions apply for private/exclusive drops)';
-  elseif ($page == '100k-pizza'):
-    $title = 'RareDough | 100k Pizza';
-    $description = ' A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 101k BREAD Tokens (1% Bonus), if burned in the NFT Oven.';
-  elseif ($page == '50k-pizza'):
-    $title = 'RareDough | 50k Pizza';
-    $description = 'A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 50250 BREAD Tokens (0.5% Bonus), if burned in the NFT Oven.';
-  elseif ($page == '10k-pizza'):
-    $title = 'RareDough | 10k Pizza';
-    $description = 'A limited edition Pizza only available for a limited time in the RareDough Shop. Owners of this NFT are eligible to receive 10010 BREAD Tokens (0.1% Bonus), if burned in the Oven.';
   elseif ($page == 'burn-ovenv2'):
     $title = 'RareDough | Burn Oven V2';
     $description = 'Burn RareDough Pizza Collectibles to earn BREAD Tokens here. Use your BREAD in our Shop to buy unique products.';
-  elseif ($page == 'bitcoin-pizza-79715'):
-    $title = 'RareDough | Inscription 79715';
-    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
-  elseif ($page == 'bitcoin-pizza-79944'):
-    $title = 'RareDough | Inscription 79944';
-    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
-  elseif ($page == 'bitcoin-pizza-80332'):
-    $title = 'RareDough | Inscription 80332';
-    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
-  elseif ($page == 'bitcoin-pizza-79831'):
-    $title = 'RareDough | Inscription 79831';
-    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
-  elseif ($page == 'bitcoin-pizza-80331'):
-    $title = 'RareDough | Inscription 80331';
-    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
-  elseif ($page == 'bitcoin-pizza-79930'):
-    $title = 'RareDough | Inscription 79930';
-    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
-  elseif ($page == 'burn-bitcoin-pizza-79921'):
-    $title = 'RareDough | Inscription 79921';
-    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
-  elseif ($page == 'bitcoin-pizza-80348'):
-    $title = 'RareDough | Inscription 80348';
-    $description = 'This Pizza is forever inscribed on the Bitcoin Blockchain. Ordinals are digital assets inscribed on Satoshis, the lowest denomination of Bitcoin (BTC).';
-    elseif ($page == 'coldpizza'):
-    $title = 'RareDough | Coldpizza';
-    $description = 'Showcasing our beloved Community Member "Coldpizza" (Twitter: @coldpizza_16). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
-    elseif ($page == 'redheadphone'):
-    $title = 'RareDough | Redheadphone Pizza';
-    $description = 'Showcasing our beloved Community Member "RedHeadphone" (Twitter: @huzaifa_Khila). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
-    elseif ($page == 'vinnypizza'):
-    $title = 'RareDough | Vinnypizza';
-    $description = 'Showcasing our beloved Community Member "Vinnypiazza" (Twitter: @vinnypiazza). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
-    elseif ($page == 'chesspizza'):
-    $title = 'RareDough | Chesspizza';
-    $description = 'This is a special Promo Pizza created to Showcase great projects in the Web3 Space. The $ELO Chess Club is a Play-to-Earn crypto chess game in Decentraland.';
-    elseif ($page == 'grafkaalpizza'):
-    $title = 'RareDough | Grafkaalpizza';
-    $description = 'Showcasing our beloved Community Member "Grafkaal" (Twitter: @grafkaal). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
-    elseif ($page == 'jdoggpizza'):
-    $title = 'RareDough | Jdoggpizza';
-    $description = 'Showcasing our beloved Community Member "Jdogg" (Twitter: @612crypto_eth). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
-    elseif ($page == 'easterpizza23'):
-    $title = 'RareDough | Easter23pizza';
-    $description = 'Celebrating Easter 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.';
-    elseif ($page == 'bulksenderpizza'):
-    $title = 'RareDough | Bulksenderpizza';
-    $description = 'Celebrating the creators of the Bulksender Tool.';
-    elseif ($page == 'minguspizza'):
-    $title = 'RareDough | Minguspizza';
-    $description = 'Showcasing our beloved Community Member "MingusMill" (Twitter: @WNCDAVE1). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
-    elseif ($page == 'corapizza'):
-    $title = 'RareDough | Corapizza';
-    $description = 'Showcasing our beloved Community Member "GreenLantern" (Twitter: @GreenLanternNFT). The Community Spotlight Pizza is a new campaign invented by RareDough to showcase supporters of the beloved Pizza Community and grow together.';
-    elseif ($page == 'vip'):
-    $title = 'RareDough | VIP';
-    $description = 'Support us and enjoy privileged benefits in the RareDough Community.';
-    elseif ($page == 'btcday23'):
-    $title = 'RareDough | BTCDay23Pizza';
-    $description = 'Celebrating Bitcoin Day 2023 with this limited edition Pizza. Distributed exclusively to all Giveaway participants.';
-    elseif ($page == 'custom-pizza-form'):
-      $title = 'RareDough | Mint Your Own RareDough Pizza';
-      $description = 'In 4 simple steps you can mint your very own custom RareDough pizza.';
-    elseif ($page == 'pizza-oven'):
-      $title = 'RareDough | Pizza Oven';
-      $description = 'View pending and minted custom pizzas that have been created by our community.';
-    else:
-      $title = 'RareDough';
-      $description = 'Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products created by RareDough.';
+  elseif ($page == 'custom-pizza-form'):
+    $title = 'RareDough | Mint Your Own RareDough Pizza';
+    $description = 'In 4 simple steps you can mint your very own custom RareDough pizza.';
+  elseif ($page == 'pizza-oven'):
+    $title = 'RareDough | Pizza Oven';
+    $description = 'View pending and minted custom pizzas that have been created by our community.';
+  elseif ($page == 'shop-item'):
+    $id = $_GET['id'];
+    $itemData = file_get_contents('./assets/' . $id . '.json');
+    if (isset($_GET['type'])):
+      $itemData = file_get_contents('./assets/community/' . $id . '.json');
+    endif;
+    $itemDecoded = json_decode($itemData, false);
+    $title = 'RareDough | ' . $itemDecoded->name;
+    $description = $itemDecoded->description;
+  else:
+    $title = 'RareDough';
+    $description = 'Collect digital Pizza Collectibles, earn BREAD and buy innovative crypto products created by RareDough.';
   endif;
 ?>
 

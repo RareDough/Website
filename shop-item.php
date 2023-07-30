@@ -30,6 +30,7 @@ $itemDescription = $itemDecoded->description;
 $itemImage = $itemDecoded->image;
 $itemAttributes = $itemDecoded->attributes;
 $itemStatus = get_object_vars($itemAttributes[0])['value'];
+$soldOut = get_object_vars($itemAttributes[0])['soldout'];
 $itemPrice = get_object_vars($itemAttributes[2])['value'];
 ?>
 
@@ -64,11 +65,11 @@ $itemPrice = get_object_vars($itemAttributes[2])['value'];
                             <h1 class="subHeading">Description</h1>
                             <div class="descriptionBody">
                                 <p class="mainText itemDescription"><?= $itemDescription ?></p>
-                                <?php if ($itemStatus != 'soldout' && $itemStatus != 'inactive') : ?>
+                                <?php if (!$soldOut && $itemStatus != 'inactive') : ?>
                                     <div class="mainText">Current Price</div>
                                 <?php endif; ?>
                                 <h1 class="mainHeading">
-                                    <?php if ($itemStatus == 'soldout') : ?>
+                                    <?php if ($soldOut) : ?>
                                         Sold Out
                                     <?php elseif ($itemStatus == 'inactive') : ?>
                                         Unavailable
@@ -80,7 +81,7 @@ $itemPrice = get_object_vars($itemAttributes[2])['value'];
                                 <?php if ($itemStatus != 'inactive') : ?>
                                     <div class="row ">
                                         <div class="col-lg-6 ">
-                                            <?php if ($itemStatus == 'soldout') : ?>
+                                            <?php if ($soldOut) : ?>
                                                 <a class="mainBtn light" href="https://opensea.io/assets/matic/<?= $contract; ?>/<?= $id; ?>" target="_blank">Buy on Opensea</a>
                                             <?php else : ?>
                                                 <a id="mintButton" data-id="<?= $id; ?>" class="mainBtn light" data-price="<?= str_replace(' BREAD', '', $itemPrice); ?>" href="#">Connect Wallet</a>
