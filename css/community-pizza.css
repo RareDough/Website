@@ -435,12 +435,25 @@ section[data-step="2"] .token-preview {
 .pizza-oven-headings > *, .pizza-item-container > * {
     display:flex;
     width:calc(65% / 4);
-    display:flex;
     align-items:center;
     justify-content:center;
+    flex-wrap:wrap;
 }
-.pizza-oven-headings > *:first-child, .pizza-item-container > *:first-child {
-    width:35%;
+    .pizza-oven-headings > div:nth-child(3), .pizza-item-container > div:nth-child(3) {
+        display:none;
+    }
+@media only screen and (max-width: 991px) {
+    .pizza-oven-headings > div:nth-child(2), .pizza-item-container > div:nth-child(2) {
+        display:none;
+    }
+    .pizza-item-container > *:first-child {
+        justify-content:center;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .pizza-oven-headings > *:first-child, .pizza-item-container > *:first-child {
+        width:35%;
+    }
 }
 .pizza-oven-headings {
     display:flex;
@@ -466,9 +479,16 @@ section[data-step="2"] .token-preview {
             height:80px;
             border: 1px solid #292437;
             border-radius: 10px;
+            flex-shrink:0;
         }
         .token-name {
-            width:256px;
+            width:40%;
+            display:none;
+        }
+        @media only screen and (min-width: 992px) {
+            .token-name {
+                display:block;
+            }
         }
         a.oven-btn {
             width:auto;
@@ -477,11 +497,34 @@ section[data-step="2"] .token-preview {
             padding:8px;
             margin:0 30px 0 0;
         }
-    .pizza-status {
+        @media only screen and (max-width: 991px) {
+            .pizza-item a.oven-btn {
+                margin:15px auto 0;
+            }
+        }
 
+    .pizza-status {
+        flex-wrap:nowrap;
     }
+        .oven-btns {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
         .pizza-status a.oven-btn {
             margin:0 0 0 15px;
+        }
+        @media only screen and (max-width: 991px) {
+            .oven-btns {
+                flex-direction:column;
+                margin-left:15px;
+            }
+            .pizza-status .oven-btns a.oven-btn {
+                margin:15px 0 0;
+            }
+                .pizza-status .oven-btns a.oven-btn:first-child {
+                    margin-top:0;
+                }
         }
         .pizza-status span {
             display:block;
@@ -492,6 +535,7 @@ section[data-step="2"] .token-preview {
             width:12px;
             height:12px;
             border-radius:12px;
+            flex-shrink:0;
         }
             .pizza-status.status-approved i {
                 background: #42FA5F;

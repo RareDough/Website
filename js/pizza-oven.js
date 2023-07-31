@@ -57,7 +57,7 @@ async function verifyUser(walletAddress) {
 				supply = $this.attr('data-supply');
 
 			const userButtons = `
-				<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="activate">Activate</a>
+				<div class="oven-btns"><a class="oven-btn mod-btn mainBtn dark" href="#" data-action="activate">Activate</a></div>
 			`;
 
 			if (creatorID == userID) {
@@ -81,17 +81,23 @@ async function verifyUser(walletAddress) {
 
 			if (status == 'pending') {
 				modButtons = `
-					<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="enable">Enable</a>
-					<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="reject">Reject</a>
+					<div class="oven-btns">
+						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="enable">Enable</a>
+						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="reject">Reject</a>
+					</div>
 				`;
 			} else if (status == 'approved') {
 				modButtons = `
-					<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="disable">Disable</a>
-					<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="pause">Pause</a>
+					<div class="oven-btns">
+						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="disable">Disable</a>
+						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="pause">Pause</a>
+					</div>
 				`;
 			} else if (status == 'disabled') {
 				modButtons = `
-					<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="enable">Enable</a>
+					<div class="oven-btns">
+						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="enable">Enable</a>
+					</div>
 				`;
 			}
 

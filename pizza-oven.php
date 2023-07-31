@@ -81,7 +81,7 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="token-name">
                                         <?= $name; ?>
                                     </div>
-                                    <a class="oven-btn mainBtn dark" href="#">Details</a>
+                                    <a class="oven-btn mainBtn dark" href="/shop-item?id=<?= $tokenID; ?>">Details</a>
                                 </div>
                                 <div class="pizza-id">
                                     <?= $pizza['token_id']; ?>
