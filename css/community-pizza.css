@@ -376,7 +376,7 @@
     display:flex;
     flex-direction:column;
 }
-    #mint-section-buttons a {
+    #mint-section-buttons a.mainBtn {
         display:block;
         width:auto;
         margin:30px auto 0;
@@ -384,12 +384,17 @@
         padding-right:40px;
         align-self:center;
     }
-        #mint-section-buttons a:nth-child(2) {
+        #mint-section-buttons a.mainBtn:nth-child(2) {
             margin-top:40px;
         }
         #mint-section-buttons a#next-step {
             display:none;
         }
+    
+    #mint-section-buttons span.prev-purchased {
+        display:none;
+        margin-top:15px;
+    }
 
 /* Step 1 */
 section[data-step="1"] label.radio-label {

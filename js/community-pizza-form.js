@@ -50,8 +50,8 @@
 					$('select[name="token-select"]').append('<option data-supply="' + tokenSupply + '" value="' + tokenID + '">Token #' + tokenID + '</option>');
 				});
 
-				// Show continue button to allow them to skip
-				$('a#next-step').attr('disabled', false).css('display', 'inline-block');
+				// If user owns tokens already show text link
+				$('.prev-purchased').show();
 			}
 		});
 	}
@@ -132,16 +132,24 @@
 			$('#mint-nav a').removeClass('previous-step');
 			$('#mint-nav a[data-step="'+selectedStep+'"]').parent().prevAll().find('a').addClass('previous-step');
 
+			// Hide navigation buttons if greater than Step 2
 			if (selectedStep > 2) {
 				$('#mint-section-buttons').hide();
 			} else {
 				$('#mint-section-buttons').show();
 			}
+
+			// Show/hide the skip 1st step link
+			if (selectedStep > 1) {
+				$('.prev-purchased').hide();
+			} else {
+				$('.prev-purchased').show();
+			}
 		//}
 	});
 
 	// Form progression
-	$('a#next-step').click(function(e) {
+	$('a#next-step, .prev-purchased a').click(function(e) {
 		e.preventDefault();
 
 		let $this = $(this);
@@ -151,7 +159,9 @@
 				nextStep = parseInt(currentStep) + 1;
 
 			// Disable the continue button
-			$this.attr('disabled', true);
+			if (!$this.parent().hasClass('prev-purchased')) {
+				$this.attr('disabled', true);
+			}
 
 			// Hide current section and show next
 			$('section.mint-section, #mint-nav a').removeClass('active-step');
@@ -169,6 +179,13 @@
 				$('#mint-section-buttons').hide();
 			} else {
 				$('#mint-section-buttons').show();
+			}
+
+			// Show/hide the skip 1st step link
+			if (nextStep > 1) {
+				$('.prev-purchased').hide();
+			} else {
+				$('.prev-purchased').show();
 			}
 
 			// Hide buy button
@@ -227,10 +244,6 @@
 
 		// Update the background image
 		swapTokenBackground();
-
-		// Enable and show continue button
-		$('a#next-step').attr('disabled', false);
-		$('a#next-step').css('display', 'inline-block');
 	});
 
 

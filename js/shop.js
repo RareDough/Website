@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
          .then((response) => {
             return response.json()
          }).then(function(item) {
-            console.log(item);
             let itemStatus = item.attributes[0].value,
                itemName = item.name,
                itemImage = item.image,
@@ -93,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                  </div>
                                  </a>
                            </div>`;
-            
+
             if (category === itemCategory.toLowerCase() && itemStatus != 'inactive') {
                shopContainer.insertAdjacentHTML('beforeend', shopItem);
             }

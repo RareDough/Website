@@ -121,7 +121,9 @@ async function verifyUser(walletAddress) {
 		
 	}
 
-	$(document).on('click', '.mod-btn', function() {
+	$(document).on('click', '.mod-btn', function(e) {
+		e.preventDefault();
+		
 		let $this = $(this),
 			$tokenRow = $(this).closest('.pizza-item-container');
 
