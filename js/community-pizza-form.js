@@ -242,6 +242,10 @@
 		$('input[name="token-supply"]').val(tokenSupply);
 		$('input[name="token-id"]').val(tokenID);
 
+		// Enable and show continue button
+		$('a#next-step').attr('disabled', false);
+		$('a#next-step').css('display', 'inline-block');
+
 		// Update the background image
 		swapTokenBackground();
 	});

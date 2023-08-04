@@ -25,14 +25,13 @@ if ($user) {
         $token = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($token) {
-            // Update the token database entry
-            $stmt = $pdo->prepare('UPDATE submissions SET status = ? WHERE token_id = ?');
-            $stmt->execute([ $status, $token['token_id'] ]);
+			$tokenName = $token['name'];
+			$tokenDesc = $token['description'];
 
             // Generate JSON and transfer image file if enabling
             if ($action == 'enable') {
             	// Move image to assets folder
-			    $source = $_SERVER['DOCUMENT_ROOT'].explode('https://raredough.com', $token['image_path'])[1];
+			    $source = $_SERVER['DOCUMENT_ROOT'].'/'.explode('/', $token['image_path'], 4)[3];
 			    $destination = $_SERVER['DOCUMENT_ROOT'].'/assets/community/images/'.$tokenID.'.jpg';
 			    copy($source, $destination);
 
@@ -42,12 +41,12 @@ if ($user) {
 		            "symbol" => $tokenID,
 		            "description" => $tokenDesc,
 		            "image" => "https://raredough.com/assets/community/images/" . $tokenID . ".jpg",
-		            "external_link" => "https://raredough.com/community-pizza?id=" . $tokenID
+		            "external_link" => "https://raredough.com/community-pizza?id=" . $tokenID,
 					"attributes" => [
 						[
-							"trait_type": "Status",
-							"value": "active",
-							"soldout": false
+							"trait_type" => "Status",
+							"value" => "active",
+							"soldout" => false
 						],
 						[
 							"trait_type" => "Category",
@@ -56,7 +55,7 @@ if ($user) {
 						[
 							"trait_type" => "Price",
 							"value" => "100 BREAD"
-						],
+						]
 					]
 		        ];
 			    // Convert JSON
@@ -65,6 +64,10 @@ if ($user) {
 			    $fp = fopen($jsonPath, 'w');
 			    fwrite($fp, $jsonString);
 			    fclose($fp);
+
+				// Update the token database entry
+				$stmt = $pdo->prepare('UPDATE submissions SET status = ? WHERE token_id = ?');
+				$stmt->execute([ $status, $token['token_id'] ]);
             }
 
             echo json_encode( array('token_updated' => true, 'message' => 'Token #' . $tokenID . ' status has been changed to ' . $status) );

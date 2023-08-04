@@ -659,6 +659,19 @@ window.abi_pizzomatic = [
 	{
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "breadAddress",
+				"type": "address"
+			}
+		],
+		"name": "setBreadCoin",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "uint256",
 				"name": "tokenId",
 				"type": "uint256"
@@ -688,6 +701,19 @@ window.abi_pizzomatic = [
 			}
 		],
 		"name": "setCreatorForToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "breadWholeCoins",
+				"type": "uint256"
+			}
+		],
+		"name": "setPizzaCreationPrice",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
