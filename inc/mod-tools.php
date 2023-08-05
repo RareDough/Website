@@ -63,12 +63,12 @@ if ($user) {
 				$fp = fopen($jsonPath, 'w');
 				fwrite($fp, $jsonString);
 				fclose($fp);
-			} elseif ($action == 'disable') {
+			} else {
 				$jsonString = file_get_contents($jsonPath);
 				$jsonData = json_decode($jsonString, true);
 
 				// Change status to disabled
-				$jsonData['attributes'][0]['value'] = 'disabled';
+				$jsonData['attributes'][0]['value'] = $status;
 
 				// Write to file
 				$newJsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
@@ -82,17 +82,16 @@ if ($user) {
             echo json_encode( array('token_updated' => true, 'message' => 'Token #' . $tokenID . ' status has been changed to ' . $status) );
 		} else {
 			// User is not a moderator
-			if ($action == 'activate') {
-				$jsonString = file_get_contents($jsonPath);
-				$jsonData = json_decode($jsonString, true);
+			$jsonString = file_get_contents($jsonPath);
+			$jsonData = json_decode($jsonString, true);
 
-				// Change status to disabled
-				$jsonData['attributes'][0]['value'] = 'active';
+			// Change status to disabled
+			$jsonData['attributes'][0]['value'] = $status;
 
-				// Write to file
-				$newJsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-				file_put_contents($jsonPath, $newJsonString);
-			}
+			// Write to file
+			$newJsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+			file_put_contents($jsonPath, $newJsonString);
+			
 			echo json_encode( array('token_updated' => true, 'message' => 'Token #' . $tokenID . ' status has been changed to ' . $status) );
 		}
 	} else {
