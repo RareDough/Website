@@ -61,7 +61,7 @@
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form.js?v=1.0.6"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.7"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>

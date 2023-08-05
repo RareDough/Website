@@ -219,14 +219,14 @@
 
 		if (!$this.attr('disabled')) {
 			// Get supply value
-			let tokenSupply = $('input[name="token-supply"]:checked').val();
+			let tokenSupply = $('input[name="token-select-box"]:checked').val();
 
 			// Disable buy button and add loading animation
 			$('#buy-token').attr('disabled', true);
 			$('#buy-token').addClass('loading');
 
 			// Disable supply inputs
-			$('input[name="token-supply"]').attr('disabled', true);
+			$('input[name="token-select-box"]').attr('disabled', true);
 			
 			// Call create pizza method
 			createPizza(web3.utils.toWei('100', 'ether'), tokenSupply);
