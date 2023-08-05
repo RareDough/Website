@@ -1,5 +1,4 @@
 <?php
-
 $userWallet = $_POST['userWallet'];
 $tokenID = $_POST['tokenID'];
 $action = $_POST['action'];
@@ -18,30 +17,30 @@ if ($user) {
 	$userLevel = $user['user_level'];
 	$userTwitter = $user['twitter_username'];
 
-	if ($userLevel == 10) {
-		// User is a moderator
+	if ($token) {
+		// Get token from database
 		$stmt = $pdo->prepare('SELECT * FROM submissions WHERE token_id = ?');
         $stmt->execute([$tokenID]);
         $token = $stmt->fetch(PDO::FETCH_ASSOC);
+		$jsonPath = $_SERVER['DOCUMENT_ROOT'].'/assets/community/' . $tokenID . '.json';
 
-        if ($token) {
-			$tokenName = $token['name'];
-			$tokenDesc = $token['description'];
+		if ($userLevel == 10) {
+			// User is a moderator
+			if ($action == 'enable') {
+				$tokenName = $token['name'];
+				$tokenDesc = $token['description'];
 
-            // Generate JSON and transfer image file if enabling
-            if ($action == 'enable') {
-            	// Move image to assets folder
-			    $source = $_SERVER['DOCUMENT_ROOT'].'/'.explode('/', $token['image_path'], 4)[3];
-			    $destination = $_SERVER['DOCUMENT_ROOT'].'/assets/community/images/'.$tokenID.'.jpg';
-			    copy($source, $destination);
+				// Generate JSON and transfer image file if enabling
+				$source = $_SERVER['DOCUMENT_ROOT'].'/'.explode('/', $token['image_path'], 4)[3];
+				$destination = $_SERVER['DOCUMENT_ROOT'].'/assets/community/images/'.$tokenID.'.jpg';
+				copy($source, $destination);
 
-            	$jsonPath = $_SERVER['DOCUMENT_ROOT'].'/assets/community/' . $tokenID . '.json';
-			    $jsonData = [
-		            "name" => $tokenName,
-		            "symbol" => $tokenID,
-		            "description" => $tokenDesc,
-		            "image" => "https://raredough.com/assets/community/images/" . $tokenID . ".jpg",
-		            "external_link" => "https://raredough.com/community-pizza?id=" . $tokenID,
+				$jsonData = [
+					"name" => $tokenName,
+					"symbol" => $tokenID,
+					"description" => $tokenDesc,
+					"image" => "https://raredough.com/assets/community/images/" . $tokenID . ".jpg",
+					"external_link" => "https://raredough.com/community-pizza?id=" . $tokenID,
 					"attributes" => [
 						[
 							"trait_type" => "Status",
@@ -57,26 +56,47 @@ if ($user) {
 							"value" => "100 BREAD"
 						]
 					]
-		        ];
-			    // Convert JSON
-			    $jsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-			    // Save JSON file
-			    $fp = fopen($jsonPath, 'w');
-			    fwrite($fp, $jsonString);
-			    fclose($fp);
+				];
+				// Convert JSON
+				$jsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+				// Save JSON file
+				$fp = fopen($jsonPath, 'w');
+				fwrite($fp, $jsonString);
+				fclose($fp);
+			} elseif ($action == 'disable') {
+				$jsonString = file_get_contents($jsonPath);
+				$jsonData = json_decode($jsonString, true);
 
-				// Update the token database entry
-				$stmt = $pdo->prepare('UPDATE submissions SET status = ? WHERE token_id = ?');
-				$stmt->execute([ $status, $token['token_id'] ]);
-            }
+				// Change status to disabled
+				$jsonData['attributes'][0]['value'] = 'disabled';
+
+				// Write to file
+				$newJsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+				file_put_contents($jsonPath, $newJsonString);
+			}
+
+			// Update the token database entry
+			$stmt = $pdo->prepare('UPDATE submissions SET status = ? WHERE token_id = ?');
+			$stmt->execute([ $status, $token['token_id'] ]);
 
             echo json_encode( array('token_updated' => true, 'message' => 'Token #' . $tokenID . ' status has been changed to ' . $status) );
-        } else {
-            echo json_encode( array('token_updated' => false, 'message' => 'Token ID not found.') );
-        }
+		} else {
+			// User is not a moderator
+			if ($action == 'activate') {
+				$jsonString = file_get_contents($jsonPath);
+				$jsonData = json_decode($jsonString, true);
+
+				// Change status to disabled
+				$jsonData['attributes'][0]['value'] = 'active';
+
+				// Write to file
+				$newJsonString = json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+				file_put_contents($jsonPath, $newJsonString);
+			}
+			echo json_encode( array('token_updated' => true, 'message' => 'Token #' . $tokenID . ' status has been changed to ' . $status) );
+		}
 	} else {
-		// User is not a moderator
-		echo json_encode( array('token_updated' => false, 'message' => 'User not authorized to make this change') );
+		echo json_encode( array('token_updated' => false, 'message' => 'Token ID not found.') );
 	}
 } else {
 	exit('User not found');
