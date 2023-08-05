@@ -60,6 +60,9 @@ async function verifyUser(walletAddress) {
 				<div class="oven-btns"><a class="oven-btn mod-btn mainBtn dark" href="#" data-action="activate">Activate</a></div>
 			`;
 
+			console.log(creatorID);
+			console.log(userID);
+
 			if (creatorID == userID) {
 				$('.pizza-status span', this).hide();
 				$('.pizza-status', this).append(userButtons);
@@ -86,7 +89,7 @@ async function verifyUser(walletAddress) {
 						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="reject">Reject</a>
 					</div>
 				`;
-			} else if (status == 'approved') {
+			} else if (status == 'approved' || status == 'active') {
 				modButtons = `
 					<div class="oven-btns">
 						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="disable">Disable</a>

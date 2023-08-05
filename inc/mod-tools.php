@@ -18,11 +18,12 @@ if ($user) {
 	$userLevel = $user['user_level'];
 	$userTwitter = $user['twitter_username'];
 
+	// Get token from database
+	$stmt = $pdo->prepare('SELECT * FROM submissions WHERE token_id = ?');
+	$stmt->execute([$tokenID]);
+	$token = $stmt->fetch(PDO::FETCH_ASSOC);
+
 	if ($token) {
-		// Get token from database
-		$stmt = $pdo->prepare('SELECT * FROM submissions WHERE token_id = ?');
-        $stmt->execute([$tokenID]);
-        $token = $stmt->fetch(PDO::FETCH_ASSOC);
 		$ownerID = $token['user_id'];
 		$jsonPath = $_SERVER['DOCUMENT_ROOT'].'/assets/community/' . $tokenID . '.json';
 
