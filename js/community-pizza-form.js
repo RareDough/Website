@@ -7,7 +7,7 @@
 		userLevel = null;
 
 	// Get owned token IDs from contract
-	async function getTokenIDs(supply) {
+	async function addToken(supply) {
 		// let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
 		let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
@@ -41,6 +41,7 @@
 			}
 		}).done(function(data) {
 			let createdTokens = data.created_tokens;
+			$('select[name="token-select"]').html();
 			if (createdTokens.length) {
 				// User has created tokens awaiting metadata
 				$.each(createdTokens, function( index, token ) {
@@ -73,8 +74,11 @@
 			// console.log(confirmationNumber);
 			// console.log(receipt);
 
-			// Once confirmations start rolling in - get token IDs
-			getTokenIDs(supply);
+			// Get created tokens
+			getCreatedTokens(userID);
+
+			// Once confirmations start rolling in - add token to database
+			addToken(supply);
 
 			// Enable the user to continue
 			$('#buy-token').removeClass('loading');
@@ -194,13 +198,13 @@
 	});
 
 	// Update token preview and background image
-	function swapTokenBackground() {
-		let backgroundImage = $('select[name="token-select"] option:selected').attr('data-supply');
-		$('.token-preview img').attr('src', '/custom-mint/backgrounds/' + backgroundImage + '.png');
+	function swapTokenBackground(supply) {
+		$('.token-preview img').attr('src', '/custom-mint/backgrounds/' + supply + '.png');
+		$('#pizza-template').attr('src', '/custom-mint/backgrounds/' + supply + '.png');
 	}
 
 	// Step 1 
-	$('input[name="token-supply"]').on('change', function() {
+	$('input[name="token-select-box"]').on('change', function() {
 		let $this = $(this);
 		// Enable buy button once supply is selected
 		$('#buy-token').attr('disabled', false);
@@ -247,7 +251,7 @@
 		$('a#next-step').css('display', 'inline-block');
 
 		// Update the background image
-		swapTokenBackground();
+		swapTokenBackground(tokenSupply);
 	});
 
 
@@ -455,7 +459,7 @@
 	                	userWallet: walletAddress,
 	                    imgBase64: dataURL,
 	                    id: document.getElementsByName('token-id')[0].value,
-	                    supply: document.getElementsByName('token-supply')[0].value,
+	                    supply: document.getElementsByName('token-select-box')[0].value,
 	                    name: document.getElementsByName('token-name')[0].value,
 	                    description: document.getElementsByName('token-desc')[0].value,
 	                    twitter: document.getElementsByName('twitter-username')[0].value,

@@ -6,9 +6,6 @@
 
 include 'header.php';
 
-$path = 'custom-mint/backgrounds';
-$backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
-
 ?>
 
 <section id="mint-header">
@@ -46,22 +43,22 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                     <div class="form-fields form-fields__row">
                         <label class="radio-label">
                             <?= number_format(500); ?>
-                            <input name="token-supply" value="500" type="radio" />
+                            <input name="token-select-box" value="500" type="radio" />
                             <img src="/custom-mint/backgrounds/500.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(1000); ?>
-                            <input name="token-supply" value="1000" type="radio" />
+                            <input name="token-select-box" value="1000" type="radio" />
                             <img src="/custom-mint/backgrounds/1000.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(5000); ?>
-                            <input name="token-supply" value="5000" type="radio" />
+                            <input name="token-select-box" value="5000" type="radio" />
                             <img src="/custom-mint/backgrounds/5000.png" />
                         </label>
                         <label class="radio-label">
                             <?= number_format(10000); ?>
-                            <input name="token-supply" value="10000" type="radio" />
+                            <input name="token-select-box" value="10000" type="radio" />
                             <img src="/custom-mint/backgrounds/10000.png" />
                         </label>
                     </div>
@@ -97,7 +94,7 @@ $backgrounds = array_values(array_diff(scandir($path), array('..', '.')));
                     <!-- PIZZA IMAGE -->
                     <div id="image-upload">
                         <div id="pizza-container">
-                            <img id="pizza-template" src="/custom-mint/backgrounds/<?php echo $backgrounds[0]; ?>" alt="Background Image" />
+                            <img id="pizza-template" src="/custom-mint/backgrounds/500.png" alt="Background Image" />
                             <!-- Text on Curve -->
                             <svg xmlns="http://www.w3.org/2000/svg" id="text-path" viewBox="0 0 500 500">
                                 <g data-name="Layer 1">
