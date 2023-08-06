@@ -542,7 +542,7 @@ section[data-step="2"] .token-preview {
             border-radius:12px;
             flex-shrink:0;
         }
-            .pizza-status.status-approved , .pizza-status.status-active i {
+            .pizza-status.status-approved i, .pizza-status.status-active i {
                 background: #42FA5F;
             }
             .pizza-status.status-pending i, .pizza-status.status-paused i {
