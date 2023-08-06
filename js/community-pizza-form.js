@@ -46,6 +46,7 @@
 			console.log(data);
 			let createdTokens = data.created_tokens;
 			$('select[name="token-select"]').empty();
+			$('select[name="token-select"]').append('<option selected disabled>Select a TokenID</option>');
 			if (createdTokens.length) {
 				// User has created tokens awaiting metadata
 				$.each(createdTokens, function( index, token ) {
