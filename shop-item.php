@@ -18,7 +18,7 @@ if (isset($_GET['type'])) :
 
     if ($pizzaType == 'community'):
         $itemData = file_get_contents('./assets/community/' . $id . '.json');
-        $contract = '0x7ee70d147b0b275c14f503b52A4E4cBE327CEc0d';
+        $contract = '0x4f65ca65362B284739F033611b8d3d84e70EdB10';
     endif;
 endif;
 
