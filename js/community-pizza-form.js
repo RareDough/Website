@@ -27,6 +27,9 @@
 			}
 		}).done(function(data) {
 			console.log(data);
+
+			// Get created tokens
+			getCreatedTokens(userID);
 		});
 	}
 
@@ -40,8 +43,9 @@
 				userID: userID,
 			}
 		}).done(function(data) {
+			console.log(data);
 			let createdTokens = data.created_tokens;
-			$('select[name="token-select"]').html();
+			$('select[name="token-select"]').empty();
 			if (createdTokens.length) {
 				// User has created tokens awaiting metadata
 				$.each(createdTokens, function( index, token ) {
@@ -71,12 +75,6 @@
 			console.log(receipt);
 		})
 		.once('confirmation', function(confirmationNumber, receipt) {
-			// console.log(confirmationNumber);
-			// console.log(receipt);
-
-			// Get created tokens
-			getCreatedTokens(userID);
-
 			// Once confirmations start rolling in - add token to database
 			addToken(supply);
 

@@ -52,18 +52,28 @@ async function verifyUser(walletAddress) {
 		$('.pizza-item-container').each(function(i) {
 			let $this = $(this),
 				status = $this.attr('data-status'),
+				userButtons = null,
 				creatorID = $this.attr('data-user-id'),
 				tokenID = $this.attr('data-token-id'),
 				supply = $this.attr('data-supply');
 
-			const userButtons = `
-				<div class="oven-btns"><a class="oven-btn mod-btn mainBtn dark" href="#" data-action="activate">Activate</a></div>
-			`;
+			if (status == 'approved') {
+				userButtons = `
+					<div class="oven-btns"><a class="oven-btn mod-btn mainBtn dark" href="#" data-action="activate">Activate</a></div>
+				`;
+			} else if (status == 'active') {
+				userButtons = `
+					<div class="oven-btns"><a class="oven-btn mod-btn mainBtn dark" href="#" data-action="pause">Pause</a></div>
+				`;
+			} else if (status == 'paused') {
+				userButtons = `
+					<div class="oven-btns">
+						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="activate">Activate</a>
+					</div>
+				`;
+			}
 
-			console.log(creatorID);
-			console.log(userID);
-
-			if (creatorID == userID) {
+			if (creatorID == userID && userButtons) {
 				$('.pizza-status span', this).hide();
 				$('.pizza-status', this).append(userButtons);
 			}
@@ -89,11 +99,10 @@ async function verifyUser(walletAddress) {
 						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="reject">Reject</a>
 					</div>
 				`;
-			} else if (status == 'approved' || status == 'active') {
+			} else if (status == 'approved' || status == 'active' || status == 'paused') {
 				modButtons = `
 					<div class="oven-btns">
 						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="disable">Disable</a>
-						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="pause">Pause</a>
 					</div>
 				`;
 			} else if (status == 'disabled') {
@@ -104,7 +113,9 @@ async function verifyUser(walletAddress) {
 				`;
 			}
 
-			$('.pizza-status', this).append(modButtons);
+			if (modButtons) {
+				$('.pizza-status', this).append(modButtons);
+			}
 
 			// Get number of minted for each token
 			let pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
@@ -136,37 +147,51 @@ async function verifyUser(walletAddress) {
 			let tokenID = $tokenRow.attr('data-token-id'),
 				action = $this.attr('data-action'),
 				status = null,
+				method =  null,
 				// pizzaContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC),
 				pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
 			if (action == 'enable' || action == 'reactivate') {
-				pizzomaticContract.methods.activateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				//pizzomaticContract.methods.activateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				method = 'activateToken';
 				status = 'approved';
 			} else if (action == 'activate') {
-				pizzomaticContract.methods.activateSale(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				//pizzomaticContract.methods.activateSale(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				method = 'activateSale';
 				status = 'active';
 			} else if (action == 'disable') {
-				pizzomaticContract.methods.deactivateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				//pizzomaticContract.methods.deactivateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				method = 'deactivateToken';
 				status = 'disabled';
 			} else if (action == 'pause') {
-				pizzomaticContract.methods.deactivateSale(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				//pizzomaticContract.methods.deactivateSale(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+				method = 'deactivateSale';
 				status = 'paused';
 			}
 
-			// Make changes in database
-			$.ajax({
-				type: 'POST',
-				url: '/inc/mod-tools',
-				dataType: 'json',
-				data: {
-					userWallet: window.walletAddress,
-					tokenID: tokenID,
-					action: action,
-					status: status
-				}
-			}).done(function(data) {
-				console.log(data);
-			});
+			pizzomaticContract.methods[method](tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)})
+			.once('transactionHash', function(hash) {
+				console.log(hash);
+			})
+			.once('confirmation', function(receipt) {
+				console.log(receipt);
+			})
+			.on('receipt', function(receipt) {
+				// Once confirmations start rolling in - update token in database
+				$.ajax({
+					type: 'POST',
+					url: '/inc/mod-tools',
+					dataType: 'json',
+					data: {
+						userWallet: window.walletAddress,
+						tokenID: tokenID,
+						action: action,
+						status: status
+					}
+				}).done(function(data) {
+					console.log(data);
+				});
+			})
 		})
 		.catch(function(err) {
 			// User not validated
