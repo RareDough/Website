@@ -127,7 +127,8 @@
 	$('#mint-nav a').click(function(e) {
 		e.preventDefault();
 		const $this = $(this);
-		//if ($this.hasClass('previous-step')) {
+		const currentStep = $('#mint-nav a.active-step').attr('data-step');
+		if ($this.hasClass('previous-step') && currentStep != '4') {
 			const selectedStep = $this.attr('data-step');
 			$('section.mint-section, #mint-nav a').removeClass('active-step');
 			$('section.mint-section[data-step="'+selectedStep+'"], #mint-nav a[data-step="'+selectedStep+'"]').addClass('active-step');
@@ -148,7 +149,7 @@
 			} else {
 				$('.prev-purchased').show();
 			}
-		//}
+		}
 	});
 
 	// Form progression
@@ -438,6 +439,9 @@
 
 			$form.addClass('is-uploading').removeClass('is-error');
 
+			// Disable submit button
+			$('input[type="submit]', $form).attr('disabled', true);
+
 			// Clone preview to final composition container
 			let $finalPizza = $('#pizza-container').clone();
 			$('#pizza-comp').html($finalPizza);
@@ -465,8 +469,11 @@
 	                    discord: document.getElementsByName('discord-username')[0].value
 	                }
 	            }).done(function(data) {
-					alert(data.message);
 	                console.log(data);
+					$('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
+					$('#mint-nav ol').attr('data-step', 4);
+					$('section.mint-section').removeClass('active-step');
+					$('section.mint-section[data-step="4"], #mint-nav a[data-step="4"]').addClass('active-step');
 	            });
 		    });
 		}

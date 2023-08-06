@@ -108,7 +108,7 @@ async function verifyUser(walletAddress) {
 			} else if (status == 'disabled') {
 				modButtons = `
 					<div class="oven-btns">
-						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="reactivate">Enable</a>
+						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="reenable">Enable</a>
 					</div>
 				`;
 			}
@@ -151,20 +151,16 @@ async function verifyUser(walletAddress) {
 				// pizzaContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC),
 				pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
-			if (action == 'enable' || action == 'reactivate') {
-				//pizzomaticContract.methods.activateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
+			if (action == 'enable' || action == 'reenable') {
 				method = 'activateToken';
 				status = 'approved';
 			} else if (action == 'activate') {
-				//pizzomaticContract.methods.activateSale(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
 				method = 'activateSale';
 				status = 'active';
 			} else if (action == 'disable') {
-				//pizzomaticContract.methods.deactivateToken(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
 				method = 'deactivateToken';
 				status = 'disabled';
 			} else if (action == 'pause') {
-				//pizzomaticContract.methods.deactivateSale(tokenID).send({ from:window.walletAddress, amount:0, gasPrice:(gas)});
 				method = 'deactivateSale';
 				status = 'paused';
 			}
@@ -190,8 +186,10 @@ async function verifyUser(walletAddress) {
 					}
 				}).done(function(data) {
 					console.log(data);
+					// Transaction successful, refresh page
+					window.location.reload();
 				});
-			})
+			});
 		})
 		.catch(function(err) {
 			// User not validated

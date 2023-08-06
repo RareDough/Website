@@ -7,6 +7,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha512-72WD92hLs7T5FAXn3vkNZflWG6pglUDDpm87TeQmfSg8KnrymL2G30R7as4FmTwhgu9H7eSzDCX3mjitSecKnw==" crossorigin="anonymous"></script>
+    <script src="./js/lightbox.min.js"></script>
+    <script>
+      lightbox.option({
+        'disableScrolling': true,
+        'showImageNumberLabel': false,
+        'resizeDuration': 200,
+        'fadeDuration': 200
+      })
+    </script>
     <script src="./js/main.js"></script>
     <script src="./js/lang.js"></script>
     <script>
@@ -61,11 +70,11 @@
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form.js?v=1.0.9"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.10"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>
-      <script src="./js/pizza-oven.js?v=1.0.8"></script>
+      <script src="./js/pizza-oven.js?v=1.0.9"></script>
     <?php endif; ?>
 
     <script src="./js/mint-button.js?v=1.0.7"></script>

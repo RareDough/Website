@@ -159,6 +159,7 @@ include 'header.php';
             <div class="row justify-content-center">
                 <div class="col-md-7 col-lg-5">
                     <h2>4. Your RareDough Pizza has been submitted!</h2>
+                    <p>Please wait for a moderator to review and activate your pizza, at which time you will be able to activate the sale of your pizza in our shop. In the meantime, <a href="/pizza-oven">check out what's cookin'</a> in the oven!</p>
                 </div>
             </div>
         </div>

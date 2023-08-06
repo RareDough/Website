@@ -76,14 +76,16 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <div class="pizza-item-container" data-user-id="<?= $userID; ?>" data-token-id="<?= $tokenID; ?>" data-supply="<?= $supply; ?>" data-status="<?= $status; ?>">
                                 <div class="pizza-item">
                                     <div class="token-image">
-                                        <img src="<?= $image; ?>" alt="<?= $name; ?>" />
+                                        <a href="<?= $image; ?>" data-lightbox="token-<?= $tokenID; ?>" data-title="Token #<?= $tokenID; ?> - <?= $name; ?>"><img src="<?= $image; ?>" alt="<?= $name; ?>" /></a>
                                     </div>
                                     <div class="token-name">
                                         <?= $name; ?>
                                     </div>
-                                    <?php if ($status == 'active'): ?>
-                                        <a class="oven-btn mainBtn dark" href="/shop-item?type=community&id=<?= $tokenID; ?>">Details</a>
-                                    <?php endif; ?>
+                                    <div class="token-details">
+                                        <?php if ($status == 'active'): ?>
+                                            <a class="oven-btn mainBtn dark" style="<?= ($status !== 'active') ? 'display:none;' : ''; ?>" href="/shop-item?type=community&id=<?= $tokenID; ?>">Details</a>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                                 <div class="pizza-id">
                                     <?= $pizza['token_id']; ?>
