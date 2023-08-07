@@ -160,6 +160,12 @@
             font-weight:bold;
             cursor:pointer;
         }
+            #pizza-form label.radio-label.disabled {
+                cursor:not-allowed;
+            }
+            #pizza-form label.radio-label.unselected {
+                opacity:.5;
+            }
 
         #pizza-form label.checkbox-label {
             display:flex;

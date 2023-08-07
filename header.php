@@ -115,7 +115,7 @@
     <link rel="stylesheet" href="./css/lightbox.min.css" />
     <link rel="stylesheet" href="./css/style.css?v=1.0.6" />
     <?php if ( $page == 'community-pizza-form' || $page == 'pizza-oven' ) : ?>
-      <link rel="stylesheet" href="./css/community-pizza.css?v=1.0.7" />
+      <link rel="stylesheet" href="./css/community-pizza.css?v=1.0.8" />
     <?php endif; ?>
   </head>
   <body class="<?= $page; ?>" data-page="<?= $page; ?>" onload="connectWallet()">

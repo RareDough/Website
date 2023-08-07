@@ -83,6 +83,15 @@
 			$('#buy-token').removeClass('loading');
 			$('#buy-token').hide();
 			$('a#next-step').attr('disabled', false).css('display', 'inline-block');
+		})
+		.once('error', function(error, receipt) {
+			if (error.code == '4001') {
+				// User canceled transaction
+				$('input[name="token-select-box"]').attr('disabled', false);
+				$('input[name="token-select-box"]').prop('checked', false);
+				$('input[name="token-select-box"]').parent().removeClass('disabled unselected');
+				$('#buy-token').removeClass('loading');
+			}
 		});
 	}
 
@@ -227,6 +236,10 @@
 
 			// Disable supply inputs
 			$('input[name="token-select-box"]').attr('disabled', true);
+			$('input[name="token-select-box"]').parent().addClass('disabled');
+
+			// Reduce opacity of unselected options
+			$('input[name="token-select-box"]:not(:checked)').parent().addClass('unselected');
 			
 			// Call create pizza method
 			createPizza(web3.utils.toWei('100', 'ether'), tokenSupply);
