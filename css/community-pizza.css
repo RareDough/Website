@@ -167,7 +167,7 @@
                 opacity:.5;
             }
 
-        #pizza-form label.checkbox-label {
+        #pizza-form .checkbox-label__inner {
             display:flex;
             flex-direction:row-reverse;
             align-items:center;
@@ -252,8 +252,8 @@
             #pizza-form select.error, #pizza-form input[type="text"].error, #pizza-form textarea.error {
                 border:1px solid red;
             }
-        #pizza-form input[type="submit"] {
-            max-width:135px;
+        #pizza-form #submit-form {
+            max-width:145px;
             margin-top:0;
         }
 

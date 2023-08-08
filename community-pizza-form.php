@@ -140,14 +140,16 @@ include 'header.php';
                             <input name="discord-username" type="text" required />
                         </label>
                         <label class="checkbox-label">
-                            <span>Please make sure to <a href="https://discord.com/invite/GbwykC99N6" target="_blank">join our discord server</a> for further communication.</span>
-                            <input name="discord-joined" type="checkbox" required />
-                            <span class="checkmark"></span>
+                            <div class="checkbox-label__inner">
+                                <span>Please make sure to <a href="https://discord.com/invite/GbwykC99N6" target="_blank">join our discord server</a> for further communication.</span>
+                                <input name="discord-joined" type="checkbox" required />
+                                <span class="checkmark"></span>
+                            </div>
                         </label>
                         <label class="submit-label">
                             <input type="hidden" name="token-supply" value="">
                             <input type="hidden" name="token-id" value="" />
-                            <input type="submit" class="mainBtn light" />
+                            <a id="submit-form" href="#" class="mainBtn light">Submit</a>
                         </label>
                     </div>
                 </div>

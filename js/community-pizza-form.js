@@ -30,6 +30,11 @@
 
 			// Get created tokens
 			getCreatedTokens(userID);
+
+			// Enable the user to continue
+			$('#buy-token').removeClass('loading');
+			$('#buy-token').hide();
+			$('a#next-step').attr('disabled', false).css('display', 'inline-block');
 		});
 	}
 
@@ -78,11 +83,6 @@
 		.once('confirmation', function(confirmationNumber, receipt) {
 			// Once confirmations start rolling in - add token to database
 			addToken(supply);
-
-			// Enable the user to continue
-			$('#buy-token').removeClass('loading');
-			$('#buy-token').hide();
-			$('a#next-step').attr('disabled', false).css('display', 'inline-block');
 		})
 		.once('error', function(error, receipt) {
 			if (error.code == '4001') {
@@ -435,6 +435,8 @@
 		errorPlacement: function(error, element) {
 			if (element.attr('name') == 'custom-image') {
 				error.insertAfter('#image-upload');
+			} else if (element.attr('name') == 'discord-joined') {
+				error.insertAfter(element.parent());
 			} else {
 				error.insertAfter(element);
 			}
@@ -442,7 +444,7 @@
 	});
 
 	// Submit form if valid
-	$form.on('submit', function(e) {
+	$('#submit-form').click(function(e) {
 		e.preventDefault();
 
 		let isvalid = $form.valid();
@@ -453,7 +455,8 @@
 			$form.addClass('is-uploading').removeClass('is-error');
 
 			// Disable submit button
-			$('input[type="submit]', $form).attr('disabled', true);
+			$('#submit-form').attr('disabled', true);
+			$('#submit-form').addClass('loading');
 
 			// Clone preview to final composition container
 			let $finalPizza = $('#pizza-container').clone();
@@ -482,11 +485,11 @@
 	                    discord: document.getElementsByName('discord-username')[0].value
 	                }
 	            }).done(function(data) {
-	                console.log(data);
 					$('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
 					$('#mint-nav ol').attr('data-step', 4);
 					$('section.mint-section').removeClass('active-step');
 					$('section.mint-section[data-step="4"], #mint-nav a[data-step="4"]').addClass('active-step');
+					$('#submit-form').removeClass('loading');
 	            });
 		    });
 		}

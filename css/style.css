@@ -373,6 +373,9 @@ a.mainBtn, button.mainBtn, input.mainBtn {
     top:50%;
     transform:translateY(-50%);
   }
+    a.mainBtn.light.loading:after {
+      background-image: url("../img/spinner-dark.svg");
+    }
 .mainBtn.mobileBtn {
   display: none;
 }
