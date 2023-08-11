@@ -227,8 +227,9 @@
 		let $this = $(this);
 
 		if (!$this.attr('disabled')) {
-			// Get supply value
-			let tokenSupply = $('input[name="token-select-box"]:checked').val();
+			// Get supply value and set default token price
+			let tokenSupply = $('input[name="token-select-box"]:checked').val(),
+				tokenPrice = '100';
 
 			// Disable buy button and add loading animation
 			$('#buy-token').attr('disabled', true);
@@ -241,8 +242,12 @@
 			// Reduce opacity of unselected options
 			$('input[name="token-select-box"]:not(:checked)').parent().addClass('unselected');
 			
+			// Change price for 500 supply token
+			if (tokenSupply == '500') {
+				tokenPrice = '1000';
+			}
 			// Call create pizza method
-			createPizza(web3.utils.toWei('100', 'ether'), tokenSupply);
+			createPizza(web3.utils.toWei(tokenPrice, 'ether'), tokenSupply);
 		}
 	});
 
@@ -447,7 +452,9 @@
 	$('#submit-form').click(function(e) {
 		e.preventDefault();
 
-		let isvalid = $form.valid();
+		let isvalid = $form.valid(),
+			dataURL = null;
+
 		if (isvalid) {
 			// Check if form is already submitting
 			if ($form.hasClass('is-uploading')) return false;
@@ -469,7 +476,7 @@
 				width: 1000,
 				height: 1000
 			}).then(canvas => {
-		        var dataURL = canvas.toDataURL();
+		        dataURL = canvas.toDataURL();
 	            $.ajax({
 	                type: 'POST',
 	                url: '/inc/save-pizza',
@@ -485,6 +492,7 @@
 	                    discord: document.getElementsByName('discord-username')[0].value
 	                }
 	            }).done(function(data) {
+					$('#image-preview').attr('src', dataURL);
 					$('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
 					$('#mint-nav ol').attr('data-step', 4);
 					$('section.mint-section').removeClass('active-step');

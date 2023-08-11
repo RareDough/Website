@@ -416,6 +416,20 @@ section[data-step="1"] label.radio-label {
             box-shadow: 0px 0px 10px #ff1f00;
         }
 
+.token-cost {
+    display:flex;
+    align-items:center;
+    width:100%;
+}
+    .token-cost i {
+        display:inline-block;
+        width:16px;
+        height:16px;
+        background-image:url("../img/bpac-sm-icon.svg");
+        background-size:cover;
+        background-repeat:no-repeat;
+    }
+
 /* Step 2 */
 section[data-step="2"] label {
     display:flex;
@@ -438,6 +452,29 @@ section[data-step="2"] .token-preview {
         box-shadow: 0px 0px 10px #ff1f00;
     }
 
+/* Step 4 */
+.submit-checkmark {
+    display:block;
+    width:36px;
+    height:25px;
+    background-image:url("../img/check.svg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    margin:0 auto 24px;
+}
+.image-preview {
+    display:block;
+    width:200px;
+    height:200px;
+    margin:0 auto;
+    border: 1px solid #292437;
+    border-radius: 10px;
+    margin-bottom:24px;
+    overflow:hidden;
+}
+    .image-preview img {
+        width:100%;
+    }
 
 /* Pizza Oven */
 #pizza-oven {

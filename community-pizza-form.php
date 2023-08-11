@@ -45,21 +45,25 @@ include 'header.php';
                             <?= number_format(500); ?>
                             <input name="token-select-box" value="500" type="radio" />
                             <img src="/custom-mint/backgrounds/500.png" />
+                            <span class="token-cost mt-2"><i class="me-2"></i>1,000</span>
                         </label>
                         <label class="radio-label">
                             <?= number_format(1000); ?>
                             <input name="token-select-box" value="1000" type="radio" />
                             <img src="/custom-mint/backgrounds/1000.png" />
+                            <span class="token-cost mt-2"><i class="me-2"></i>100</span>
                         </label>
                         <label class="radio-label">
                             <?= number_format(5000); ?>
                             <input name="token-select-box" value="5000" type="radio" />
                             <img src="/custom-mint/backgrounds/5000.png" />
+                            <span class="token-cost mt-2"><i class="me-2"></i>100</span>
                         </label>
                         <label class="radio-label">
                             <?= number_format(10000); ?>
                             <input name="token-select-box" value="10000" type="radio" />
                             <img src="/custom-mint/backgrounds/10000.png" />
+                            <span class="token-cost mt-2"><i class="me-2"></i>100</span>
                         </label>
                     </div>
                 </div>
@@ -160,8 +164,15 @@ include 'header.php';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 col-lg-5">
-                    <h2>4. Your RareDough Pizza has been submitted!</h2>
-                    <p>Please wait for a moderator to review and activate your pizza, at which time you will be able to activate the sale of your pizza in our shop. In the meantime, <a href="/pizza-oven">check out what's cookin'</a> in the oven!</p>
+                    <span class="submit-checkmark"></span>
+                    <h2>Your RareDough Pizza has been submitted!</h2>
+                    <div class="image-preview">
+                        <img id="image-preview" src="" />
+                    </div>
+                    <p>Please wait for a moderator to review and activate your pizza, at which time you will be able to activate the sale of your pizza in our shop. In the meantime, check out what's cookin' in the oven!</p>
+                    <div class="text-center">
+                        <a href="/pizza-oven" class="mainBtn light">Pizza Oven</a>
+                    </div>
                 </div>
             </div>
         </div>
