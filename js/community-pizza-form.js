@@ -155,8 +155,11 @@
 			// Show/hide the skip 1st step link
 			if (selectedStep > 1) {
 				$('.prev-purchased').hide();
+				$('#next-step').show();
 			} else {
 				$('.prev-purchased').show();
+				$('#buy-token').show();
+				$('#next-step').hide();
 			}
 		}
 	});
