@@ -291,7 +291,12 @@ window.abi_pizzomatic = [
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "setBreadPrice",
+				"name": "purchaseWholeCoins",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "salePriceWholeCoins",
 				"type": "uint256"
 			},
 			{
@@ -709,19 +714,6 @@ window.abi_pizzomatic = [
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "breadWholeCoins",
-				"type": "uint256"
-			}
-		],
-		"name": "setPizzaCreationPrice",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
 				"name": "tokenId",
 				"type": "uint256"
 			},
@@ -781,19 +773,6 @@ window.abi_pizzomatic = [
 				"internalType": "bool",
 				"name": "",
 				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "tokenCreationPrice",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",

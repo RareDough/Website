@@ -81,12 +81,12 @@
 	}
 
 	// Create pizza token
-	async function createPizza(price, supply) {
+	async function createPizza(creationPrice, salePrice, supply) {
 		// Initialize transaction
 		let gas = await web3.eth.getGasPrice();
 		//let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
 		let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
-		createPizzaTxn.methods.createPizza(price, supply).send({ from:window.walletAddress, amount:0, gasPrice:(gas)})
+		createPizzaTxn.methods.createPizza(creationPrice, salePrice, supply).send({ from:window.walletAddress, amount:0, gasPrice:(gas)})
 		.once('transactionHash', function(hash) {
 			console.log(hash);
 		})
@@ -256,8 +256,9 @@
 
 		if (!$this.attr('disabled')) {
 			// Get supply value and set default token price
+			const salePrice = '100';
 			let tokenSupply = $('input[name="token-select-box"]:checked').val(),
-				tokenPrice = '100';
+				creationPrice = '100';
 
 			// Disable buy button and add loading animation
 			$('#buy-token').attr('disabled', true);
@@ -272,11 +273,10 @@
 			
 			// Change price for 500 supply token
 			if (tokenSupply == '500') {
-				tokenPrice = '1000';
+				creationPrice = '1000';
 			}
-
 			// Call create pizza method
-			createPizza(web3.utils.toWei(tokenPrice, 'ether'), tokenSupply);
+			createPizza(creationPrice, salePrice, tokenSupply);
 		}
 	});
 

@@ -53,7 +53,7 @@
       <script src="./js/pizzomaticabi.js"></script>
       <script src="./js/pizzalib.js"></script>
       <script src="./js/raredoughlib.js"></script>
-      <script src="./js/connect.js?v=1.0.6"></script>
+      <script src="./js/connect.js?v=1.0.7"></script>
     <?php elseif ($page == 'leaderboard'): ?>
       <script src="./js/leaderboard.js"></script>
     <?php endif; ?>
@@ -71,7 +71,7 @@
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/select2.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form.js?v=1.0.17"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.18"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>
