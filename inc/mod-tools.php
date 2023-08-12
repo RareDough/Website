@@ -43,7 +43,7 @@ if ($user) {
 					"symbol" => $tokenID,
 					"description" => $tokenDesc,
 					"image" => "https://raredough.com/assets/community/images/" . $tokenID . ".jpg",
-					"external_link" => "https://raredough.com/community-pizza?id=" . $tokenID,
+					"external_link" => "https://raredough.com/shop-item?type=community&id=" . $tokenID,
 					"attributes" => [
 						[
 							"trait_type" => "Status",
