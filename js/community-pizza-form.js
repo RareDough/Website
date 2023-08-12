@@ -29,7 +29,7 @@
 			console.log(data);
 
 			// Get created tokens
-			getCreatedTokens(userID);
+			getCreatedTokens(userID, true);
 
 			// Enable the user to continue
 			$('#buy-token').removeClass('loading');
@@ -38,8 +38,17 @@
 		});
 	}
 
+	// Select2 formatting
+	function formatState (state) {
+		if (!state.id) { return state.text; }
+		var $state = $(
+			'<span>' + state.text + '</span> <img sytle="display: inline-block;" src="/custom-mint/backgrounds/'+$(state.element).attr('data-supply')+'.png" />'
+		);
+		return $state;
+	}
+
 	// Get created tokens from database
-	function getCreatedTokens(userID) {
+	function getCreatedTokens(userID, newToken) {
 		$.ajax({
 			type: 'POST',
 			url: '/inc/get-created-tokens',
@@ -62,8 +71,14 @@
 				});
 
 				// If user owns tokens already show text link
-				$('.prev-purchased').show();
+				if (!newToken) {
+					$('.prev-purchased').show();
+				}
 			}
+			$('select[name="token-select"]').select2({
+				templateResult: formatState,
+				minimumResultsForSearch: -1
+			});
 		});
 	}
 
@@ -118,7 +133,7 @@
 				userLevel = data.user_level;
 
 				// Get created tokens
-				getCreatedTokens(userID);
+				getCreatedTokens(userID, false);
 
 				// Check if user has already provided Twitter/Discord and hide fields if so
 				if (data.user_twitter) {
