@@ -217,6 +217,11 @@
 				$('#mint-section-buttons').show();
 			}
 
+			$('#next-step').show();
+			if (nextStep == 3 && $('select[name="token-select"]').val() !== null) {
+				$('a#next-step').attr('disabled', false);
+			}
+
 			// Show/hide the skip 1st step link
 			if (nextStep > 1) {
 				$('.prev-purchased').hide();
