@@ -303,7 +303,7 @@
             background:#292437;
             border-radius: 10px;
             overflow:hidden;
-            margin-top:5px;
+            margin:5px 0;
         }
         .select2-results__option {
             display:flex;

@@ -116,7 +116,7 @@
     <link rel="stylesheet" href="./css/style.css?v=1.0.7" />
     <?php if ( $page == 'community-pizza-form' || $page == 'pizza-oven' ) : ?>
       <link rel="stylesheet" href="./css/select2.min.css" />
-      <link rel="stylesheet" href="./css/community-pizza.css?v=1.0.11" />
+      <link rel="stylesheet" href="./css/community-pizza.css?v=1.0.12" />
     <?php endif; ?>
   </head>
   <body class="<?= $page; ?>" data-page="<?= $page; ?>" onload="connectWallet()">

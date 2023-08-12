@@ -43,7 +43,7 @@
       }
     </script>
     <?php if (in_array($page, $shopPages)): ?>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.1/web3.min.js" integrity="sha512-vtUOC0YIaNm/UutU7yfnwqnF9LOYnXtpHe2kwi1nvJNloeGQuncNBiEKP/3Ww3D62USAhbXGsnYpAYoiDsa+wA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js" integrity="sha512-EXk1TBrT1TC+ajcr8c+McVhGFv4xAI+8m+V7T4PwT3MdYAv47jkirleTTZh8IFtRv90ZtKPOk/4JJTGUaQ9d6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script src="./js/shopabi.js"></script>
       <script src="./js/usdcabi.js"></script>
       <script src="./js/coinabi.js"></script>
