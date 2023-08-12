@@ -71,7 +71,7 @@
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/select2.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form.js?v=1.0.15"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.16"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>

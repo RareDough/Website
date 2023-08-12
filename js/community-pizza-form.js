@@ -29,7 +29,7 @@
 			console.log(data);
 
 			// Get created tokens
-			getCreatedTokens(userID, true);
+			getCreatedTokens(userID);
 
 			// Enable the user to continue
 			$('#buy-token').removeClass('loading');
@@ -40,15 +40,16 @@
 
 	// Select2 formatting
 	function formatState (state) {
-		if (!state.id) { return state.text; }
+		let supply = $(state.element).attr('data-supply');
+		if (!state.id || supply == 'placeholder') { return state.text; }
 		var $state = $(
-			'<span>' + state.text + '</span> <img sytle="display: inline-block;" src="/custom-mint/backgrounds/'+$(state.element).attr('data-supply')+'.png" />'
+			'<span>' + state.text + '</span> <img sytle="display: inline-block;" src="/custom-mint/backgrounds/'+ supply +'.png" />'
 		);
 		return $state;
 	}
 
 	// Get created tokens from database
-	function getCreatedTokens(userID, newToken) {
+	function getCreatedTokens(userID) {
 		$.ajax({
 			type: 'POST',
 			url: '/inc/get-created-tokens',
@@ -57,10 +58,9 @@
 				userID: userID,
 			}
 		}).done(function(data) {
-			console.log(data);
 			let createdTokens = data.created_tokens;
 			$('select[name="token-select"]').empty();
-			$('select[name="token-select"]').append('<option selected disabled>Select a TokenID</option>');
+			$('select[name="token-select"]').append('<option data-supply="placeholder" selected disabled>Select a TokenID</option>');
 			if (createdTokens.length) {
 				// User has created tokens awaiting metadata
 				$.each(createdTokens, function( index, token ) {
@@ -71,9 +71,7 @@
 				});
 
 				// If user owns tokens already show text link
-				if (!newToken) {
-					$('.prev-purchased').show();
-				}
+				$('.prev-purchased').show();
 			}
 			$('select[name="token-select"]').select2({
 				templateResult: formatState,
@@ -133,7 +131,7 @@
 				userLevel = data.user_level;
 
 				// Get created tokens
-				getCreatedTokens(userID, false);
+				getCreatedTokens(userID);
 
 				// Check if user has already provided Twitter/Discord and hide fields if so
 				if (data.user_twitter) {
@@ -175,6 +173,13 @@
 				$('.prev-purchased').show();
 				$('#buy-token').show();
 				$('#next-step').hide();
+			}
+
+			// If user goes back to Step 1 to create a new token
+			if (selectedStep == 1) {
+				$('input[name="token-select-box"]').attr('disabled', false);
+				$('input[name="token-select-box"]').prop('checked', false);
+				$('input[name="token-select-box"]').parent().removeClass('disabled unselected');
 			}
 		}
 	});
@@ -264,6 +269,7 @@
 			if (tokenSupply == '500') {
 				tokenPrice = '1000';
 			}
+
 			// Call create pizza method
 			createPizza(web3.utils.toWei(tokenPrice, 'ether'), tokenSupply);
 		}
