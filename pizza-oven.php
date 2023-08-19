@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 include 'header.php';
 
 include_once 'inc/functions.php';
@@ -21,7 +17,7 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 text-center">
-                <h1 class="mainHeading">All Submissions</h1>
+                <h1 class="mainHeading">Pizza Oven</h1>
             </div>
         </div>
     </div>
@@ -30,14 +26,14 @@ $pizzas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <div class="row">
             <div class="col d-flex justify-content-between">
-                <div class="creator-filter d-flex">
-                    <a class="all-pizzas" href="#">All Pizzas</a>
-                    <a class="your-pizzas" href="#">Your Pizzas</a>
+                <div class="creator-filter">
+                    <a class="active" data-creator="all" href="#">All Pizzas</a>
+                    <a data-creator="user" href="#">Your Pizzas</a>
                 </div>
-                <div class="filter-toggles">
-                    <a class="list-view active" href="#">List View</a>
-                    <a class="grid-view" href="#">Grid View</a>
-                </div>
+                <!-- <div class="pizza-sort">
+                    <a class="list-view active" data-view="list" href="#">List View</a>
+                    <a class="grid-view" data-view="grid" href="#">Grid View</a>
+                </div> -->
             </div>
         </div>
         <div id="pizza-oven">

@@ -919,6 +919,11 @@ body.infinityPage {
 #shopSection .col-lg-2.smallSectionBorder {
   border-right: 1px solid #8b817b;
 }
+@media only screen and (min-width:992px) {
+  #shopContainer {
+    margin-top:-1.5rem;
+  }
+}
 .shopCard {
   position: relative;
 }
@@ -1236,8 +1241,7 @@ body.infinityPage {
 .leaderboard .mainHeading {
   text-align: center;
   text-transform: uppercase;
-  margin: 1em 0;
-  margin-top: 2em;
+  margin: 2em 0 1em;
 }
 .leaderboard .rankImg {
   width: 1.5em;

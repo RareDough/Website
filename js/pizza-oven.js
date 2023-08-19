@@ -34,6 +34,12 @@ async function verifyUser(walletAddress) {
 				// Set user ID
 				userID = data.user_id;
 
+				// Check if user has pizzas in oven
+				const numPizzas = $('.pizza-item-container[data-user-id="'+userID+'"]').length;
+				if (numPizzas) {
+					$('.creator-filter a[data-creator="user"]').show();
+				}
+
 				// Set user level
 				userLevel = data.user_level;
 
@@ -134,6 +140,26 @@ async function verifyUser(walletAddress) {
 		});
 		
 	}
+
+	// Creator filter
+	$('.creator-filter a').click(function(e) {
+		e.preventDefault();
+		const filter = $(this).attr('data-creator');
+
+		if (filter == 'all') {
+			$('.pizza-item-container').show();
+		} else {
+			$('.pizza-item-container').each(function() {
+				let creatorID = $(this).attr('data-user-id');
+				if (creatorID != userID) {
+					$(this).hide();
+				}
+			});
+		}
+
+		$('.creator-filter a').removeClass('active');
+		$(this).addClass('active');
+	});
 
 	$(document).on('click', '.mod-btn', function(e) {
 		e.preventDefault();

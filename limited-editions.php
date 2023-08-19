@@ -9,10 +9,10 @@
     echo json_encode($out); ?>;
 </script>
 
-    <section id="shopSection" class="mt-lg-3" data-category="limited editions">
+    <section id="shopSection" class="mt-lg-5" data-category="limited editions">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-2 smallSectionBorder py-lg-5">
+                <div class="col-lg-2 smallSectionBorder">
                     <div class="sideMenu">
                         <!-- desktopView -->
                         <div class="sideMenuLinks desktopView">
@@ -41,7 +41,7 @@
                 </div>
                     </div>
                 </div>
-                <div class="col-lg-10 py-lg-5 ps-lg-4">
+                <div class="col-lg-10 ps-lg-4">
                     <div class="row">
 
                       <!--
