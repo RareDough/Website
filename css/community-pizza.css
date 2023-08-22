@@ -51,6 +51,9 @@
             top:0;
             left:0;
         }
+            #pizza-container.image-selected {
+                cursor:pointer;
+            }
             #pizza-container img {
                 display:block;
             }

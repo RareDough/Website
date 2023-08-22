@@ -359,27 +359,32 @@
 			const inputKey = customImage.getAttribute('name')
 			let files = event.srcElement.files;
 			const filePromises = Object.entries(files).map(item => {
-				return new Promise((resolve, reject) => {
-					const [index, file] = item;
-					const reader = new FileReader();
-					reader.readAsBinaryString(file);
+				
+				if (item) {
+					$('#user-image').remove();
+					return new Promise((resolve, reject) => {
+						const [index, file] = item;
+						const reader = new FileReader();
+						reader.readAsBinaryString(file);
 
-					reader.onload = function(event) {
-						const fileKey = `${inputKey}${files.length > 1 ? `[${index}]` : ''}`
-						userFile[fileKey] = `data:${file.type};base64,${btoa(event.target.result)}`
-						let userImage = new Image();
-						userImage.id = 'user-image';
-						userImage.src = userFile[fileKey];
-						document.getElementById('pizza-container').appendChild(userImage);
-						fileInput.style.display = 'none';
-						resolve();
-					};
+						reader.onload = function(event) {
+							const fileKey = `${inputKey}${files.length > 1 ? `[${index}]` : ''}`
+							userFile[fileKey] = `data:${file.type};base64,${btoa(event.target.result)}`
+							let userImage = new Image();
+							userImage.id = 'user-image';
+							userImage.src = userFile[fileKey];
+							document.getElementById('pizza-container').appendChild(userImage);
+							document.getElementById('pizza-container').classList.add('image-selected');
+							fileInput.style.display = 'none';
+							resolve();
+						};
 
-					reader.onerror = function() {
-						console.log('File not read');
-						reject();
-					};
-				});
+						reader.onerror = function() {
+							console.log('File not read');
+							reject();
+						};
+					});
+				}
 
 			});
 
@@ -392,6 +397,13 @@
 				console.log(error);
 				console.log('Something went wrong');
 			});
+		}
+	});
+
+	// Replace image
+	$('#image-upload').click(function(e) {
+		if ($('#user-image').length) {
+			customImage.click();
 		}
 	});
 
