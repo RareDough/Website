@@ -71,14 +71,14 @@
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/select2.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form.js?v=1.0.19"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.20"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>
       <script src="./js/pizza-oven.js?v=1.0.9"></script>
     <?php endif; ?>
 
-    <script src="./js/mint-button.js?v=1.0.7"></script>
+    <script src="./js/mint-button.js?v=1.0.8"></script>
 
   </body>
 </html>

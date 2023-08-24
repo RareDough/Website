@@ -573,7 +573,7 @@ section[data-step="2"] .token-preview {
 }
 @media only screen and (min-width: 992px) {
     .pizza-oven-headings > *:first-child, .pizza-item-container > *:first-child {
-        width:35%;
+        width:40%;
     }
 }
 
@@ -614,7 +614,7 @@ section[data-step="2"] .token-preview {
     border-bottom: 1px solid #292437;
 }
     .pizza-item {
-        justify-content:space-between;
+        justify-content:flex-start;
     }
         .token-image {
             width:80px;
@@ -626,6 +626,7 @@ section[data-step="2"] .token-preview {
         .token-name {
             width:40%;
             display:none;
+            padding-left:15px;
         }
         @media only screen and (min-width: 992px) {
             .token-name {

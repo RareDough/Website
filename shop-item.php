@@ -65,20 +65,20 @@ $itemPrice = get_object_vars($itemAttributes[2])['value'];
                             <h1 class="subHeading">Description</h1>
                             <div class="descriptionBody">
                                 <p class="mainText itemDescription"><?= $itemDescription ?></p>
-                                <?php if (!$soldOut && $itemStatus != 'inactive') : ?>
+                                <?php if (!$soldOut && $itemStatus != 'disabled') : ?>
                                     <div class="mainText">Current Price</div>
                                 <?php endif; ?>
                                 <h1 class="mainHeading">
                                     <?php if ($soldOut) : ?>
                                         Sold Out
-                                    <?php elseif ($itemStatus == 'inactive') : ?>
+                                    <?php elseif ($itemStatus == 'disabled') : ?>
                                         Unavailable
                                     <?php else : ?>
                                         <img src="./img/bpac-lg-icon.svg" alt=""/>
                                         <?= str_replace(' BREAD', '', $itemPrice); ?>
                                     <?php endif; ?>
                                 </h1>
-                                <?php if ($itemStatus != 'inactive') : ?>
+                                <?php if ($itemStatus != 'disabled') : ?>
                                     <div class="row ">
                                         <div class="col-lg-6 ">
                                             <?php if ($soldOut) : ?>

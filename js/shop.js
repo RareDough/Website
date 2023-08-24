@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                  </a>
                            </div>`;
                            
-            if (itemStatus != 'inactive') {
+            if (itemStatus != 'disabled') {
                shopContainer.insertAdjacentHTML('beforeend', shopItem);
             }
          }).catch((ex) => {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                  </a>
                            </div>`;
    
-            if (itemStatus != 'inactive') {
+            if (itemStatus != 'disabled') {
                shopContainer.insertAdjacentHTML('beforeend', shopItem);
             }
          }).catch((ex) => {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                  </a>
                            </div>`;
 
-            if (category === itemCategory.toLowerCase() && itemStatus != 'inactive') {
+            if (category === itemCategory.toLowerCase() && itemStatus != 'disabled') {
                shopContainer.insertAdjacentHTML('beforeend', shopItem);
             }
          }).catch((ex) => {

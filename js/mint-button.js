@@ -1,3 +1,6 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
 async function setSpendApproval() {
   let gas = await web3.eth.getGasPrice();
 
@@ -9,10 +12,15 @@ async function setSpendApproval() {
 
 async function buyPizzas() {
   let gas = await web3.eth.getGasPrice();
-  let txn = new web3.eth.Contract(SHOP_ABI, SHOP);
   let TOKENID = mintButton.dataset.id;
 
-  await txn.methods.buyPizzas( TOKENID, AMOUNT ).send({ from:walletAddress, amount:0, gasPrice:(gas)});
+  if (urlParams.has('type')) {
+    let txn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+    await txn.methods.mintToken( TOKENID ).send({ from:walletAddress, amount:0, gasPrice:(gas)});
+  } else {
+    let txn = new web3.eth.Contract(SHOP_ABI, SHOP);
+    await txn.methods.buyPizzas( TOKENID, AMOUNT ).send({ from:walletAddress, amount:0, gasPrice:(gas)});
+  }
 }
 
 $(function() {
