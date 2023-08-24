@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 include 'header.php';
 
@@ -10,7 +10,7 @@ $contract = '0xf829FDF890B800d2be08BEA228142726FeD3E71d';
 
 // Get ID param
 $id = $_GET['id'];
-$itemData = file_get_contents('./assets/' . $id . '.json');
+$itemData = null;
 
 // If type is set get type param
 if (isset($_GET['type'])) :
@@ -20,6 +20,8 @@ if (isset($_GET['type'])) :
         $itemData = file_get_contents('./assets/community/' . $id . '.json');
         $contract = '0x4f65ca65362B284739F033611b8d3d84e70EdB10';
     endif;
+else :
+    $itemData = file_get_contents('./assets/' . $id . '.json');
 endif;
 
 $itemDecoded = json_decode($itemData, false);
