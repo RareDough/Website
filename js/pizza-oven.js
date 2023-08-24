@@ -177,7 +177,7 @@ async function verifyUser(walletAddress) {
 			action = $this.attr('data-action'),
 			status = null,
 			method =  null,
-			pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC),
+			pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
 			//pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
 		if (action == 'enable' || action == 'reenable') {
