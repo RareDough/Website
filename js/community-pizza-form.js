@@ -8,8 +8,8 @@
 
 	// Get owned token IDs from contract
 	async function addToken(supply) {
-		// let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
-		let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+		let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
+		//let pizzomaticTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
 		// Call the smart contract to retrieve the TokenIDs associated with the wallet
 		ownedTokens = await pizzomaticTxn.methods.getTokensCreatedBy(window.walletAddress).call();
@@ -84,8 +84,8 @@
 	async function createPizza(creationPrice, salePrice, supply) {
 		// Initialize transaction
 		let gas = await web3.eth.getGasPrice();
-		//let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
-		let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+		let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
+		//let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 		createPizzaTxn.methods.createPizza(creationPrice, salePrice, supply).send({ from:window.walletAddress, amount:0, gasPrice:(gas)})
 		.once('transactionHash', function(hash) {
 			console.log(hash);

@@ -129,7 +129,8 @@ async function verifyUser(walletAddress) {
 			}
 
 			// Get number of minted for each token
-			let pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+			let pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
+			//let pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 			pizzomaticContract.methods.getNumMintedForToken(tokenID).call().then(function(response) {
 				return response;
 			}).then(function(data) {
@@ -176,8 +177,8 @@ async function verifyUser(walletAddress) {
 			action = $this.attr('data-action'),
 			status = null,
 			method =  null,
-			// pizzaContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC),
-			pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+			pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC),
+			//pizzomaticContract = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
 
 		if (action == 'enable' || action == 'reenable') {
 			method = 'activateToken';

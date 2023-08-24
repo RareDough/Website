@@ -53,13 +53,13 @@
       <script src="./js/pizzomaticabi.js"></script>
       <script src="./js/pizzalib.js"></script>
       <script src="./js/raredoughlib.js"></script>
-      <script src="./js/connect.js?v=1.0.7"></script>
+      <script src="./js/connect.js?v=1.0.8"></script>
     <?php elseif ($page == 'leaderboard'): ?>
       <script src="./js/leaderboard.js"></script>
     <?php endif; ?>
 
     <?php if ($page == 'shop' || $page == 'utilities' || $page == 'whitelist' || $page == 'limited-editions' || $page == 'custom-pizzas' || $page == 'community-pizzas'): ?>
-      <script src="./js/shop.js?v=1.0.2"></script>
+      <script src="./js/shop.js?v=1.0.3"></script>
     <?php endif; ?>
 
     <?php if ($page == 'burn-oven' || $page == 'burn-ovenv2'): ?>
@@ -71,14 +71,14 @@
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/select2.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form.js?v=1.0.20"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.21"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>
-      <script src="./js/pizza-oven.js?v=1.0.10"></script>
+      <script src="./js/pizza-oven.js?v=1.0.11"></script>
     <?php endif; ?>
 
-    <script src="./js/mint-button.js?v=1.0.8"></script>
+    <script src="./js/mint-button.js?v=1.0.9"></script>
 
   </body>
 </html>

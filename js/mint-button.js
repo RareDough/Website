@@ -15,7 +15,7 @@ async function buyPizzas() {
   let TOKENID = mintButton.dataset.id;
 
   if (urlParams.has('type')) {
-    let txn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+    let txn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
     await txn.methods.mintToken( TOKENID ).send({ from:walletAddress, amount:0, gasPrice:(gas)});
   } else {
     let txn = new web3.eth.Contract(SHOP_ABI, SHOP);

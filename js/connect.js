@@ -19,7 +19,7 @@ const inventoryContainer = document.getElementById('inventoryContainer');
 const USDC = '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174';
 const USDC_ABI = top.abi_usdc;
 const PIZZOMATIC_ABI = top.abi_pizzomatic;
-const PIZZOMATIC = '0x1d18038A4FFD3B165Ac98b52e94504E78FD6B52f';
+const PIZZOMATIC = '0x3c3CCd492c4a11f5D1744709793Ff5Cf40098019';
 const PIZZOMATICTESTNET = '0xD8126E091148A5b056393b19191eb2b6a7D8d736';
 
 // Specify which libray/oven to use
