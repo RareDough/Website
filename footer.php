@@ -53,7 +53,7 @@
       <script src="./js/pizzomaticabi.js"></script>
       <script src="./js/pizzalib.js"></script>
       <script src="./js/raredoughlib.js"></script>
-      <script src="./js/connect.js?v=1.0.8"></script>
+      <script src="./js/connect.js?v=1.0.9"></script>
     <?php elseif ($page == 'leaderboard'): ?>
       <script src="./js/leaderboard.js"></script>
     <?php endif; ?>

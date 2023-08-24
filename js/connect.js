@@ -12,7 +12,6 @@ const SHOP = '0xf829FDF890B800d2be08BEA228142726FeD3E71d';
 const PIZZA = '0x2953399124F0cBB46d2CbACD8A89cF0599974963';
 const PIZZA_ABI = top.abi_pizza;
 const BREAD = '0xb8e57A05579b1F4c42DEc9e18E0b665B0dB5277f';
-const BREADTESTNET = '0x3f080FC578D7879e701e54A6E78442b201F979A2';
 const BREAD_ABI = top.abi_coin;
 const BREAD_IMG = 'https://www.raredough.com/img/BAPC-coin.svg';
 const inventoryContainer = document.getElementById('inventoryContainer');

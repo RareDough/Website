@@ -14,7 +14,6 @@ include 'header.php';
             <div class="col-md-8 col-lg-6 text-center">
                 <h1 class="mainHeading">Mint your RareDough Pizza in a few simple steps!</h1>
                 <h3 id="return-user-heading"></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a elementum turpis, non volutpat est. Nulla aliquam elementum quam ac dignissim. Sed mattis ultricies leo sagittis luctus.</p>
             </div>
         </div>
     </div>
