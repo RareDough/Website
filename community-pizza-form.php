@@ -12,7 +12,7 @@ include 'header.php';
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 text-center">
-                <h1 class="mainHeading">Mint your RareDough Pizza in a few simple steps!</h1>
+                <h1 class="mainHeading">Pizza Base</h1>
                 <h3 id="return-user-heading"></h3>
             </div>
         </div>
@@ -37,8 +37,7 @@ include 'header.php';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 col-lg-5">
-                    <h2>1. Buy a plate to create your pizza</h2>
-                    <label>Choose your pizza supply.</label>
+                    <h2>1. Buy a Plate (and choose the Supply)</h2>
                     <div class="form-fields form-fields__row">
                         <label class="radio-label">
                             <?= number_format(500); ?>
@@ -73,10 +72,10 @@ include 'header.php';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 col-lg-5">
-                    <h2>2. Select your plate (Pizza supply)</h2>
+                    <h2>2. Choose your Plate</h2>
                     <label>
                         <div>
-                            Choose your plate (TokenID).
+                            Select your TokenID
                             <select name="token-select">
                                 <option selected disabled>Select a TokenID</option>
                             </select>
@@ -93,7 +92,7 @@ include 'header.php';
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 col-lg-5">
-                    <h2>3. Create your pizza</h2>
+                    <h2>3. Submit your Pizza</h2>
                     <!-- PIZZA IMAGE -->
                     <div id="image-upload">
                         <div id="pizza-container">
