@@ -166,6 +166,37 @@ async function getUserAssets() {
       }
    }
 
+   /* If community pizza form */
+   if (document.getElementById('buy-token')) {
+      const buyToken = document.getElementById('buy-token');
+
+      $('input[name="token-select-box"]').on('change', function() {
+         let $this = $(this),
+             quantity = $this.val(),
+             mintPrice = 100;
+         
+         if (quantity == 500) {
+            mintPrice = 1000;
+         }
+
+         if (parseFloat(mintPrice) > parseFloat(breadHoldings)) {
+            // user does not have enough BREAD
+            buyToken.classList.add('disabled');
+            buyToken.innerHTML = 'Insufficient $BREAD';
+         } else {
+            buyToken.classList.remove('disabled');
+            buyToken.innerHTML = 'Buy with $BREAD';
+         }
+
+         if (!$('#buy-token').hasClass('disabled')) {
+            // Enable buy button once supply is selected
+            $('#buy-token').attr('disabled', false);
+            // Focus the buy button once a choice is made
+            $('#buy-token').focus();
+         }
+      });
+   }
+
    /* Account Inventory */
    if (inventoryContainer) {
       inventoryContainer.innerHTML = '';

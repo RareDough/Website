@@ -241,14 +241,6 @@
 	}
 
 	// Step 1 
-	$('input[name="token-select-box"]').on('change', function() {
-		let $this = $(this);
-		// Enable buy button once supply is selected
-		$('#buy-token').attr('disabled', false);
-		// Focus the buy button once a choice is made
-		$('#buy-token').focus();
-	});
-
 	$('#buy-token').click(function(e) {
 		e.preventDefault();
 

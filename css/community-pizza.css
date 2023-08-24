@@ -460,6 +460,9 @@
         padding-right:40px;
         align-self:center;
     }
+        a.mainBtn#buy-token {
+            max-width:275px;
+        }
         #mint-section-buttons a.mainBtn:nth-child(2) {
             margin-top:40px;
         }
