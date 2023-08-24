@@ -73,7 +73,7 @@ $itemPrice = get_object_vars($itemAttributes[2])['value'];
                                 <h1 class="mainHeading">
                                     <?php if ($soldOut) : ?>
                                         Sold Out
-                                    <?php elseif ($itemStatus == 'disabled') : ?>
+                                    <?php elseif ($itemStatus == 'disabled' || $itemStatus == 'paused') : ?>
                                         Unavailable
                                     <?php else : ?>
                                         <img src="./img/bpac-lg-icon.svg" alt=""/>
