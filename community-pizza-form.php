@@ -179,7 +179,7 @@ include 'header.php';
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 text-center">
                 <div id="mint-section-buttons">
-                    <a id="buy-token" href="#" class="mainBtn dark" disabled>Buy with BREAD</a>
+                    <a id="buy-token" href="#" class="mainBtn dark" disabled>Buy with $BREAD</a>
                     <a id="next-step" href="#" class="mainBtn light" disabled>Continue</a>
                     <span class="prev-purchased">Already purchased a token? <a href="#">Click here</a> to continue.</span>
                 </div>
