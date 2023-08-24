@@ -80,7 +80,7 @@ $itemPrice = get_object_vars($itemAttributes[2])['value'];
                                         <?= str_replace(' BREAD', '', $itemPrice); ?>
                                     <?php endif; ?>
                                 </h1>
-                                <?php if ($itemStatus != 'disabled') : ?>
+                                <?php if ($itemStatus != 'disabled' && $itemStatus != 'paused') : ?>
                                     <div class="row ">
                                         <div class="col-lg-6 ">
                                             <?php if ($soldOut) : ?>
