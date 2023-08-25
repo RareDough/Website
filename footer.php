@@ -59,7 +59,7 @@
     <?php endif; ?>
 
     <?php if ($page == 'shop' || $page == 'utilities' || $page == 'whitelist' || $page == 'limited-editions' || $page == 'custom-pizzas' || $page == 'community-pizzas'): ?>
-      <script src="./js/shop.js?v=1.0.3"></script>
+      <script src="./js/shop.js?v=1.0.4"></script>
     <?php endif; ?>
 
     <?php if ($page == 'burn-oven' || $page == 'burn-ovenv2'): ?>

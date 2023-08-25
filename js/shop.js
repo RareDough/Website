@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                  </a>
                            </div>`;
 
-            if (category === itemCategory.toLowerCase() && itemStatus != 'disabled') {
+            if (category === itemCategory.toLowerCase() && itemStatus != 'disabled' && itemStatus != 'approved') {
                shopContainer.insertAdjacentHTML('beforeend', shopItem);
             }
          }).catch((ex) => {
