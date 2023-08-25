@@ -67,6 +67,9 @@
     <?php endif; ?>
 
     <?php if ($page == 'community-pizza-form'): ?>
+      <!-- DEBUG -->
+      <!-- <script src="https://browser.sentry-cdn.com/6.19.2/bundle.js"  crossorigin="anonymous"></script>
+      <script src="https://browser.sentry-cdn.com/6.19.2/captureconsole.min.js"></script> -->
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/select2.min.js"></script>
@@ -75,7 +78,7 @@
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>
-      <script src="./js/pizza-oven.js?v=1.0.12"></script>
+      <script src="./js/pizza-oven.js?v=1.0.13"></script>
     <?php endif; ?>
 
     <script src="./js/mint-button.js?v=1.0.9"></script>

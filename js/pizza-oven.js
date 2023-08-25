@@ -225,13 +225,13 @@ async function verifyUser(walletAddress) {
 			// });
 		} else if (action == 'airdrop') {
 			let airdropQty = (function ask() {
-				let n = prompt('How many ' + tokenName + 's would you like to airdrop to your wallet? (max. 10)', '1');
+				let n = prompt('How many ' + tokenName + 's would you like to airdrop to your wallet? (max. 50)', '1');
 				// If user hits "cancel" close prompt
 				if (n === null) {
 				  return;
 				}
-				// If amount is not a number, or the value is not between 1 and 10, re-prompt
-				return isNaN(n) || +n > 10 || +n < 1 ? ask() : n;
+				// If amount is not a number, or the value is not between 1 and 50, re-prompt
+				return isNaN(n) || +n > 50 || +n < 1 ? ask() : n;
 			}());
 
 			pizzomaticContract.methods[method](window.walletAddress, tokenID, airdropQty).send({ from:window.walletAddress, amount:0, gasPrice:(gas)})
