@@ -47,7 +47,7 @@ if ($user) {
 					"attributes" => [
 						[
 							"trait_type" => "Status",
-							"value" => "active",
+							"value" => "approved",
 							"soldout" => false
 						],
 						[
