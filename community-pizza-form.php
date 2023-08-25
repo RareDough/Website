@@ -13,7 +13,7 @@ include 'header.php';
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 text-center">
                 <h1 class="mainHeading">Down for maintenence</h1>
-                <p>Unfortunately we have discovered a bug with the contract and have to take down the community pizza submission form. Thank you for understanding.</p>
+                <p>Unfortunately we have discovered a bug with the contract and have to take down the community pizza submission form for the time being. Thank you for understanding.</p>
                 <h3 id="return-user-heading"></h3>
             </div>
         </div>
