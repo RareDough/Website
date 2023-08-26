@@ -118,8 +118,7 @@ include 'header.php';
                             </label>
                         </div>
                     </div>
-                    <label class="instructions">File types supported: JPG, PNG, GIF, WEBP. Max size: 5 MB</label>
-                    <!-- <div id="holder-cont"><img id="holder-img" src="" alt=""></div> -->
+                    <label class="instructions">File types supported: JPG, PNG, GIF, WEBP, AVIF. Max size: 5 MB</label>
                     <div class="form-fields">
                         <label>
                             Name

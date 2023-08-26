@@ -428,7 +428,7 @@
 		rules: {
 			'custom-image': {
 				required: true,
-            	extension: 'jpg|jpeg|gif|png|webp',
+            	extension: 'jpg|jpeg|gif|png|webp|avif',
             	filesize: 5
 			},
 	        'token-name': {
@@ -455,7 +455,7 @@
 	    messages: {
 	    	'custom-image': {
 				required: 'Please provide your custom artwork',
-            	extension: 'Accepted filetypes: JPG, PNG, GIF, WEBP',
+            	extension: 'Accepted filetypes: JPG, PNG, GIF, WEBP, AVIF',
             	filesize: 'Filesize must be ≤ 5MB'
 			},
 	        'token-name': {
