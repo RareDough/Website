@@ -49,6 +49,7 @@
 	}
 
 	// Get created tokens from database
+	let createdTokens = 0;
 	function getCreatedTokens(userID) {
 		$.ajax({
 			type: 'POST',
@@ -68,6 +69,8 @@
 						tokenSupply = token['supply'];
 
 					$('select[name="token-select"]').append('<option data-supply="' + tokenSupply + '" value="' + tokenID + '">Token #' + tokenID + '</option>');
+
+					createdTokens++;
 				});
 
 				// If user owns tokens already show text link
@@ -86,6 +89,10 @@
 		let gas = await web3.eth.getGasPrice();
 		let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATIC);
 		//let createPizzaTxn = new web3.eth.Contract(PIZZOMATIC_ABI, PIZZOMATICTESTNET);
+
+		// Hide skip link
+		$('.prev-purchased').hide();
+
 		createPizzaTxn.methods.createPizza(creationPrice, salePrice, supply).send({ from:window.walletAddress, amount:0, gasPrice:(gas)})
 		.once('transactionHash', function(hash) {
 			console.log(hash);
@@ -170,7 +177,9 @@
 				$('.prev-purchased').hide();
 				$('#next-step').show();
 			} else {
-				$('.prev-purchased').show();
+				if (createdTokens > 0) {
+					$('.prev-purchased').show();
+				}
 				$('#buy-token').show();
 				$('#next-step').hide();
 			}
@@ -540,5 +549,16 @@
 	$input
 	.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
 	.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+
+	// Debugging
+	// Sentry.init({
+    //     dsn: "https://92fc69b645f93d52488af0d1524f357e@o4505762853683200.ingest.sentry.io/4505762855256064",
+    //     debug: false,
+    //     integrations: [
+    //         new Sentry.Integrations.CaptureConsole({
+    //             levels: ['log', 'info', 'warn', 'error', 'debug', 'assert']
+    //         })
+    //     ],
+    // });
 
 })( jQuery, window, document );
