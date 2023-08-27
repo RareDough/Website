@@ -7,7 +7,7 @@
     "attributes": [
       {
         "trait_type": "Status",
-        "value": "active",
+        "value": "disabled",
         "soldout": false
       },
       {
