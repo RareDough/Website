@@ -265,9 +265,9 @@
       <div class="hideMenuBody">
         <a class="hideMenuLink" tkey="" href="./">Home</a>
         <br />
-        <a class="hideMenuLink" tkey="get_btn" href="./vip-pass.php">Get Vip Pass</a>
+        <a class="hideMenuLink" tkey="" href="./pizza-oven">Pizza Oven</a>
         <br />
-        <a class="hideMenuLink" tkey="" href="./burn-ovenv2.php">Burn oven</a>
+        <a class="hideMenuLink" tkey="" href="./burn-ovenv2.php">Burn2Earn</a>
         <br />
         <a class="hideMenuLink" tkey="" href="./shop-item?id=1">Free Pizza</a>
         <br />
@@ -325,10 +325,10 @@
                 >
               </li>
               <li class="nav-item">
-                <a tkey="get_btn" class="nav-link" href="./vip-pass.php">Get VIP Pass</a>
+                <a tkey="get_btn" class="nav-link" href="./pizza-oven">Pizza Oven</a>
               </li>
               <li class="nav-item">
-                <a tkey="" class="nav-link" href="./burn-ovenv2.php">Burn oven</a>
+                <a tkey="" class="nav-link" href="./burn-ovenv2.php">Burn2Earn</a>
               </li>
               <li class="nav-item">
                 <a tkey="" class="nav-link" href="./shop-item?id=1">Free Pizza</a>
