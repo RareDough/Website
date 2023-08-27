@@ -269,7 +269,7 @@
         <br />
         <a class="hideMenuLink" tkey="" href="./burn-ovenv2.php">Burn oven</a>
         <br />
-        <a class="hideMenuLink" tkey="leaderboard" href="./leaderboard.php">Leaderboard</a>
+        <a class="hideMenuLink" tkey="" href="./shop-item?id=1">Free Pizza</a>
         <br />
         <a class="hideMenuLink" tkey="shop" href="./shop.php">Shop</a>
         <div class="socialIcons">
@@ -331,7 +331,7 @@
                 <a tkey="" class="nav-link" href="./burn-ovenv2.php">Burn oven</a>
               </li>
               <li class="nav-item">
-                <a tkey="leaderboard" class="nav-link" href="./leaderboard.php">Leaderboard</a>
+                <a tkey="" class="nav-link" href="./shop-item?id=1">Free Pizza</a>
               </li>
               <li class="nav-item">
                 <a tkey="shop" class="nav-link" href="./shop.php">Shop</a>
