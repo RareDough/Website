@@ -78,7 +78,7 @@
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>
-      <script src="./js/pizza-oven.js?v=1.0.13"></script>
+      <script src="./js/pizza-oven.js?v=1.0.14"></script>
     <?php endif; ?>
 
     <script src="./js/mint-button.js?v=1.0.9"></script>

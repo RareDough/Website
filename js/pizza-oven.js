@@ -67,6 +67,7 @@ async function verifyUser(walletAddress) {
 				userButtons = `
 					<div class="oven-btns">
 						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="activate">Activate</a>
+						<a class="oven-btn mod-btn mainBtn dark" href="#" data-action="airdrop">Airdrop</a>
 					</div>
 				`;
 			} else if (status == 'active') {
