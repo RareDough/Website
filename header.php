@@ -3,7 +3,7 @@
   $page = preg_replace("/(.+)\.php$/", "$1", $filename);
 
   // START SHOP PAGES
-  $shopPages = array('account', 'shop', 'shop-item', 'burn-oven', 'burn-ovenv2', 'custom-pizza', 'custom-pizzas', 'community-pizzas', 'community-pizza-form', 'pizza-oven');
+  $shopPages = array('account', 'shop', 'shop-item', 'burn-oven', 'burn-ovenv2', 'custom-pizza', 'custom-pizzas', 'community-pizzas', 'community-pizza-form', 'community-pizza-form-test', 'pizza-oven');
   // END SHOP PAGES
 
   if ($page == 'index'):
@@ -114,7 +114,7 @@
     />
     <link rel="stylesheet" href="./css/lightbox.min.css" />
     <link rel="stylesheet" href="./css/style.css?v=1.0.8" />
-    <?php if ( $page == 'community-pizza-form' || $page == 'pizza-oven' ) : ?>
+    <?php if ( $page == 'community-pizza-form' || $page == 'community-pizza-form-test' || $page == 'pizza-oven' ) : ?>
       <link rel="stylesheet" href="./css/select2.min.css" />
       <link rel="stylesheet" href="./css/community-pizza.css?v=1.0.17" />
     <?php endif; ?>

@@ -77,6 +77,14 @@
       <script src="./js/community-pizza-form.js?v=1.0.25"></script>
     <?php endif; ?>
 
+    <?php if ($page == 'community-pizza-form-test'): ?>
+      <script src="./js/html2canvas.min.js"></script>
+      <script src="./js/jquery.validate.min.js"></script>
+      <script src="./js/select2.min.js"></script>
+      <script src="./js/additional-methods.min.js"></script>
+      <script src="./js/community-pizza-form-test.js?v=1.0.25"></script>
+    <?php endif; ?>
+
     <?php if ($page == 'pizza-oven'): ?>
       <script src="./js/pizza-oven.js?v=1.0.14"></script>
     <?php endif; ?>
