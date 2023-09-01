@@ -7,9 +7,18 @@
     $userWallet = $_POST['userWallet'];
     $imageData = $_POST['imgBase64'];
     $id = $_POST['id'];
-    $suppy = $_POST['supply'];
+    $supply = $_POST['supply'];
     $name = $_POST['name'];
     $description = $_POST['description'];
 
-    echo $userWallet . '\n' . $imageData . '\n' . $id . '\n' . $supply . '\n' . $name . '\n' . $description;
+    echo json_encode( 
+        array(
+            'wallet' => $userWallet,
+            'image' => $imageData,
+            'id' => $id,
+            'supply' => $supply,
+            'name' => $name,
+            'desc' => $description
+        )
+    );
 ?>

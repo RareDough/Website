@@ -501,7 +501,7 @@
 			// Check if form is already submitting
 			if ($form.hasClass('is-uploading')) return false;
 
-			$form.addClass('is-uploading').removeClass('is-error');
+			//$form.addClass('is-uploading').removeClass('is-error');
 
 			// Disable submit button
 			// $('#submit-form').attr('disabled', true);
@@ -539,9 +539,14 @@
 				$('#debug').append(JSON.stringify(ajaxOptions));
 
 				$.ajax(ajaxOptions).done(function(data) {
-					console.log(data);
-					$('#debug').append(data);
-					$('#image-preview').attr('src', dataURL);
+					console.log(data.wallet);
+					$('#debug').append('<br/>' + data.wallet);
+					$('#debug').append('<br/>' + data.image);
+					$('#debug').append('<br/>' + data.id);
+					$('#debug').append('<br/>' + data.supply);
+					$('#debug').append('<br/>' + data.name);
+					$('#debug').append('<br/>' + data.desc);
+					// $('#image-preview').attr('src', dataURL);
 					// $('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
 					// $('#mint-nav ol').attr('data-step', 4);
 					// $('section.mint-section').removeClass('active-step');
