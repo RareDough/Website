@@ -538,16 +538,16 @@
 
 				$('#debug').append(JSON.stringify(ajaxOptions));
 
-				// $.ajax(ajaxOptions).done(function(data) {
-				// 	console.log(data);
-				// 	$('#debug').append(data);
-				// 	$('#image-preview').attr('src', dataURL);
-				// 	$('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
-				// 	$('#mint-nav ol').attr('data-step', 4);
-				// 	$('section.mint-section').removeClass('active-step');
-				// 	$('section.mint-section[data-step="4"], #mint-nav a[data-step="4"]').addClass('active-step');
-				// 	$('#submit-form').removeClass('loading');
-	            // });
+				$.ajax(ajaxOptions).done(function(data) {
+					console.log(data);
+					$('#debug').append(data);
+					$('#image-preview').attr('src', dataURL);
+					// $('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
+					// $('#mint-nav ol').attr('data-step', 4);
+					// $('section.mint-section').removeClass('active-step');
+					// $('section.mint-section[data-step="4"], #mint-nav a[data-step="4"]').addClass('active-step');
+					// $('#submit-form').removeClass('loading');
+	            });
 		    });
 		}
 	});
