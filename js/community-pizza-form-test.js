@@ -504,8 +504,8 @@
 			$form.addClass('is-uploading').removeClass('is-error');
 
 			// Disable submit button
-			$('#submit-form').attr('disabled', true);
-			$('#submit-form').addClass('loading');
+			// $('#submit-form').attr('disabled', true);
+			// $('#submit-form').addClass('loading');
 
 			// Clone preview to final composition container
 			let $finalPizza = $('#pizza-container').clone();

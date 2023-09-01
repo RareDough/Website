@@ -186,7 +186,7 @@ include 'header.php';
         </div>
     </div>
 </form>
-<div id="debug" style="word-break: break-all;color:#fff;"></div>
+<div id="debug" style="color:#fff;"></div>
 <div id="pizza-comp"></div>
 
 <?php include 'footer.php';?>
