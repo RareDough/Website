@@ -568,4 +568,15 @@
 	.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
 	.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
 
+	// Debugging
+	Sentry.init({
+        dsn: "https://92fc69b645f93d52488af0d1524f357e@o4505762853683200.ingest.sentry.io/4505762855256064",
+        debug: false,
+        integrations: [
+            new Sentry.Integrations.CaptureConsole({
+                levels: ['log', 'info', 'error', 'debug', 'assert']
+            })
+        ],
+    });
+
 })( jQuery, window, document );

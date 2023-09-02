@@ -67,11 +67,14 @@
     <?php endif; ?>
 
     <?php if ($page == 'community-pizza-form'): ?>
+      <!-- DEBUG -->
+      <script src="https://browser.sentry-cdn.com/6.19.2/bundle.js"  crossorigin="anonymous"></script>
+      <script src="https://browser.sentry-cdn.com/6.19.2/captureconsole.min.js"></script>
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/select2.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form.js?v=1.0.26"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.27"></script>
     <?php endif; ?>
 
     <?php if ($page == 'community-pizza-form-test'): ?>
