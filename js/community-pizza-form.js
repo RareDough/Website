@@ -519,28 +519,46 @@
 				height: 1000
 			}).then(canvas => {
 		        dataURL = canvas.toDataURL();
-	            $.ajax({
-	                type: 'POST',
-	                url: '/inc/save-pizza',
-	                dataType: 'json',
-	                data: {
-	                	userWallet: walletAddress,
-	                    imgBase64: dataURL,
-	                    id: document.getElementsByName('token-id')[0].value,
-	                    supply: document.getElementsByName('token-select-box')[0].value,
-	                    name: document.getElementsByName('token-name')[0].value,
-	                    description: document.getElementsByName('token-desc')[0].value,
-	                    twitter: document.getElementsByName('twitter-username')[0].value,
-	                    discord: document.getElementsByName('discord-username')[0].value
-	                }
-	            }).done(function(data) {
-					$('#image-preview').attr('src', dataURL);
-					$('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
-					$('#mint-nav ol').attr('data-step', 4);
-					$('section.mint-section').removeClass('active-step');
-					$('section.mint-section[data-step="4"], #mint-nav a[data-step="4"]').addClass('active-step');
-					$('#submit-form').removeClass('loading');
-	            });
+
+				let tokenData = {
+					'userWallet': window.walletAddress,
+					'imgBase64': dataURL,
+					'id': document.getElementsByName('token-id')[0].value,
+					'supply': document.getElementsByName('token-select-box')[0].value,
+					'name': document.getElementsByName('token-name')[0].value,
+					'description': document.getElementsByName('token-desc')[0].value,
+					'twitter': document.getElementsByName('twitter-username')[0].value,
+					'discord': document.getElementsByName('discord-username')[0].value
+				};
+				
+				let formBody = [];
+				for (let property in tokenData) {
+					let encodedKey = encodeURIComponent(property);
+					let encodedValue = encodeURIComponent(tokenData[property]);
+					formBody.push(encodedKey + '=' + encodedValue);
+				}
+				formBody = formBody.join('&');
+
+				fetch('/inc/save-pizza', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					body: formBody
+				})
+				.then(response => response.json())
+				.then((data) => {
+					if (data.token_updated) {
+						$('#image-preview').attr('src', dataURL);
+						$('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
+						$('#mint-nav ol').attr('data-step', 4);
+						$('section.mint-section').removeClass('active-step');
+						$('section.mint-section[data-step="4"], #mint-nav a[data-step="4"]').addClass('active-step');
+						$('#submit-form').removeClass('loading');
+					} else {
+						console.log('Error: ' + data.message);
+					}
+				});
 		    });
 		}
 	});
@@ -549,16 +567,5 @@
 	$input
 	.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
 	.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
-
-	// Debugging
-	// Sentry.init({
-    //     dsn: "https://92fc69b645f93d52488af0d1524f357e@o4505762853683200.ingest.sentry.io/4505762855256064",
-    //     debug: false,
-    //     integrations: [
-    //         new Sentry.Integrations.CaptureConsole({
-    //             levels: ['log', 'info', 'warn', 'error', 'debug', 'assert']
-    //         })
-    //     ],
-    // });
 
 })( jQuery, window, document );
