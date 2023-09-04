@@ -4,21 +4,22 @@
     error_reporting(E_ALL);
 
     // Form variables
-    $userWallet = $_POST['userWallet'];
-    $imageData = $_POST['imgBase64'];
+    $data = json_decode(file_get_contents('php://input'));
+    $userWallet = $request = $data->userWallet;
+    $imageData = $request = $data->imgBase64;
 
 	function generateImage($img, $wallet) {
+        global $data;
         global $userWallet;
         global $imageData;
 
-        $tokenID = $_POST['id'];
-        $tokenSupply = $_POST['supply'];
-        $tokenName = $_POST['name'];
-        $tokenDesc = $_POST['description'];
+        $tokenID = $data->id;
+        $tokenName = $data->name;
+        $tokenDesc = $data->description;
         $folderPath = null;
         $websitePath = null;
-        $userTwitter = $_POST['twitter'];
-        $userDiscord = $_POST['discord'];
+        $userTwitter = $data->twitter;
+        $userDiscord = $data->discord;
 
 		// Set directory for saved images
         $folderPath = $_SERVER['DOCUMENT_ROOT'].'/custom-mint/creations/' . $wallet . '/';

@@ -68,24 +68,31 @@
 
     <?php if ($page == 'community-pizza-form'): ?>
       <!-- DEBUG -->
-      <script src="https://browser.sentry-cdn.com/6.19.2/bundle.js"  crossorigin="anonymous"></script>
-      <script src="https://browser.sentry-cdn.com/6.19.2/captureconsole.min.js"></script>
+      <script src="https://browser.sentry-cdn.com/7.64.0/bundle.js"  crossorigin="anonymous"></script>
+      <script src="https://browser.sentry-cdn.com/7.64.0/captureconsole.min.js"></script>
+      <script src="https://browser.sentry-cdn.com/7.64.0/httpclient.min.js"></script>
+      <script src="./js/axios.min.js"></script>
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/select2.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form.js?v=1.0.27"></script>
+      <script src="./js/community-pizza-form.js?v=1.0.28"></script>
     <?php endif; ?>
 
     <?php if ($page == 'community-pizza-form-test'): ?>
+      <!-- DEBUG -->
+      <script src="https://browser.sentry-cdn.com/7.64.0/bundle.js"  crossorigin="anonymous"></script>
+      <script src="https://browser.sentry-cdn.com/7.64.0/captureconsole.min.js"></script>
+      <script src="https://browser.sentry-cdn.com/7.64.0/httpclient.min.js"></script>
       <script src="./js/html2canvas.min.js"></script>
       <script src="./js/jquery.validate.min.js"></script>
       <script src="./js/select2.min.js"></script>
       <script src="./js/additional-methods.min.js"></script>
-      <script src="./js/community-pizza-form-test.js?v=1.0.29"></script>
+      <script src="./js/community-pizza-form-test.js?v=1.0.32"></script>
     <?php endif; ?>
 
     <?php if ($page == 'pizza-oven'): ?>
+      <script src="./js/axios.min.js"></script>
       <script src="./js/pizza-oven.js?v=1.0.14"></script>
     <?php endif; ?>
 

@@ -520,35 +520,20 @@
 			}).then(canvas => {
 		        dataURL = canvas.toDataURL();
 
-				let tokenData = {
-					'userWallet': window.walletAddress,
-					'imgBase64': dataURL,
-					'id': document.getElementsByName('token-id')[0].value,
-					'supply': document.getElementsByName('token-select-box')[0].value,
-					'name': document.getElementsByName('token-name')[0].value,
-					'description': document.getElementsByName('token-desc')[0].value,
-					'twitter': document.getElementsByName('twitter-username')[0].value,
-					'discord': document.getElementsByName('discord-username')[0].value
-				};
-				
-				let formBody = [];
-				for (let property in tokenData) {
-					let encodedKey = encodeURIComponent(property);
-					let encodedValue = encodeURIComponent(tokenData[property]);
-					formBody.push(encodedKey + '=' + encodedValue);
-				}
-				formBody = formBody.join('&');
-
-				fetch('/inc/save-pizza', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded'
-					},
-					body: formBody
-				})
-				.then(response => response.json())
-				.then((data) => {
-					if (data.token_updated) {
+				axios.post(
+					'/inc/save-pizza',
+					{
+						'userWallet': window.walletAddress,
+						'imgBase64': dataURL,
+						'id': document.getElementsByName('token-id')[0].value,
+						'name': document.getElementsByName('token-name')[0].value,
+						'description': document.getElementsByName('token-desc')[0].value,
+						'twitter': document.getElementsByName('twitter-username')[0].value,
+						'discord': document.getElementsByName('discord-username')[0].value
+					}
+				)
+				.then(function(response) {
+					if (response.data.token_updated) {
 						$('#image-preview').attr('src', dataURL);
 						$('section.mint-section, #mint-nav a').removeClass('previous-step active-step');
 						$('#mint-nav ol').attr('data-step', 4);
@@ -556,8 +541,11 @@
 						$('section.mint-section[data-step="4"], #mint-nav a[data-step="4"]').addClass('active-step');
 						$('#submit-form').removeClass('loading');
 					} else {
-						console.log('Error: ' + data.message);
+						console.log('Error: ' + response.data.message);
 					}
+				})
+				.catch(function(error) {
+					console.error(error);
 				});
 		    });
 		}
@@ -574,9 +562,11 @@
         debug: false,
         integrations: [
             new Sentry.Integrations.CaptureConsole({
-                levels: ['log', 'info', 'error', 'debug', 'assert']
-            })
+                levels: ['log', 'info', 'error', 'warn', 'debug', 'assert']
+            }),
+			new Sentry.Integrations.HttpClient()
         ],
+		sendDefaultPii: true,
     });
 
 })( jQuery, window, document );
